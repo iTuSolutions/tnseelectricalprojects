@@ -13,7 +13,8 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
 
   <header class="sticky top-0 z-50 border-b border-slate-200/10 bg-slate-950/90 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+    <!-- Changed header container to relative so absolute centering of mega menus aligns with the header width -->
+    <div class="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
       
       <!-- LOGO -->
       <a href="../index.html" class="flex items-center gap-3 group">
@@ -35,51 +36,59 @@
         <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../index.html">Home</a>
         <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../about/index.html">About</a>
         
+        <!-- Electrical Dropdown -->
         <div class="nav-group relative">
           <button class="rounded-lg px-3 py-2 hover:bg-white/10 flex items-center gap-1">
             Electrical <span class="material-symbols-outlined align-middle text-base">expand_more</span>
           </button>
-          <div class="mega rounded-2xl bg-slate-900 p-6 shadow-2xl">
+          <!-- Updated mega class with absolute centering relative to the header -->
+          <div class="mega absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[650px] rounded-2xl bg-slate-900 p-6 shadow-2xl border border-slate-800">
             <div class="grid grid-cols-3 gap-6">
               <div>
                 <b class="text-amber-400">Electrical Services</b>
-                <a class="block mt-3 hover:text-amber-400" href="../electrical/index.html">Overview</a>
-                <a class="block mt-2 hover:text-amber-400" href="../electrical/installations.html">Installations</a>
-                <a class="block mt-2 hover:text-amber-400" href="../electrical/maintenance.html">Maintenance</a>
-                <a class="block mt-2 hover:text-amber-400" href="../electrical/repairs.html">Repairs</a>
+                <a class="block mt-3 hover:text-amber-400 text-slate-300" href="../electrical/index.html">Overview</a>
+                <a class="block mt-2 hover:text-amber-400 text-slate-300" href="../electrical/installations.html">Installations</a>
+                <a class="block mt-2 hover:text-amber-400 text-slate-300" href="../electrical/maintenance.html">Maintenance</a>
+                <a class="block mt-2 hover:text-amber-400 text-slate-300" href="../electrical/repairs.html">Repairs</a>
               </div>
               <div>
                 <b class="text-amber-400">Installation Solutions</b>
-                <p class="mt-3 text-slate-400">Residential · Commercial · Industrial · Wiring · Distribution boards</p>
+                <p class="mt-3 text-slate-400 text-xs leading-relaxed">Residential · Commercial · Industrial · Wiring · Distribution boards</p>
               </div>
-              <div class="rounded-xl bg-amber-400 p-5 text-slate-950">
-                <b>Need electrical services?</b>
-                <a href="../contact/index.html" class="mt-4 inline-flex rounded-lg bg-slate-950 px-4 py-2 text-white">Request a Quote</a>
+              <div class="rounded-xl bg-amber-400 p-5 text-slate-950 flex flex-col justify-between">
+                <div>
+                  <b class="block text-sm">Need electrical services?</b>
+                </div>
+                <a href="../contact/index.html" class="mt-4 inline-flex items-center justify-center rounded-lg bg-slate-950 px-4 py-2 text-xs font-bold text-white transition hover:bg-slate-900">Request a Quote</a>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Solar Dropdown -->
         <div class="nav-group relative">
           <button class="rounded-lg px-3 py-2 hover:bg-white/10 flex items-center gap-1">
             Solar <span class="material-symbols-outlined align-middle text-base">expand_more</span>
           </button>
-          <div class="mega rounded-2xl bg-slate-900 p-6 shadow-2xl">
+          <!-- Updated mega class with absolute centering relative to the header -->
+          <div class="mega absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[650px] rounded-2xl bg-slate-900 p-6 shadow-2xl border border-slate-800">
             <div class="grid grid-cols-3 gap-6">
               <div>
                 <b class="text-amber-400">Solar Services</b>
-                <a class="block mt-3 hover:text-amber-400" href="../solar/index.html">Overview</a>
-                <a class="block mt-2 hover:text-amber-400" href="../solar/installations.html">Installations</a>
-                <a class="block mt-2 hover:text-amber-400" href="../solar/maintenance.html">Maintenance</a>
-                <a class="block mt-2 hover:text-amber-400" href="../solar/repairs.html">Repairs</a>
+                <a class="block mt-3 hover:text-amber-400 text-slate-300" href="../solar/index.html">Overview</a>
+                <a class="block mt-2 hover:text-amber-400 text-slate-300" href="../solar/installations.html">Installations</a>
+                <a class="block mt-2 hover:text-amber-400 text-slate-300" href="../solar/maintenance.html">Maintenance</a>
+                <a class="block mt-2 hover:text-amber-400 text-slate-300" href="../solar/repairs.html">Repairs</a>
               </div>
               <div>
                 <b class="text-amber-400">Solar Systems</b>
-                <p class="mt-3 text-slate-400">Panels · Inverters · Batteries · System design · Backup power</p>
+                <p class="mt-3 text-slate-400 text-xs leading-relaxed">Panels · Inverters · Batteries · System design · Backup power</p>
               </div>
-              <div class="rounded-xl bg-amber-400 p-5 text-slate-950">
-                <b>Need solar?</b>
-                <a href="../contact/index.html" class="mt-4 inline-flex rounded-lg bg-slate-950 px-4 py-2 text-white">Request a Quote</a>
+              <div class="rounded-xl bg-amber-400 p-5 text-slate-950 flex flex-col justify-between">
+                <div>
+                  <b class="block text-sm">Need solar?</b>
+                </div>
+                <a href="../contact/index.html" class="mt-4 inline-flex items-center justify-center rounded-lg bg-slate-950 px-4 py-2 text-xs font-bold text-white transition hover:bg-slate-900">Request a Quote</a>
               </div>
             </div>
           </div>
@@ -87,15 +96,17 @@
 
         <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../energy-solutions/index.html">Energy Solutions</a>
         
+        <!-- Projects Dropdown -->
         <div class="nav-group relative">
           <button class="rounded-lg px-3 py-2 hover:bg-white/10 flex items-center gap-1">
             Projects <span class="material-symbols-outlined align-middle text-base">expand_more</span>
           </button>
-          <div class="mega rounded-2xl bg-slate-900 p-6 shadow-2xl">
-            <div class="flex gap-8">
-              <a href="../projects/index.html" class="hover:text-amber-400">All Projects</a>
-              <a href="../projects/electrical/index.html" class="hover:text-amber-400">Electrical</a>
-              <a href="../projects/solar/index.html" class="hover:text-amber-400">Solar</a>
+          <!-- Updated mega class with absolute centering relative to the header -->
+          <div class="mega absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[300px] rounded-2xl bg-slate-900 p-6 shadow-2xl border border-slate-800">
+            <div class="flex flex-col gap-3">
+              <a href="../projects/index.html" class="hover:text-amber-400 text-slate-300 font-medium">All Projects</a>
+              <a href="../projects/electrical/index.html" class="hover:text-amber-400 text-slate-300 font-medium">Electrical</a>
+              <a href="../projects/solar/index.html" class="hover:text-amber-400 text-slate-300 font-medium">Solar</a>
             </div>
           </div>
         </div>

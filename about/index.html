@@ -13,11 +13,11 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
 
 <header class="sticky top-0 z-50 border-b border-slate-200/10 bg-slate-950/90 backdrop-blur-xl">
-  <!-- Header container with relative positioning for desktop mega menu alignment -->
-  <div class="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+  <!-- Increased horizontal padding (px-6 lg:px-8) and spacing -->
+  <div class="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
     
     <!-- LOGO -->
-    <a href="../index.html" class="flex items-center gap-3 group">
+    <a href="../index.html" class="flex items-center gap-3 group mr-4">
       <div class="overflow-hidden rounded-2xl ring-2 ring-amber-400/50 shadow-md h-12 w-12 grid place-items-center bg-white dark:bg-slate-900">
         <img src="../images/logo/logo.light.mode.png" alt="TNSE Electrical Projects Logo" class="h-full w-full object-cover dark:hidden">
         <img src="../images/logo/logo.dark.mode.jpg" alt="TNSE Electrical Projects Logo" class="h-full w-full object-cover hidden dark:block">
@@ -32,14 +32,14 @@
       </span>
     </a>
 
-    <!-- DESKTOP NAVIGATION -->
-    <nav class="hidden lg:flex items-center gap-1 text-sm text-slate-200">
-      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../index.html">
+    <!-- DESKTOP NAVIGATION (Increased gap between items from gap-1 to gap-2 / gap-3) -->
+    <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-sm text-slate-200 mx-auto">
+      <a class="flex items-center gap-2 rounded-lg px-3.5 py-2 hover:bg-white/10 transition" href="../index.html">
         <span class="material-symbols-outlined text-amber-400 text-lg">home</span>
         <span>Home</span>
       </a>
 
-      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../about/index.html">
+      <a class="flex items-center gap-2 rounded-lg px-3.5 py-2 hover:bg-white/10 transition" href="../about/index.html">
         <span class="material-symbols-outlined text-amber-400 text-lg">info</span>
         <span>About</span>
       </a>
@@ -48,7 +48,7 @@
            ELECTRICAL MEGA MENU
       ================================================== -->
       <div class="relative group">
-        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3">
+        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3.5">
           <span class="material-symbols-outlined text-amber-400 text-lg">electrical_services</span>
           <span>Electrical</span>
           <span class="material-symbols-outlined text-sm">expand_more</span>
@@ -125,7 +125,7 @@
            SOLAR MEGA MENU
       ================================================== -->
       <div class="relative group">
-        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3">
+        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3.5">
           <span class="material-symbols-outlined text-amber-400 text-lg">solar_power</span>
           <span>Solar</span>
           <span class="material-symbols-outlined text-sm">expand_more</span>
@@ -198,7 +198,7 @@
         </div>
       </div>
 
-      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../energy-solutions/index.html">
+      <a class="flex items-center gap-2 rounded-lg px-3.5 py-2 hover:bg-white/10 transition" href="../energy-solutions/index.html">
         <span class="material-symbols-outlined text-amber-400 text-lg">bolt</span>
         <span>Energy Solutions</span>
       </a>
@@ -207,7 +207,7 @@
            PROJECTS MEGA MENU
       ================================================== -->
       <div class="relative group">
-        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3">
+        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3.5">
           <span class="material-symbols-outlined text-amber-400 text-lg">folder_open</span>
           <span>Projects</span>
           <span class="material-symbols-outlined text-sm">expand_more</span>
@@ -258,18 +258,18 @@
         </div>
       </div>
 
-      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../contact/index.html">
+      <a class="flex items-center gap-2 rounded-lg px-3.5 py-2 hover:bg-white/10 transition" href="../contact/index.html">
         <span class="material-symbols-outlined text-amber-400 text-lg">mail</span>
         <span>Contact</span>
       </a>
     </nav>
 
-    <!-- RIGHT CONTROLS -->
-    <div class="flex items-center gap-2">
+    <!-- RIGHT CONTROLS (Increased spacing gap-4 between theme toggle and quote button) -->
+    <div class="flex items-center gap-4">
       <button data-theme class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white hover:bg-white/10 transition">
         <span class="material-symbols-outlined">dark_mode</span>
       </button>
-      <a href="../contact/index.html" class="hidden sm:inline-flex rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 transition">
+      <a href="../contact/index.html" class="hidden sm:inline-flex rounded-lg bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 transition">
         Request a Quote
       </a>
       <button data-mobile-toggle="mobile" class="lg:hidden grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white hover:bg-white/10 transition">
@@ -283,22 +283,22 @@
        MOBILE NAVIGATION PANEL
   ================================================== -->
   <div id="mobile" class="mobile-panel hidden border-t border-white/10 bg-slate-950 lg:hidden">
-    <div class="space-y-2 px-5 py-6">
+    <div class="space-y-2 px-6 py-6">
       
-      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5" href="../index.html">
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white font-medium hover:bg-white/5" href="../index.html">
         <span class="material-symbols-outlined text-amber-400">home</span> Home
       </a>
 
-      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5" href="../about/index.html">
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white font-medium hover:bg-white/5" href="../about/index.html">
         <span class="material-symbols-outlined text-amber-400">info</span> About Us
       </a>
 
       <!-- MOBILE ELECTRICAL ACCORDION -->
       <div class="pt-2">
-        <div class="flex items-center gap-3 px-3 py-2 font-bold text-amber-400">
+        <div class="flex items-center gap-3 px-3 py-2.5 font-bold text-amber-400">
           <span class="material-symbols-outlined">electrical_services</span> Electrical Services
         </div>
-        <div class="pl-4 grid gap-1 border-l-2 border-slate-800 ml-4 mt-1">
+        <div class="pl-4 grid gap-1.5 border-l-2 border-slate-800 ml-4 mt-1">
           <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../electrical/index.html">
             <span class="material-symbols-outlined text-amber-400 text-sm">bolt</span> Electrical Overview
           </a>
@@ -316,10 +316,10 @@
 
       <!-- MOBILE SOLAR ACCORDION -->
       <div class="pt-2">
-        <div class="flex items-center gap-3 px-3 py-2 font-bold text-amber-400">
+        <div class="flex items-center gap-3 px-3 py-2.5 font-bold text-amber-400">
           <span class="material-symbols-outlined">solar_power</span> Solar & Energy
         </div>
-        <div class="pl-4 grid gap-1 border-l-2 border-slate-800 ml-4 mt-1">
+        <div class="pl-4 grid gap-1.5 border-l-2 border-slate-800 ml-4 mt-1">
           <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../solar/index.html">
             <span class="material-symbols-outlined text-amber-400 text-sm">sunny</span> Solar Overview
           </a>
@@ -335,16 +335,16 @@
         </div>
       </div>
 
-      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5 pt-2" href="../energy-solutions/index.html">
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white font-medium hover:bg-white/5 pt-2" href="../energy-solutions/index.html">
         <span class="material-symbols-outlined text-amber-400">bolt</span> Energy Solutions
       </a>
 
       <!-- MOBILE PROJECTS ACCORDION -->
       <div class="pt-2">
-        <div class="flex items-center gap-3 px-3 py-2 font-bold text-amber-400">
+        <div class="flex items-center gap-3 px-3 py-2.5 font-bold text-amber-400">
           <span class="material-symbols-outlined">folder_open</span> Projects Portfolio
         </div>
-        <div class="pl-4 grid gap-1 border-l-2 border-slate-800 ml-4 mt-1">
+        <div class="pl-4 grid gap-1.5 border-l-2 border-slate-800 ml-4 mt-1">
           <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../projects/index.html">
             <span class="material-symbols-outlined text-amber-400 text-sm">grid_view</span> All Projects
           </a>
@@ -357,12 +357,12 @@
         </div>
       </div>
 
-      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5 pt-2" href="../contact/index.html">
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-white font-medium hover:bg-white/5 pt-2" href="../contact/index.html">
         <span class="material-symbols-outlined text-amber-400">mail</span> Contact Us
       </a>
 
       <div class="pt-4">
-        <a class="flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 py-3 text-sm font-extrabold text-slate-950 text-center shadow-lg shadow-amber-400/20" href="../contact/index.html">
+        <a class="flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 py-3.5 text-sm font-extrabold text-slate-950 text-center shadow-lg shadow-amber-400/20" href="../contact/index.html">
           <span class="material-symbols-outlined text-lg">request_quote</span> Request a Quote
         </a>
       </div>

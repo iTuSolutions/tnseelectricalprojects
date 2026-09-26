@@ -12,773 +12,364 @@
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
 
-  <header class="sticky top-0 z-50 border-b border-slate-200/10 bg-slate-950/90 backdrop-blur-xl">
-    <!-- Changed header container to relative so absolute centering of mega menus aligns with the header width -->
-    <div class="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-      
-      <!-- LOGO -->
-      <a href="../index.html" class="flex items-center gap-3 group">
-        <div class="overflow-hidden rounded-2xl ring-2 ring-amber-400/50 shadow-md h-12 w-12 grid place-items-center bg-white dark:bg-slate-900">
-          <img src="../images/logo/logo.light.mode.png" alt="TNSE Electrical Projects Logo" class="h-full w-full object-cover dark:hidden">
-          <img src="../images/logo/logo.dark.mode.jpg" alt="TNSE Electrical Projects Logo" class="h-full w-full object-cover hidden dark:block">
-        </div>
-        <span>
-          <b class="text-base tracking-tight text-white group-hover:text-amber-400 transition">
-            TNSE Electrical
-          </b>
-          <small class="block text-xs text-amber-600 dark:text-amber-400 font-semibold">
-            Projects
-          </small>
-        </span>
+<header class="sticky top-0 z-50 border-b border-slate-200/10 bg-slate-950/90 backdrop-blur-xl">
+  <!-- Header container with relative positioning for desktop mega menu alignment -->
+  <div class="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+    
+    <!-- LOGO -->
+    <a href="../index.html" class="flex items-center gap-3 group">
+      <div class="overflow-hidden rounded-2xl ring-2 ring-amber-400/50 shadow-md h-12 w-12 grid place-items-center bg-white dark:bg-slate-900">
+        <img src="../images/logo/logo.light.mode.png" alt="TNSE Electrical Projects Logo" class="h-full w-full object-cover dark:hidden">
+        <img src="../images/logo/logo.dark.mode.jpg" alt="TNSE Electrical Projects Logo" class="h-full w-full object-cover hidden dark:block">
+      </div>
+      <span>
+        <b class="text-base tracking-tight text-white group-hover:text-amber-400 transition">
+          TNSE Electrical
+        </b>
+        <small class="block text-xs text-amber-600 dark:text-amber-400 font-semibold">
+          Projects
+        </small>
+      </span>
+    </a>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="hidden lg:flex items-center gap-1 text-sm text-slate-200">
+      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../index.html">
+        <span class="material-symbols-outlined text-amber-400 text-lg">home</span>
+        <span>Home</span>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-1 text-sm text-slate-200">
-        <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../index.html">Home</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../about/index.html">About</a>
-        
-        <!-- Electrical Dropdown -->
+      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../about/index.html">
+        <span class="material-symbols-outlined text-amber-400 text-lg">info</span>
+        <span>About</span>
+      </a>
+      
+      <!-- =================================================
+           ELECTRICAL MEGA MENU
+      ================================================== -->
+      <div class="relative group">
+        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3">
+          <span class="material-symbols-outlined text-amber-400 text-lg">electrical_services</span>
+          <span>Electrical</span>
+          <span class="material-symbols-outlined text-sm">expand_more</span>
+        </button>
+
+        <div class="absolute top-full left-1/2 -translate-x-1/2 w-[760px] max-w-[calc(100vw-2rem)] hidden group-hover:block pt-1">
+          <div class="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 dark:ring-slate-800">
+            <div class="grid grid-cols-3 gap-0">
+              
+              <!-- Electrical Services -->
+              <div class="p-6 border-r border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">electrical_services</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Services</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../electrical/index.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">bolt</span> Overview
+                  </a>
+                  <a href="../electrical/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">construction</span> Installations
+                  </a>
+                  <a href="../electrical/maintenance.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">engineering</span> Maintenance
+                  </a>
+                  <a href="../electrical/repairs.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">tools_wrench</span> Repairs & Fault Finding
+                  </a>
+                </div>
+              </div>
+
+              <!-- Installations -->
+              <div class="p-6 border-r border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">apartment</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Solutions</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../electrical/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">home</span> Residential
+                  </a>
+                  <a href="../electrical/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">storefront</span> Commercial
+                  </a>
+                  <a href="../electrical/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">factory</span> Industrial
+                  </a>
+                  <a href="../electrical/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">power</span> Wiring & DB Boards
+                  </a>
+                </div>
+              </div>
+
+              <!-- Quick CTA Box -->
+              <div class="p-6 bg-slate-50 dark:bg-slate-900/50 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-amber-500 text-2xl">support_agent</span>
+                    <h3 class="font-black text-slate-900 dark:text-white">Get Started</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Need certified electrical installations or repairs? Let our expert team assist you.</p>
+                </div>
+                <a href="../contact/index.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 py-2.5 text-xs font-extrabold text-slate-950 hover:bg-amber-300 transition shadow-md shadow-amber-400/20">
+                  <span class="material-symbols-outlined text-base">request_quote</span> Request a Quote
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================================
+           SOLAR MEGA MENU
+      ================================================== -->
+      <div class="relative group">
+        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3">
+          <span class="material-symbols-outlined text-amber-400 text-lg">solar_power</span>
+          <span>Solar</span>
+          <span class="material-symbols-outlined text-sm">expand_more</span>
+        </button>
+
+        <div class="absolute top-full left-1/2 -translate-x-1/2 w-[760px] max-w-[calc(100vw-2rem)] hidden group-hover:block pt-1">
+          <div class="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 dark:ring-slate-800">
+            <div class="grid grid-cols-3 gap-0">
+              
+              <!-- Solar Energy -->
+              <div class="p-6 border-r border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">solar_power</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Solar Energy</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../solar/index.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">sunny</span> Overview
+                  </a>
+                  <a href="../solar/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">grid_view</span> Installations
+                  </a>
+                  <a href="../solar/maintenance.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">settings_suggest</span> Maintenance
+                  </a>
+                  <a href="../solar/repairs.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">build</span> Repairs
+                  </a>
+                </div>
+              </div>
+
+              <!-- Solar Systems -->
+              <div class="p-6 border-r border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">battery_charging_full</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Systems</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../solar/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">wb_sunny</span> Solar Panels
+                  </a>
+                  <a href="../solar/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">power_settings_new</span> Inverters
+                  </a>
+                  <a href="../solar/installations.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">battery_full</span> Battery Storage
+                  </a>
+                  <a href="../energy-solutions/index.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">bolt</span> Backup Power
+                  </a>
+                </div>
+              </div>
+
+              <!-- Quick CTA Box -->
+              <div class="p-6 bg-slate-50 dark:bg-slate-900/50 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-amber-500 text-2xl">eco</span>
+                    <h3 class="font-black text-slate-900 dark:text-white">Go Green</h3>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Explore dependable solar setups engineered for continuous uninterrupted power.</p>
+                </div>
+                <a href="../contact/index.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 py-2.5 text-xs font-extrabold text-slate-950 hover:bg-amber-300 transition shadow-md shadow-amber-400/20">
+                  <span class="material-symbols-outlined text-base">request_quote</span> Request a Quote
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../energy-solutions/index.html">
+        <span class="material-symbols-outlined text-amber-400 text-lg">bolt</span>
+        <span>Energy Solutions</span>
+      </a>
+      
+      <!-- =================================================
+           PROJECTS MEGA MENU
+      ================================================== -->
+      <div class="relative group">
+        <button type="button" class="flex items-center gap-1.5 hover:text-amber-400 font-medium transition-colors py-8 px-3">
+          <span class="material-symbols-outlined text-amber-400 text-lg">folder_open</span>
+          <span>Projects</span>
+          <span class="material-symbols-outlined text-sm">expand_more</span>
+        </button>
+
+        <div class="absolute top-full left-1/2 -translate-x-1/2 w-[650px] max-w-[calc(100vw-2rem)] hidden group-hover:block pt-1">
+          <div class="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 dark:ring-slate-800">
+            <div class="grid grid-cols-3 gap-0">
+              
+              <div class="p-6 border-r border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">work</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Portfolio</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../projects/index.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">grid_view</span> All Projects
+                  </a>
+                </div>
+              </div>
+
+              <div class="p-6 border-r border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">electrical_services</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Electrical</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../projects/electrical/index.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">bolt</span> Electrical Works
+                  </a>
+                </div>
+              </div>
+
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-outlined text-amber-500 text-2xl">solar_power</span>
+                  <h3 class="font-black text-slate-900 dark:text-white">Solar</h3>
+                </div>
+                <div class="grid gap-1.5">
+                  <a href="../projects/solar/index.html" class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined text-amber-500 text-base">sunny</span> Solar Projects
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10 transition" href="../contact/index.html">
+        <span class="material-symbols-outlined text-amber-400 text-lg">mail</span>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <!-- RIGHT CONTROLS -->
+    <div class="flex items-center gap-2">
+      <button data-theme class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white hover:bg-white/10 transition">
+        <span class="material-symbols-outlined">dark_mode</span>
+      </button>
+      <a href="../contact/index.html" class="hidden sm:inline-flex rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-amber-400/20 hover:bg-amber-300 transition">
+        Request a Quote
+      </a>
+      <button data-mobile-toggle="mobile" class="lg:hidden grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white hover:bg-white/10 transition">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+  </div>
+
   <!-- =================================================
-             ELECTRICAL MEGA MENU
-        ================================================== -->
+       MOBILE NAVIGATION PANEL
+  ================================================== -->
+  <div id="mobile" class="mobile-panel hidden border-t border-white/10 bg-slate-950 lg:hidden">
+    <div class="space-y-2 px-5 py-6">
+      
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5" href="../home/index.html">
+        <span class="material-symbols-outlined text-amber-400">home</span> Home
+      </a>
 
-        <div class="relative group">
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5" href="../index.html">
+        <span class="material-symbols-outlined text-amber-400">info</span> About Us
+      </a>
 
-          <button
-            type="button"
-            class="flex items-center gap-1 hover:text-amber-500 font-medium transition-colors py-8"
-          >
-
-            <span>Electrical</span>
-
-            <span class="material-symbols-outlined text-sm">
-              expand_more
-            </span>
-
-          </button>
-
-
-          <!-- Static-position mega menu -->
-          <div
-            class="absolute top-full left-1/2 -translate-x-1/2 w-[760px] max-w-[calc(100vw-2rem)] hidden group-hover:block"
-          >
-
-            <div
-              class="mt-0 overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 dark:ring-slate-800"
-            >
-
-              <div class="grid grid-cols-3 gap-0">
-
-
-                <!-- Electrical Services -->
-                <div class="p-6 border-r border-slate-200 dark:border-slate-800">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      electrical_services
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Electrical Services
-                    </h3>
-
-                  </div>
-
-                  <div class="grid gap-2">
-
-                    <a
-                      href="electrical/index.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Electrical Overview
-                    </a>
-
-                    <a
-                      href="electrical/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Installations
-                    </a>
-
-                    <a
-                      href="electrical/maintenance.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Maintenance
-                    </a>
-
-                    <a
-                      href="electrical/repairs.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Repairs & Fault Finding
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-                <!-- Installations -->
-                <div class="p-6 border-r border-slate-200 dark:border-slate-800">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      construction
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Installations
-                    </h3>
-
-                  </div>
-
-                  <div class="grid gap-2">
-
-                    <a
-                      href="electrical/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Residential
-                    </a>
-
-                    <a
-                      href="electrical/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Commercial
-                    </a>
-
-                    <a
-                      href="electrical/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Industrial
-                    </a>
-
-                    <a
-                      href="electrical/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Electrical Wiring
-                    </a>
-
-                    <a
-                      href="electrical/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Distribution Boards
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-                <!-- Quick Links -->
-                <div class="p-6">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      bolt
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Quick Links
-                    </h3>
-
-                  </div>
-
-                  <div class="grid gap-2">
-
-                    <a
-                      href="projects/electrical/index.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Electrical Projects
-                    </a>
-
-                    <a
-                      href="electrical/maintenance.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Maintenance
-                    </a>
-
-                    <a
-                      href="electrical/repairs.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Repairs
-                    </a>
-
-                    <a
-                      href="contact/index.html"
-                      class="rounded-lg px-3 py-2 bg-amber-400 text-slate-950 font-bold hover:bg-amber-300 transition"
-                    >
-                      Request a Quote
-                    </a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
+      <!-- MOBILE ELECTRICAL ACCORDION -->
+      <div class="pt-2">
+        <div class="flex items-center gap-3 px-3 py-2 font-bold text-amber-400">
+          <span class="material-symbols-outlined">electrical_services</span> Electrical Services
         </div>
-
-
-        <!-- =================================================
-             SOLAR MEGA MENU
-        ================================================== -->
-
-        <div class="relative group">
-
-          <button
-            type="button"
-            class="flex items-center gap-1 hover:text-amber-500 font-medium transition-colors py-8"
-          >
-
-            <span>Solar</span>
-
-            <span class="material-symbols-outlined text-sm">
-              expand_more
-            </span>
-
-          </button>
-
-
-          <!-- Static-position mega menu -->
-          <div
-            class="absolute top-full left-1/2 -translate-x-1/2 w-[760px] max-w-[calc(100vw-2rem)] hidden group-hover:block"
-          >
-
-            <div
-              class="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 dark:ring-slate-800"
-            >
-
-              <div class="grid grid-cols-3">
-
-
-                <!-- Solar Energy -->
-                <div class="p-6 border-r border-slate-200 dark:border-slate-800">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      solar_power
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Solar Energy
-                    </h3>
-
-                  </div>
-
-                  <div class="grid gap-2">
-
-                    <a
-                      href="solar/index.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Overview
-                    </a>
-
-                    <a
-                      href="solar/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Installations
-                    </a>
-
-                    <a
-                      href="solar/maintenance.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Maintenance
-                    </a>
-
-                    <a
-                      href="solar/repairs.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Repairs
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-                <!-- Solar Systems -->
-                <div class="p-6 border-r border-slate-200 dark:border-slate-800">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      battery_charging_full
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Solar Systems
-                    </h3>
-
-                  </div>
-
-                  <div class="grid gap-2">
-
-                    <a
-                      href="solar/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Panels
-                    </a>
-
-                    <a
-                      href="solar/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Inverters
-                    </a>
-
-                    <a
-                      href="solar/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Battery Storage
-                    </a>
-
-                    <a
-                      href="solar/installations.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      System Design
-                    </a>
-
-                    <a
-                      href="energy-solutions/index.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Backup Power
-                    </a>
-
-                  </div>
-
-                </div>
-
-
-                <!-- Quick Links -->
-                <div class="p-6">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      sunny
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Quick Links
-                    </h3>
-
-                  </div>
-
-                  <div class="grid gap-2">
-
-                    <a
-                      href="projects/solar/index.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Projects
-                    </a>
-
-                    <a
-                      href="solar/maintenance.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Maintenance
-                    </a>
-
-                    <a
-                      href="solar/repairs.html"
-                      class="rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                    >
-                      Solar Repairs
-                    </a>
-
-                    <a
-                      href="contact/index.html"
-                      class="rounded-lg px-3 py-2 bg-amber-400 text-slate-950 font-bold hover:bg-amber-300 transition"
-                    >
-                      Request a Quote
-                    </a>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
+        <div class="pl-4 grid gap-1 border-l-2 border-slate-800 ml-4 mt-1">
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../electrical/index.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">bolt</span> Electrical Overview
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../electrical/installations.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">construction</span> Installations
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../electrical/maintenance.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">engineering</span> Maintenance
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../electrical/repairs.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">build</span> Repairs & Fault Finding
+          </a>
         </div>
+      </div>
 
-        <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../energy-solutions/index.html">Energy Solutions</a>
-        
-        <!-- Projects Dropdown -->
-        <div class="relative group">
-
-          <button
-            type="button"
-            class="flex items-center gap-1 hover:text-amber-500 font-medium transition-colors py-8"
-          >
-
-            <span>Projects</span>
-
-            <span class="material-symbols-outlined text-sm">
-              expand_more
-            </span>
-
-          </button>
-
-
-          <!-- Static-position mega menu -->
-          <div
-            class="absolute top-full left-1/2 -translate-x-1/2 w-[650px] max-w-[calc(100vw-2rem)] hidden group-hover:block"
-          >
-
-            <div
-              class="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-900/5 dark:ring-slate-800"
-            >
-
-              <div class="grid grid-cols-3">
-
-
-                <!-- Portfolio -->
-                <div class="p-6 border-r border-slate-200 dark:border-slate-800">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      folder_open
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Portfolio
-                    </h3>
-
-                  </div>
-
-                  <a
-                    href="projects/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    All Projects
-                  </a>
-
-                  <a
-                    href="projects/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Featured Projects
-                  </a>
-
-                </div>
-
-
-                <!-- Electrical -->
-                <div class="p-6 border-r border-slate-200 dark:border-slate-800">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      electrical_services
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Electrical
-                    </h3>
-
-                  </div>
-
-                  <a
-                    href="projects/electrical/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Electrical Projects
-                  </a>
-
-                  <a
-                    href="projects/electrical/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Installations
-                  </a>
-
-                  <a
-                    href="projects/electrical/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Infrastructure
-                  </a>
-
-                </div>
-
-
-                <!-- Solar -->
-                <div class="p-6">
-
-                  <div class="flex items-center gap-3 mb-5">
-
-                    <span
-                      class="material-symbols-outlined text-amber-500 text-3xl"
-                    >
-                      solar_power
-                    </span>
-
-                    <h3 class="font-black text-slate-900 dark:text-white">
-                      Solar
-                    </h3>
-
-                  </div>
-
-                  <a
-                    href="projects/solar/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Solar Projects
-                  </a>
-
-                  <a
-                    href="projects/solar/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Solar Systems
-                  </a>
-
-                  <a
-                    href="projects/solar/index.html"
-                    class="block rounded-lg px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-                  >
-                    Battery Projects
-                  </a>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
+      <!-- MOBILE SOLAR ACCORDION -->
+      <div class="pt-2">
+        <div class="flex items-center gap-3 px-3 py-2 font-bold text-amber-400">
+          <span class="material-symbols-outlined">solar_power</span> Solar & Energy
         </div>
+        <div class="pl-4 grid gap-1 border-l-2 border-slate-800 ml-4 mt-1">
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../solar/index.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">sunny</span> Solar Overview
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../solar/installations.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">grid_view</span> Solar Installations
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../solar/maintenance.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">settings</span> Solar Maintenance
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../solar/repairs.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">tools_wrench</span> Solar Repairs
+          </a>
+        </div>
+      </div>
 
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5 pt-2" href="../energy-solutions/index.html">
+        <span class="material-symbols-outlined text-amber-400">bolt</span> Energy Solutions
+      </a>
 
+      <!-- MOBILE PROJECTS ACCORDION -->
+      <div class="pt-2">
+        <div class="flex items-center gap-3 px-3 py-2 font-bold text-amber-400">
+          <span class="material-symbols-outlined">folder_open</span> Projects Portfolio
+        </div>
+        <div class="pl-4 grid gap-1 border-l-2 border-slate-800 ml-4 mt-1">
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../projects/index.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">grid_view</span> All Projects
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../projects/electrical/index.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">electrical_services</span> Electrical Projects
+          </a>
+          <a class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-white/5" href="../projects/solar/index.html">
+            <span class="material-symbols-outlined text-amber-400 text-sm">solar_power</span> Solar Projects
+          </a>
+        </div>
+      </div>
 
-        <a class="rounded-lg px-3 py-2 hover:bg-white/10" href="../contact/index.html">Contact</a>
-      </nav>
+      <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-white font-medium hover:bg-white/5 pt-2" href="../contact/index.html">
+        <span class="material-symbols-outlined text-amber-400">mail</span> Contact Us
+      </a>
 
-      <div class="flex items-center gap-2">
-        <button data-theme class="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white hover:bg-white/10">
-          <span class="material-symbols-outlined">dark_mode</span>
-        </button>
-        <a href="../contact/index.html" class="hidden sm:inline-flex rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-bold text-slate-950">Request a Quote</a>
-        <button data-mobile-toggle="mobile" class="lg:hidden grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-white">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
+      <div class="pt-4">
+        <a class="flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 py-3 text-sm font-extrabold text-slate-950 text-center shadow-lg shadow-amber-400/20" href="../contact/index.html">
+          <span class="material-symbols-outlined text-lg">request_quote</span> Request a Quote
+        </a>
       </div>
 
     </div>
-
-    <div id="mobile" class="mobile-panel border-t border-white/10 bg-slate-950 lg:hidden">
-      <div class="space-y-1 px-5 py-4">
-        <a
-          class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900"
-          href="index.html"
-        >
-          Home
-        </a>
-
-
-        <a
-          class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900"
-          href="about/index.html"
-        >
-          About
-        </a>
-
-
-        <!-- MOBILE ELECTRICAL -->
-
-        <div class="px-3 py-2 font-bold text-amber-500">
-          Electrical
-        </div>
-
-        <div
-          class="pl-4 grid gap-1 border-l-2 border-slate-200 dark:border-slate-800 ml-3"
-        >
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="electrical/index.html"
-          >
-            Electrical Overview
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="electrical/installations.html"
-          >
-            Installations
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="electrical/maintenance.html"
-          >
-            Maintenance
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="electrical/repairs.html"
-          >
-            Repairs & Fault Finding
-          </a>
-
-        </div>
-
-
-        <!-- MOBILE SOLAR -->
-
-        <div class="px-3 py-2 font-bold text-amber-500 mt-2">
-          Solar
-        </div>
-
-        <div
-          class="pl-4 grid gap-1 border-l-2 border-slate-200 dark:border-slate-800 ml-3"
-        >
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="solar/index.html"
-          >
-            Solar Overview
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="solar/installations.html"
-          >
-            Solar Installations
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="solar/maintenance.html"
-          >
-            Solar Maintenance
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="solar/repairs.html"
-          >
-            Solar Repairs
-          </a>
-
-        </div>
-
-
-        <!-- ENERGY SOLUTIONS -->
-
-        <a
-          class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900 mt-2"
-          href="energy-solutions/index.html"
-        >
-          Energy Solutions
-        </a>
-
-
-        <!-- MOBILE PROJECTS -->
-
-        <div class="px-3 py-2 font-bold text-amber-500 mt-2">
-          Projects
-        </div>
-
-        <div
-          class="pl-4 grid gap-1 border-l-2 border-slate-200 dark:border-slate-800 ml-3"
-        >
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="projects/index.html"
-          >
-            All Projects
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="projects/electrical/index.html"
-          >
-            Electrical Projects
-          </a>
-
-          <a
-            class="rounded-lg px-3 py-1.5 text-sm hover:bg-slate-100 dark:hover:bg-slate-900"
-            href="projects/solar/index.html"
-          >
-            Solar Projects
-          </a>
-
-        </div>
-
-
-        <!-- CONTACT -->
-
-        <a
-          class="rounded-lg px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-900 mt-2"
-          href="contact/index.html"
-        >
-          Contact
-        </a>
-
-
-        <!-- QUOTE -->
-
-        <a
-          class="rounded-lg px-3 py-3 bg-amber-400 text-slate-950 font-bold text-center mt-2"
-          href="contact/index.html"
-        >
-          Request a Quote
-        </a>
-
-      </div>
-    </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <section class="relative overflow-hidden bg-slate-950 py-24">

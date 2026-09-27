@@ -95,12 +95,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// 9. Mobile Navigation Accordion Toggle (Global Scope for inline onclick)
+// 9. Exclusive Mobile Navigation Accordion Toggle (Ensures only one is open at a time)
 window.toggleAccordion = function(id, button) {
   const content = document.getElementById(id);
+  const isHidden = content.classList.contains('hidden');
+
+  // Close all other accordions and reset their icons
+  const mobileNav = document.getElementById('mobileNav');
+  if (mobileNav) {
+    mobileNav.querySelectorAll('[id$="Accordion"]').forEach(el => {
+      if (el.id !== id) {
+        el.classList.add('hidden');
+      }
+    });
+    mobileNav.querySelectorAll('button[onclick^="toggleAccordion"]').forEach(btn => {
+      if (btn !== button) {
+        const btnIcon = btn.querySelector('.material-symbols-outlined:last-child');
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
+  // Toggle the clicked accordion
   const icon = button.querySelector('.material-symbols-outlined:last-child');
-  
-  if (content.classList.contains('hidden')) {
+  if (isHidden) {
     content.classList.remove('hidden');
     if (icon) icon.style.transform = 'rotate(180deg)';
   } else {

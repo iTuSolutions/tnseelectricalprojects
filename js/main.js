@@ -134,7 +134,6 @@ window.toggleAccordion = function(id, button) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Explicit array containing all 30 parallax project image URLs
     let imageArray = [
       "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(1).jpg",
       "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(2).jpg",
@@ -168,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(30).jpg"
     ];
 
-    // Shuffle the array randomly using Fisher-Yates shuffle
+    // Shuffle array randomly
     for (let i = imageArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [imageArray[i], imageArray[j]] = [imageArray[j], imageArray[i]];
@@ -177,20 +176,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const carouselContainer = document.getElementById("heroCarousel");
     if (!carouselContainer) return;
 
-    // Build slide elements
+    // Build slide elements filling the section background
     imageArray.forEach((src, index) => {
       const img = document.createElement("img");
       img.src = src;
-      img.alt = `TNSE Electrical Project ${index + 1}`;
+      img.alt = `TNSE Electrical Project Background ${index + 1}`;
       img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
-      img.dataset.index = index;
       carouselContainer.appendChild(img);
     });
 
     let currentIndex = 0;
     const slides = carouselContainer.querySelectorAll("img");
 
-    // Rotate slides every 4.5 seconds
+    // Rotate background slides every 4.5 seconds
     setInterval(() => {
       slides[currentIndex].classList.remove("opacity-100");
       slides[currentIndex].classList.add("opacity-0");
@@ -200,8 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slides[currentIndex].classList.remove("opacity-0");
       slides[currentIndex].classList.add("opacity-100");
     }, 4500);
-});
-
+  });
 
 
 

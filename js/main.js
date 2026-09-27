@@ -133,38 +133,40 @@ window.toggleAccordion = function(id, button) {
 
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let imageArray = [
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(1).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(2).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(3).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(4).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(5).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(6).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(7).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(8).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(9).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(10).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(11).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(12).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(13).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(14).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(15).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(16).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(17).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(18).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(19).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(20).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(21).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(22).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(23).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(24).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(25).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(26).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(27).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(28).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(29).jpg",
-      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(30).jpg"
+      "/tnseelectricalprojects/images/parallax/tnse (1).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (2).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (3).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (4).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (5).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (6).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (7).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (8).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (9).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (10).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (11).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (12).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (13).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (14).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (15).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (16).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (17).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (18).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (19).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (20).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (21).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (22).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (23).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (24).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (25).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (26).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (27).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (28).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (29).jpg",
+      "/tnseelectricalprojects/images/parallax/tnse (30).jpg"
     ];
 
     // Shuffle array randomly
@@ -187,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentIndex = 0;
     const slides = carouselContainer.querySelectorAll("img");
+    if (slides.length === 0) return;
 
     // Rotate background slides every 4.5 seconds
     setInterval(() => {
@@ -198,7 +201,11 @@ document.addEventListener("DOMContentLoaded", function () {
       slides[currentIndex].classList.remove("opacity-0");
       slides[currentIndex].classList.add("opacity-100");
     }, 4500);
-  });
+});
+
+
+
+
 
 
 

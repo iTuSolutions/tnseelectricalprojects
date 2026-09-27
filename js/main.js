@@ -126,3 +126,60 @@ window.toggleAccordion = function(id, button) {
     if (icon) icon.style.transform = 'rotate(0deg)';
   }
 };
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const totalImages = 30;
+    const imagesDir = "/tnseelectricalprojects/images/parallax/";
+    let imageArray = [];
+
+    // Generate array of image paths from tnse (1).jpg to tnse (30).jpg[cite: 1]
+    for (let i = 1; i <= totalImages; i++) {
+      imageArray.push(`${imagesDir}tnse (${i}).jpg`);
+    }
+
+    // Shuffle the array randomly using Fisher-Yates shuffle
+    for (let i = imageArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [imageArray[i], imageArray[j]] = [imageArray[j], imageArray[i]];
+    }
+
+    const carouselContainer = document.getElementById("heroCarousel");
+    if (!carouselContainer) return;
+
+    // Build slide elements
+    imageArray.forEach((src, index) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = `TNSE Electrical Project ${index + 1}`;
+      img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+      img.dataset.index = index;
+      carouselContainer.appendChild(img);
+    });
+
+    let currentIndex = 0;
+    const slides = carouselContainer.querySelectorAll("img");
+
+    // Rotate slides every 4.5 seconds
+    setInterval(() => {
+      slides[currentIndex].classList.remove("opacity-100");
+      slides[currentIndex].classList.add("opacity-0");
+
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      slides[currentIndex].classList.remove("opacity-0");
+      slides[currentIndex].classList.add("opacity-100");
+    }, 4500);
+  });
+
+
+
+
+
+
+

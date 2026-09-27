@@ -134,14 +134,39 @@ window.toggleAccordion = function(id, button) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const totalImages = 30;
-    const imagesDir = "/tnseelectricalprojects/images/parallax/";
-    let imageArray = [];
-
-    // Generate array of image paths from tnse (1).jpg to tnse (30).jpg[cite: 1]
-    for (let i = 1; i <= totalImages; i++) {
-      imageArray.push(`${imagesDir}tnse (${i}).jpg`);
-    }
+    // Explicit array containing all 30 parallax project image URLs
+    let imageArray = [
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(1).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(2).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(3).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(4).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(5).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(6).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(7).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(8).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(9).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(10).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(11).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(12).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(13).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(14).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(15).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(16).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(17).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(18).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(19).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(20).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(21).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(22).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(23).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(24).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(25).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(26).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(27).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(28).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(29).jpg",
+      "https://github.com/iTuSolutions/tnseel/raw/main/tnseelectricalprojects/images/parallax/tnse%20(30).jpg"
+    ];
 
     // Shuffle the array randomly using Fisher-Yates shuffle
     for (let i = imageArray.length - 1; i > 0; i--) {
@@ -175,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slides[currentIndex].classList.remove("opacity-0");
       slides[currentIndex].classList.add("opacity-100");
     }, 4500);
-  });
+});
 
 
 

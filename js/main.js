@@ -212,3 +212,147 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
+/* =========================================================
+   IMAGE DRAWER / LIGHTBOX CONTROLLER
+   ========================================================= */
+let galleryItems = [];
+let currentIndex = 0;
+
+// Initialize gallery items automatically from elements carrying data attributes
+document.addEventListener('DOMContentLoaded', () => {
+  const triggers = document.querySelectorAll('[onclick*="openImageDrawer"]');
+  galleryItems = Array.from(triggers).map(el => ({
+    src: el.getAttribute('data-image-src'),
+    title: el.getAttribute('data-image-title') || 'TNSE Project Image',
+    caption: el.getAttribute('data-image-caption') || 'Professional electrical and energy solutions execution.'
+  }));
+
+  // If no triggers found in DOM, fallback sample set (e.g. tnse 1 to 30 parallax/projects)
+  if (galleryItems.length === 0) {
+    for (let i = 1; i <= 10; i++) {
+      galleryItems.push({
+        src: `/tnseelectricalprojects/images/parallax/tnse (${i}).jpg`,
+        title: `TNSE Project & Parallax View ${i}`,
+        caption: 'High-grade workmanship delivered across Polokwane and Limpopo.'
+      });
+    }
+  }
+
+  buildThumbnails();
+  setupTouchGestures();
+});
+
+function buildThumbnails() {
+  const container = document.getElementById('drawerThumbnailsContainer');
+  if (!container) return;
+  container.innerHTML = '';
+
+  galleryItems.forEach((item, idx) => {
+    const thumb = document.createElement('button');
+    thumb.className = `relative h-14 w-20 rounded-lg overflow-hidden border-2 transition-all ${idx === currentIndex ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
+    thumb.onclick = () => goToImage(idx);
+    thumb.innerHTML = `<img src="${item.src}" alt="Thumbnail ${idx + 1}" class="h-full w-full object-cover">`;
+    container.appendChild(thumb);
+  });
+}
+
+function openImageDrawer(index) {
+  currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
+  updateDrawerContent();
+
+  const modal = document.getElementById('imageDrawerModal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    document.body.classList.add('overflow-hidden'); // Background scroll lock
+  }
+}
+
+function closeImageDrawer() {
+  const modal = document.getElementById('imageDrawerModal');
+  if (modal) {
+    modal.classList.add('opacity-0');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }, 300);
+  }
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  updateDrawerContent();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  updateDrawerContent();
+}
+
+function goToImage(index) {
+  currentIndex = index;
+  updateDrawerContent();
+}
+
+function updateDrawerContent() {
+  const item = galleryItems[currentIndex];
+  document.getElementById('drawerMainImage').src = item.src;
+  document.getElementById('drawerImageTitle').textContent = item.title;
+  document.getElementById('drawerImageCaption').textContent = item.caption;
+  document.getElementById('drawerImageCounter').textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+  
+  // Update active thumbnail highlight state
+  const container = document.getElementById('drawerThumbnailsContainer');
+  if (container) {
+    Array.from(container.children).forEach((child, idx) => {
+      if (idx === currentIndex) {
+        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-amber-400 scale-105 transition-all";
+        child.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+      } else {
+        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-slate-800 opacity-60 hover:opacity-100 transition-all";
+      }
+    });
+  }
+}
+
+// Keyboard Navigation Support (ESC, Left & Right Arrows)
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('imageDrawerModal');
+  if (!modal || modal.classList.contains('hidden')) return;
+
+  if (e.key === 'Escape') closeImageDrawer();
+  if (e.key === 'ArrowRight') nextImage();
+  if (e.key === 'ArrowLeft') prevImage();
+});
+
+// Touch / Swipe Support for Mobile Devices
+function setupTouchGestures() {
+  const modal = document.getElementById('imageDrawerModal');
+  if (!modal) return;
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      nextImage(); // Swiped Left -> Next
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+      prevImage(); // Swiped Right -> Previous
+    }
+  }
+}

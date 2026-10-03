@@ -4,784 +4,714 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TNSE Electrical Projects | Electrical & Solar Energy Solutions</title>
-  
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS & Google Material Symbols -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Material Symbols -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950">
 
   <!-- =========================================================
-       1. STICKY NAVIGATION & MEGA MENUS
+       1. HERO SECTION WITH IMAGE CAROUSEL & OVERLAYS
   ========================================================= -->
-  <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-      <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black">
-          <span class="material-symbols-outlined">bolt</span>
+  <section class="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden bg-slate-950">
+    <!-- Hero Background Carousel Container -->
+    <div id="heroCarousel" class="absolute inset-0 z-0">
+      <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+        <img src="/tnseelectricalprojects/images/hero/tnse (1).jpg" alt="TNSE Hero Slide 1" class="h-full w-full object-cover scale-105 animate-pulse">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40"></div>
+      </div>
+      <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+        <img src="/tnseelectricalprojects/images/hero/tnse (2).jpg" alt="TNSE Hero Slide 2" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40"></div>
+      </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full py-20">
+      <div class="max-w-3xl">
+        <span class="inline-block rounded-full bg-amber-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-amber-400 border border-amber-400/20">
+          Powering Possibilities
+        </span>
+        <h1 class="mt-6 text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Electrical & Solar <span class="text-amber-400">Energy Solutions</span>
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+          TNSE Electrical Projects delivers dependable commercial, residential, and industrial electrical installations, maintenance, fault finding, and turnkey renewable solar backup power systems across Polokwane and Limpopo.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-8 py-4 font-bold text-slate-950 shadow-xl transition hover:bg-amber-300">
+            <span class="material-symbols-outlined">request_quote</span>
+            Request a Quote
+          </a>
+          <a href="#electrical-projects" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/60 px-8 py-4 font-bold text-white backdrop-blur transition hover:bg-slate-800">
+            <span class="material-symbols-outlined">explore</span>
+            Explore Solutions
+          </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       2. COMPANY STATISTICS
+  ========================================================= -->
+  <section class="bg-slate-950 py-20 text-white border-t border-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
         <div>
-          <span class="text-lg font-black tracking-wider text-white uppercase">TNSE</span>
-          <span class="block text-[10px] font-bold text-amber-400 uppercase tracking-widest">Electrical Projects</span>
+          <p class="font-bold uppercase tracking-[0.2em] text-amber-400">Company Highlights</p>
+          <h2 class="mt-3 text-3xl font-black sm:text-4xl">Building reliable energy solutions for today and tomorrow.</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+            TNSE Electrical Projects combines professional electrical engineering competencies with advanced solar and energy solutions to help customers address their power, installation, maintenance, and project requirements.
+          </p>
+          <a href="about/index.html" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-amber-300">
+            Discover Our Company
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
         </div>
-      </a>
-
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm">
-        <a href="index.html" class="text-amber-400 hover:text-amber-300 transition">Home</a>
-        <a href="about/index.html" class="text-slate-300 hover:text-amber-400 transition">About</a>
-        
-        <!-- Electrical Dropdown / Mega Menu -->
-        <div class="relative group">
-          <button class="flex items-center gap-1 text-slate-300 group-hover:text-amber-400 transition py-2">
-            Electrical <span class="material-symbols-outlined text-sm">expand_more</span>
-          </button>
-          <div class="absolute top-full left-0 w-64 rounded-2xl border border-slate-800 bg-slate-900 p-3 shadow-2xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
-            <a href="projects/electrical/index.html" class="block rounded-xl p-3 hover:bg-slate-800 transition">
-              <p class="font-bold text-white">Installations</p>
-              <p class="text-xs text-slate-400 mt-0.5">Commercial & residential wiring</p>
-            </a>
-            <a href="projects/electrical/index.html" class="block rounded-xl p-3 hover:bg-slate-800 transition">
-              <p class="font-bold text-white">Maintenance & Repairs</p>
-              <p class="text-xs text-slate-400 mt-0.5">Board upgrades & upkeep</p>
-            </a>
-            <a href="projects/electrical/index.html" class="block rounded-xl p-3 hover:bg-slate-800 transition">
-              <p class="font-bold text-white">Fault Finding</p>
-              <p class="text-xs text-slate-400 mt-0.5">Diagnostic & safety testing</p>
-            </a>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg">
+            <span class="material-symbols-outlined text-3xl text-amber-400">calendar_month</span>
+            <p class="mt-4 text-3xl font-black">2017</p>
+            <p class="mt-1 text-slate-400">Year established</p>
           </div>
-        </div>
-
-        <!-- Solar Dropdown / Mega Menu -->
-        <div class="relative group">
-          <button class="flex items-center gap-1 text-slate-300 group-hover:text-amber-400 transition py-2">
-            Solar & Energy <span class="material-symbols-outlined text-sm">expand_more</span>
-          </button>
-          <div class="absolute top-full left-0 w-64 rounded-2xl border border-slate-800 bg-slate-900 p-3 shadow-2xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
-            <a href="projects/solar/index.html" class="block rounded-xl p-3 hover:bg-slate-800 transition">
-              <p class="font-bold text-white">Solar PV Setups</p>
-              <p class="text-xs text-slate-400 mt-0.5">Turnkey solar installations</p>
-            </a>
-            <a href="projects/solar/index.html" class="block rounded-xl p-3 hover:bg-slate-800 transition">
-              <p class="font-bold text-white">Battery Storage</p>
-              <p class="text-xs text-slate-400 mt-0.5">Lithium backup solutions</p>
-            </a>
-            <a href="projects/solar/index.html" class="block rounded-xl p-3 hover:bg-slate-800 transition">
-              <p class="font-bold text-white">Backup Power</p>
-              <p class="text-xs text-slate-400 mt-0.5">Inverters & changeover kits</p>
-            </a>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg">
+            <span class="material-symbols-outlined text-3xl text-amber-400">workspace_premium</span>
+            <p class="mt-4 text-3xl font-black">Level 1</p>
+            <p class="mt-1 text-slate-400">BEE Contributor</p>
           </div>
-        </div>
-
-        <a href="projects/index.html" class="text-slate-300 hover:text-amber-400 transition">Projects</a>
-        <a href="contact/index.html" class="text-slate-300 hover:text-amber-400 transition">Contact</a>
-      </nav>
-
-      <!-- CTA Button -->
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="contact/index.html" class="rounded-xl bg-amber-400 px-5 py-2.5 font-bold text-slate-950 transition hover:bg-amber-300 shadow-lg">
-          Request a Quote
-        </a>
-      </div>
-    </div>
-  </header>
-
-<!-- =========================================================
-     1. COMPANY STATISTICS / HIGHLIGHTS SECTION
-========================================================= -->
-<section class="bg-slate-950 py-20 text-white border-t border-slate-900">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-      <div>
-        <p class="font-bold uppercase tracking-[0.2em] text-amber-400">
-          Company Statistics
-        </p>
-        <h2 class="mt-3 text-3xl font-black sm:text-4xl">
-          Building reliable energy solutions for today and tomorrow.
-        </h2>
-        <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-          TNSE Electrical Projects combines electrical services with solar and energy solutions to help customers address their power, installation, maintenance and project requirements.
-        </p>
-        <a href="about/index.html"
-          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-amber-300">
-          Discover Our Company
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <span class="material-symbols-outlined text-3xl text-amber-400">calendar_month</span>
-          <p class="mt-4 text-3xl font-black">2017</p>
-          <p class="mt-1 text-slate-400">Established 2017</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <span class="material-symbols-outlined text-3xl text-amber-400">workspace_premium</span>
-          <p class="mt-4 text-3xl font-black">Level 1</p>
-          <p class="mt-1 text-slate-400">BEE Level 1 Contributor</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <span class="material-symbols-outlined text-3xl text-amber-400">bolt</span>
-          <p class="mt-4 text-xl font-black">Electrical</p>
-          <p class="mt-1 text-slate-400">Electrical & Solar Solutions</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <span class="material-symbols-outlined text-3xl text-amber-400">solar_power</span>
-          <p class="mt-4 text-xl font-black">Solar & Energy</p>
-          <p class="mt-1 text-slate-400">Renewable energy systems</p>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg">
+            <span class="material-symbols-outlined text-3xl text-amber-400">bolt</span>
+            <p class="mt-4 text-xl font-black">Electrical</p>
+            <p class="mt-1 text-slate-400">Installation & maintenance</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg">
+            <span class="material-symbols-outlined text-3xl text-amber-400">solar_power</span>
+            <p class="mt-4 text-xl font-black">Solar & Energy</p>
+            <p class="mt-1 text-slate-400">Renewable energy solutions</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =========================================================
-     2. PARALLAX VISUAL BREAK SECTION 1
-========================================================= -->
-<section class="relative h-[50vh] min-h-[400px] bg-slate-950 overflow-hidden flex items-center justify-center">
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="/tnseelectricalprojects/images/parallax/tnse (1).jpg" 
-      alt="TNSE Parallax Visual" 
-      class="h-full w-full object-cover opacity-40 fixed-parallax"
-      loading="lazy"
-    >
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950"></div>
-  </div>
-  <div class="relative z-10 text-center px-4 max-w-3xl">
-    <span class="material-symbols-outlined text-amber-400 text-4xl mb-3">bolt</span>
-    <h2 class="text-3xl sm:text-4xl font-black text-white">Excellence in Technical Execution</h2>
-    <p class="mt-3 text-slate-300">Powered by precision engineering across Limpopo.</p>
-  </div>
-</section>
-
-<!-- =========================================================
-     3. OUR PORTFOLIO: SEPARATE ELECTRICAL & SOLAR PROJECTS
-========================================================= -->
-<section class="py-24 bg-slate-900/40 border-t border-slate-900">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Our Portfolio</p>
-      <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Featured Electrical & Solar Projects</h2>
-      <p class="mt-4 text-lg text-slate-400">
-        Click any project card to launch the interactive high-resolution image drawer and view the complete collection.
-      </p>
+  <!-- =========================================================
+       3. PARALLAX VISUAL BREAK 1
+  ========================================================= -->
+  <section class="relative h-[40vh] min-h-[300px] bg-fixed bg-center bg-cover flex items-center justify-center" style="background-image: url('/tnseelectricalprojects/images/parallax/tnse (1).jpg');">
+    <div class="absolute inset-0 bg-slate-950/80"></div>
+    <div class="relative z-10 text-center px-4 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl font-black text-white">Precision Engineering & Craftsmanship</h2>
+      <p class="mt-3 text-slate-300">Dedicated to high standards across every residential and commercial project site.</p>
     </div>
+  </section>
 
-    <!-- ELECTRICAL PROJECTS SUB-SECTION -->
-    <div class="mb-20">
-      <div class="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400 text-slate-950">
-            <span class="material-symbols-outlined">electrical_services</span>
-          </div>
-          <h3 class="text-2xl font-black text-white">Electrical Project Gallery</h3>
+  <!-- =========================================================
+       4. WHY CHOOSE TNSE
+  ========================================================= -->
+  <section class="bg-slate-100 py-20 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">Why TNSE</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-black">Professional service with a practical engineering mindset.</h2>
+          <p class="mt-5 leading-relaxed text-slate-600 dark:text-slate-400">We focus on understanding the requirement, planning the solution and delivering dependable electrical and energy work.</p>
         </div>
-        <span class="text-xs uppercase tracking-wider text-slate-500 font-bold">Installations, Repairs & Fault Finding</span>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
+            <span class="material-symbols-outlined text-amber-500">verified</span>
+            <h3 class="mt-3 font-bold">Reliable Solutions</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Solutions designed around real operational needs.</p>
+          </div>
+          <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
+            <span class="material-symbols-outlined text-amber-500">health_and_safety</span>
+            <h3 class="mt-3 font-bold">Safety Focus</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Safety-conscious planning and execution.</p>
+          </div>
+          <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
+            <span class="material-symbols-outlined text-amber-500">engineering</span>
+            <h3 class="mt-3 font-bold">Technical Approach</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Practical technical thinking from assessment to delivery.</p>
+          </div>
+          <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
+            <span class="material-symbols-outlined text-amber-500">support_agent</span>
+            <h3 class="mt-3 font-bold">Client Focus</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Clear communication throughout the project.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. SEPARATE PORTFOLIO: ELECTRICAL PROJECTS SECTION
+  ========================================================= -->
+  <section id="electrical-projects" class="py-24 bg-slate-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div>
+          <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Our Portfolio</p>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Electrical Installations & Maintenance Projects</h2>
+          <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-400">
+            Browse our commercial wiring, distribution board upgrades, and fault-finding executions. Click any image or use the hamburger icon to open the full image drawer.
+          </p>
+        </div>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Electrical Card 1 -->
-        <div 
-          class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg"
-          onclick="openImageDrawer(0)"
-          data-image-src="/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg"
-          data-image-title="Commercial Distribution Board Installation"
-          data-image-caption="High-standard three-phase distribution board installation, wiring, and labeling in Polokwane."
-        >
-          <div class="aspect-video overflow-hidden bg-slate-950">
+      <!-- Electrical Project Grid -->
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg" onclick="openImageDrawer(0)" data-image-src="/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg" data-image-title="Commercial Distribution Board Setup" data-image-caption="High-standard three-phase electrical board installation in Polokwane.">
+          <div class="aspect-video overflow-hidden bg-slate-950 relative">
             <img src="/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg" alt="Electrical Project 1" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-3 right-3 rounded-lg bg-slate-950/80 p-2 text-amber-400 border border-slate-800 backdrop-blur">
+              <span class="material-symbols-outlined block">menu</span>
+            </div>
           </div>
           <div class="p-5 flex items-center justify-between">
             <div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition-colors">Distribution Board Upgrade</h4>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Distribution Board Upgrade</h3>
               <p class="text-xs text-slate-400 mt-1">Electrical Installation</p>
             </div>
             <span class="material-symbols-outlined text-amber-400">zoom_in</span>
           </div>
         </div>
 
-        <!-- Electrical Card 2 -->
-        <div 
-          class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg"
-          onclick="openImageDrawer(1)"
-          data-image-src="/tnseelectricalprojects/images/projects/electrical/tnse (2).jpg"
-          data-image-title="Industrial Fault Finding & Testing"
-          data-image-caption="Comprehensive diagnostic assessment and circuit restoration for commercial operations."
-        >
-          <div class="aspect-video overflow-hidden bg-slate-950">
+        <!-- Card 2 -->
+        <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg" onclick="openImageDrawer(1)" data-image-src="/tnseelectricalprojects/images/projects/electrical/tnse (2).jpg" data-image-title="Industrial Fault Tracing & Wiring" data-image-caption="Rigorous safety inspection and wiring harness maintenance.">
+          <div class="aspect-video overflow-hidden bg-slate-950 relative">
             <img src="/tnseelectricalprojects/images/projects/electrical/tnse (2).jpg" alt="Electrical Project 2" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-3 right-3 rounded-lg bg-slate-950/80 p-2 text-amber-400 border border-slate-800 backdrop-blur">
+              <span class="material-symbols-outlined block">menu</span>
+            </div>
           </div>
           <div class="p-5 flex items-center justify-between">
             <div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition-colors">Fault Finding & Repair</h4>
-              <p class="text-xs text-slate-400 mt-1">Maintenance</p>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Industrial Maintenance</h3>
+              <p class="text-xs text-slate-400 mt-1">Fault Finding & Repairs</p>
             </div>
             <span class="material-symbols-outlined text-amber-400">zoom_in</span>
           </div>
         </div>
 
-        <!-- Electrical Card 3 -->
-        <div 
-          class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg"
-          onclick="openImageDrawer(2)"
-          data-image-src="/tnseelectricalprojects/images/projects/electrical/tnse (3).jpg"
-          data-image-title="Heavy Duty Wiring & Conduit Setup"
-          data-image-caption="Secure cable routing and heavy-duty conduit installation completed to code specifications."
-        >
-          <div class="aspect-video overflow-hidden bg-slate-950">
+        <!-- Card 3 -->
+        <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg" onclick="openImageDrawer(2)" data-image-src="/tnseelectricalprojects/images/projects/electrical/tnse (3).jpg" data-image-title="Commercial Lighting & Trunking" data-image-caption="Energy-efficient commercial lighting layout and conduit routing.">
+          <div class="aspect-video overflow-hidden bg-slate-950 relative">
             <img src="/tnseelectricalprojects/images/projects/electrical/tnse (3).jpg" alt="Electrical Project 3" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-3 right-3 rounded-lg bg-slate-950/80 p-2 text-amber-400 border border-slate-800 backdrop-blur">
+              <span class="material-symbols-outlined block">menu</span>
+            </div>
           </div>
           <div class="p-5 flex items-center justify-between">
             <div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition-colors">Commercial Wiring</h4>
-              <p class="text-xs text-slate-400 mt-1">Installations</p>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Commercial Reticulation</h3>
+              <p class="text-xs text-slate-400 mt-1">Electrical Installation</p>
             </div>
             <span class="material-symbols-outlined text-amber-400">zoom_in</span>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- SOLAR PROJECTS SUB-SECTION -->
-    <div>
-      <div class="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400 text-slate-950">
-            <span class="material-symbols-outlined">solar_power</span>
-          </div>
-          <h3 class="text-2xl font-black text-white">Solar Project Gallery</h3>
+  <!-- =========================================================
+       6. SEPARATE PORTFOLIO: SOLAR PROJECTS SECTION
+  ========================================================= -->
+  <section id="solar-projects" class="py-24 bg-slate-900/40 border-t border-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div>
+          <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Our Portfolio</p>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Solar & Backup Power Systems Projects</h2>
+          <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-400">
+            Explore our hybrid inverter setups, lithium battery bank configurations, and renewable energy integrations. Click any image or hamburger menu to inspect.
+          </p>
         </div>
-        <span class="text-xs uppercase tracking-wider text-slate-500 font-bold">Inverters, Battery Storage & Backup Power</span>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Solar Card 1 -->
-        <div 
-          class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg"
-          onclick="openImageDrawer(3)"
-          data-image-src="/tnseelectricalprojects/images/projects/solar/tnse (1).jpg"
-          data-image-title="Hybrid Inverter & Lithium Battery Bank"
-          data-image-caption="Clean backup power integration featuring high-capacity lithium storage and automated changeover."
-        >
-          <div class="aspect-video overflow-hidden bg-slate-950">
+      <!-- Solar Project Grid -->
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg" onclick="openImageDrawer(3)" data-image-src="/tnseelectricalprojects/images/projects/solar/tnse (1).jpg" data-image-title="Hybrid Solar Inverter & Battery Bank" data-image-caption="Clean backup power integration featuring lithium storage and automated changeover.">
+          <div class="aspect-video overflow-hidden bg-slate-950 relative">
             <img src="/tnseelectricalprojects/images/projects/solar/tnse (1).jpg" alt="Solar Project 1" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-3 right-3 rounded-lg bg-slate-950/80 p-2 text-amber-400 border border-slate-800 backdrop-blur">
+              <span class="material-symbols-outlined block">menu</span>
+            </div>
           </div>
           <div class="p-5 flex items-center justify-between">
             <div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition-colors">Hybrid Solar System</h4>
-              <p class="text-xs text-slate-400 mt-1">Backup Power</p>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Hybrid Solar System</h3>
+              <p class="text-xs text-slate-400 mt-1">Energy Solutions</p>
             </div>
             <span class="material-symbols-outlined text-amber-400">zoom_in</span>
           </div>
         </div>
 
-        <!-- Solar Card 2 -->
-        <div 
-          class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg"
-          onclick="openImageDrawer(4)"
-          data-image-src="/tnseelectricalprojects/images/projects/solar/tnse (2).jpg"
-          data-image-title="Rooftop PV Panel Array Setup"
-          data-image-caption="Durable mounting structure and high-efficiency solar panel deployment for optimal energy harvest."
-        >
-          <div class="aspect-video overflow-hidden bg-slate-950">
+        <!-- Card 2 -->
+        <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg" onclick="openImageDrawer(4)" data-image-src="/tnseelectricalprojects/images/projects/solar/tnse (2).jpg" data-image-title="Rooftop PV Solar Array Mounting" data-image-caption="Secure rail mounting and DC cabling for maximum solar capture efficiency.">
+          <div class="aspect-video overflow-hidden bg-slate-950 relative">
             <img src="/tnseelectricalprojects/images/projects/solar/tnse (2).jpg" alt="Solar Project 2" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-3 right-3 rounded-lg bg-slate-950/80 p-2 text-amber-400 border border-slate-800 backdrop-blur">
+              <span class="material-symbols-outlined block">menu</span>
+            </div>
           </div>
           <div class="p-5 flex items-center justify-between">
             <div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition-colors">Solar PV Installation</h4>
-              <p class="text-xs text-slate-400 mt-1">Renewable Energy</p>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Rooftop PV Installation</h3>
+              <p class="text-xs text-slate-400 mt-1">Solar PV Arrays</p>
             </div>
             <span class="material-symbols-outlined text-amber-400">zoom_in</span>
           </div>
         </div>
 
-        <!-- Solar Card 3 -->
-        <div 
-          class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg"
-          onclick="openImageDrawer(5)"
-          data-image-src="/tnseelectricalprojects/images/projects/solar/tnse (3).jpg"
-          data-image-title="Inverter Maintenance & DB Integration"
-          data-image-caption="Professional setup configuration, surge protection testing, and system optimization."
-        >
-          <div class="aspect-video overflow-hidden bg-slate-950">
+        <!-- Card 3 -->
+        <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 cursor-pointer shadow-lg" onclick="openImageDrawer(5)" data-image-src="/tnseelectricalprojects/images/projects/solar/tnse (3).jpg" data-image-title="Backup Power Control Cabinet" data-image-caption="Custom protection enclosure for high-capacity solar inverter systems.">
+          <div class="aspect-video overflow-hidden bg-slate-950 relative">
             <img src="/tnseelectricalprojects/images/projects/solar/tnse (3).jpg" alt="Solar Project 3" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-3 right-3 rounded-lg bg-slate-950/80 p-2 text-amber-400 border border-slate-800 backdrop-blur">
+              <span class="material-symbols-outlined block">menu</span>
+            </div>
           </div>
           <div class="p-5 flex items-center justify-between">
             <div>
-              <h4 class="font-bold text-white group-hover:text-amber-400 transition-colors">Solar Maintenance & Config</h4>
-              <p class="text-xs text-slate-400 mt-1">Energy Efficiency</p>
+              <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Backup Power Cabinet</h3>
+              <p class="text-xs text-slate-400 mt-1">Energy Storage</p>
             </div>
             <span class="material-symbols-outlined text-amber-400">zoom_in</span>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- =========================================================
-     4. WHY CHOOSE TNSE SECTION
-========================================================= -->
-<section class="bg-slate-100 py-20 dark:bg-slate-900/60">
-  <div class="mx-auto max-w-7xl px-5">
-    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-      <div>
-        <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">Why Choose TNSE</p>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-black">Professional service with a practical engineering mindset.</h2>
-        <p class="mt-5 leading-relaxed text-slate-600 dark:text-slate-400">We focus on understanding the requirement, planning the solution and delivering dependable electrical and energy work.</p>
+  <!-- =========================================================
+       7. HOW WE WORK SECTION
+  ========================================================= -->
+  <section class="mx-auto max-w-7xl px-5 py-20">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">How we work</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-black">A clear path from idea to implementation.</h2>
+    </div>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+        <b class="text-amber-500 text-lg">01</b>
+        <h3 class="mt-3 font-bold">Consultation</h3>
+        <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Understand your requirement.</p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
-          <span class="material-symbols-outlined text-amber-500">verified</span>
-          <h3 class="mt-3 font-bold">Reliable Solutions</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Solutions designed around real operational needs.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
-          <span class="material-symbols-outlined text-amber-500">health_and_safety</span>
-          <h3 class="mt-3 font-bold">Safety Focus</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Safety-conscious planning and execution.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
-          <span class="material-symbols-outlined text-amber-500">engineering</span>
-          <h3 class="mt-3 font-bold">Technical Approach</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Practical technical thinking from assessment to delivery.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
-          <span class="material-symbols-outlined text-amber-500">support_agent</span>
-          <h3 class="mt-3 font-bold">Client-Focused Service</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Clear communication throughout the project.</p>
-        </div>
+      <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+        <b class="text-amber-500 text-lg">02</b>
+        <h3 class="mt-3 font-bold">Assessment</h3>
+        <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Review site and system needs.</p>
+      </div>
+      <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+        <b class="text-amber-500 text-lg">03</b>
+        <h3 class="mt-3 font-bold">Design</h3>
+        <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Develop a suitable solution.</p>
+      </div>
+      <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+        <b class="text-amber-500 text-lg">04</b>
+        <h3 class="mt-3 font-bold">Installation</h3>
+        <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Implement and test the work.</p>
+      </div>
+      <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40 sm:col-span-2 md:col-span-1">
+        <b class="text-amber-500 text-lg">05</b>
+        <h3 class="mt-3 font-bold">Support</h3>
+        <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Maintenance and ongoing support.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =========================================================
-     5. HOW WE WORK SECTION
-========================================================= -->
-<section class="mx-auto max-w-7xl px-5 py-20">
-  <div>
-    <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">How we work</p>
-    <h2 class="mt-3 text-3xl sm:text-4xl font-black">A clear path from idea to implementation.</h2>
-  </div>
-  <div class="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-    <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
-      <b class="text-amber-500 text-lg">01</b>
-      <h3 class="mt-3 font-bold">Consultation</h3>
-      <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Understand your requirement.</p>
-    </div>
-    <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
-      <b class="text-amber-500 text-lg">02</b>
-      <h3 class="mt-3 font-bold">Assessment</h3>
-      <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Review site and system needs.</p>
-    </div>
-    <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
-      <b class="text-amber-500 text-lg">03</b>
-      <h3 class="mt-3 font-bold">Design</h3>
-      <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Develop a suitable solution.</p>
-    </div>
-    <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
-      <b class="text-amber-500 text-lg">04</b>
-      <h3 class="mt-3 font-bold">Installation</h3>
-      <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Implement and test the work.</p>
-    </div>
-    <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40 sm:col-span-2 md:col-span-1">
-      <b class="text-amber-500 text-lg">05</b>
-      <h3 class="mt-3 font-bold">Support</h3>
-      <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Maintenance and ongoing support.</p>
-    </div>
-  </div>
-</section>
+  <!-- =========================================================
+       8. CUSTOMER REVIEWS
+  ========================================================= -->
+  <section class="py-24 bg-slate-900/40 border-t border-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Testimonials</p>
+        <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">What Our Clients Say</h2>
+        <p class="mt-4 text-lg leading-8 text-slate-400">Trusted by homeowners, businesses, and project managers across Polokwane.</p>
+      </div>
 
-<!-- =========================================================
-     6. CUSTOMER REVIEWS
-========================================================= -->
-<section class="py-24 bg-slate-900/40 border-t border-slate-900">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-3xl text-center">
-      <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Testimonials</p>
-      <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">What Our Clients Say</h2>
-      <p class="mt-4 text-lg leading-8 text-slate-400">Trusted by homeowners, businesses, and project managers across Polokwane.</p>
-    </div>
-
-    <div class="mt-14 grid gap-8 md:grid-cols-2">
-      <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 sm:p-10">
-        <div class="flex items-center gap-1 text-amber-400 mb-4">
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-        </div>
-        <p class="text-lg leading-relaxed text-slate-300 italic">
-          "TNSE Electrical Projects installed our inverter and backup battery system with incredible professionalism. Clean wiring and excellent explanation of the system operation!"
-        </p>
-        <div class="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
-          <div>
-            <p class="font-bold text-white">Residential Client</p>
-            <p class="text-xs text-slate-500">Polokwane</p>
+      <div class="mt-14 grid gap-8 md:grid-cols-2">
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 sm:p-10 shadow-xl">
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
           </div>
-          <span class="material-symbols-outlined text-3xl text-amber-400/40">format_quote</span>
-        </div>
-      </div>
-
-      <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 sm:p-10">
-        <div class="flex items-center gap-1 text-amber-400 mb-4">
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-          <span class="material-symbols-outlined">star</span>
-        </div>
-        <p class="text-lg leading-relaxed text-slate-300 italic">
-          "Very prompt and knowledgeable when dealing with complex electrical fault finding. They resolved our commercial board issues quickly and safely."
-        </p>
-        <div class="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
-          <div>
-            <p class="font-bold text-white">Commercial Partner</p>
-            <p class="text-xs text-slate-500">Limpopo</p>
-          </div>
-          <span class="material-symbols-outlined text-3xl text-amber-400/40">format_quote</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     7. FREQUENTLY ASKED QUESTIONS
-========================================================= -->
-<section class="py-24 bg-slate-950">
-  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">FAQ</p>
-      <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Frequently Asked Questions</h2>
-      <p class="mt-4 text-lg text-slate-400">Got questions about our electrical or solar solutions? Find answers below.</p>
-    </div>
-
-    <div class="mt-12 space-y-4">
-      <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur">
-        <summary class="flex cursor-pointer items-center justify-between font-bold text-white text-lg">
-          What areas does TNSE Electrical Projects service?
-          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-3 text-slate-400 leading-relaxed">
-          We are based in Moletjie, Polokwane, and serve residential, commercial, and project-based clients throughout Polokwane and surrounding areas in Limpopo.
-        </p>
-      </details>
-
-      <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur">
-        <summary class="flex cursor-pointer items-center justify-between font-bold text-white text-lg">
-          Do you handle both solar installations and general electrical repairs?
-          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-3 text-slate-400 leading-relaxed">
-          Yes! We provide full-spectrum electrical services—including installations, maintenance, fault-finding, and repairs—alongside dedicated solar systems and backup power solutions.
-        </p>
-      </details>
-
-      <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur">
-        <summary class="flex cursor-pointer items-center justify-between font-bold text-white text-lg">
-          How can I request a quote for my project?
-          <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-        </summary>
-        <p class="mt-3 text-slate-400 leading-relaxed">
-          You can easily request a quote by clicking the "Request a Quote" button on our page, emailing us at tnse.electricalprojects@gmail.com, or calling Johannes directly at +27 81 827 6288.
-        </p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     8. REQUEST A QUOTE CTA
-========================================================= -->
-<section class="relative overflow-hidden bg-amber-400 py-24 text-slate-950">
-  <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl"></div>
-  <div class="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-amber-600/20 blur-3xl"></div>
-
-  <div class="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-950 text-amber-400 mb-6 shadow-xl">
-      <span class="material-symbols-outlined text-4xl">request_quote</span>
-    </div>
-
-    <h2 class="text-3xl font-black sm:text-4xl lg:text-5xl">Have an electrical or solar project in mind?</h2>
-    <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-900">
-      Tell us about your requirements and contact TNSE Electrical Projects today to discuss the ideal electrical or energy solution for your property.
-    </p>
-
-    <div class="mt-9 flex flex-wrap justify-center gap-4">
-      <a href="contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-8 py-4 font-bold text-white shadow-xl transition hover:bg-slate-800">
-        <span class="material-symbols-outlined">request_quote</span>
-        Request a Quote
-      </a>
-      <a href="tel:+27818276288" class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-950 px-8 py-4 font-bold text-slate-950 transition hover:bg-amber-300">
-        <span class="material-symbols-outlined">call</span>
-        Call Us Now
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     9. CONTACT INFORMATION & GOOGLE MAPS
-========================================================= -->
-<section class="py-24 bg-slate-950 text-white border-t border-slate-900">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-      <div>
-        <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Get in Touch</p>
-        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Contact TNSE Electrical Projects</h2>
-        <p class="mt-4 text-lg text-slate-400 leading-relaxed">
-          Reach out to our team for professional consultations, quotation inquiries, or emergency electrical support in Polokwane and Limpopo.
-        </p>
-
-        <div class="mt-8 space-y-5">
-          <div class="flex items-start gap-4">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-400 border border-slate-800">
-              <span class="material-symbols-outlined">location_on</span>
-            </div>
+          <p class="text-lg leading-relaxed text-slate-300 italic">
+            "TNSE Electrical Projects installed our inverter and backup battery system with incredible professionalism. Clean wiring and excellent explanation of!"
+          </p>
+          <div class="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
             <div>
-              <p class="text-sm font-bold text-slate-400">Location</p>
-              <p class="text-base font-semibold text-white mt-0.5">Moletjie, Polokwane, Limpopo, South Africa</p>
+              <p class="font-bold text-white">Residential Client</p>
+              <p class="text-xs text-slate-500">Polokwane</p>
             </div>
+            <span class="material-symbols-outlined text-3xl text-amber-400/40">format_quote</span>
           </div>
+        </div>
 
-          <div class="flex items-start gap-4">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-400 border border-slate-800">
-              <span class="material-symbols-outlined">call</span>
-            </div>
-            <div>
-              <p class="text-sm font-bold text-slate-400">Phone (Johannes)</p>
-              <a href="tel:+27818276288" class="text-base font-semibold text-white mt-0.5 hover:text-amber-400 transition">+27 81 827 6288</a>
-            </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 sm:p-10 shadow-xl">
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
+            <span class="material-symbols-outlined">star</span>
           </div>
-
-          <div class="flex items-start gap-4">
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-400 border border-slate-800">
-              <span class="material-symbols-outlined">mail</span>
-            </div>
+          <p class="text-lg leading-relaxed text-slate-300 italic">
+            "Very prompt and knowledgeable when dealing with complex electrical fault finding. They resolved our commercial board issues quickly and safely."
+          </p>
+          <div class="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
             <div>
-              <p class="text-sm font-bold text-slate-400">Email Address</p>
-              <a href="mailto:tnse.electricalprojects@gmail.com" class="text-base font-semibold text-white mt-0.5 hover:text-amber-400 transition">tnse.electricalprojects@gmail.com</a>
+              <p class="font-bold text-white">Commercial Partner</p>
+              <p class="text-xs text-slate-500">Limpopo</p>
             </div>
+            <span class="material-symbols-outlined text-3xl text-amber-400/40">format_quote</span>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Google Maps Embed Container -->
-      <div class="relative h-[400px] w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115438.48421257416!2d29.38718695!3d-23.9045357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d7f7c5e4a3b1%3A0x40df8e76472d820!2sPolokwane!5e0!3m2!1sen!2sza!4v1650000000000!5m2!1sen!2sza" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-          title="TNSE Electrical Projects Location Map">
-        </iframe>
+  <!-- =========================================================
+       9. FREQUENTLY ASKED QUESTIONS
+  ========================================================= -->
+  <section class="py-24 bg-slate-950">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">FAQ</p>
+        <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Frequently Asked Questions</h2>
+        <p class="mt-4 text-lg text-slate-400">Got questions about our electrical or solar solutions? Find answers below.</p>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-white text-lg">
+            What areas does TNSE Electrical Projects service?
+            <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-slate-400 leading-relaxed">
+            We are based in Moletjie, Polokwane, and serve residential, commercial, and project-based clients throughout Polokwane and surrounding areas in Limpopo.
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-white text-lg">
+            Do you handle both solar installations and general electrical repairs?
+            <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-slate-400 leading-relaxed">
+            Yes! We provide full-spectrum electrical services—including installations, maintenance, fault-finding, and repairs—alongside dedicated solar systems and backup power solutions.
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-white text-lg">
+            How can I request a quote for my project?
+            <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3 text-slate-400 leading-relaxed">
+            You can easily request a quote by clicking the "Request a Quote" button on our page, emailing us at tnse.electricalprojects@gmail.com, or calling Johannes directly at +27 81 827 6288.
+          </p>
+        </details>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =========================================================
-     10. IMAGE DRAWER / LIGHTBOX MODAL COMPONENT
-========================================================= -->
-<div 
-  id="imageDrawerModal" 
-  class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-md opacity-0 transition-opacity duration-300 flex flex-col justify-between"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Image Lightbox Drawer"
->
-  <!-- Top Bar: Counter & Close Button -->
-  <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800/80 bg-slate-900/50">
-    <div class="flex items-center gap-3">
-      <span class="material-symbols-outlined text-amber-400">photo_library</span>
-      <p id="drawerImageCounter" class="text-sm font-bold text-slate-300">1 / 6</p>
+  <!-- =========================================================
+       10. REQUEST A QUOTE CTA
+  ========================================================= -->
+  <section class="relative overflow-hidden bg-amber-400 py-24 text-slate-950">
+    <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl"></div>
+    <div class="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-amber-600/20 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-950 text-amber-400 mb-6 shadow-xl">
+        <span class="material-symbols-outlined text-4xl">request_quote</span>
+      </div>
+
+      <h2 class="text-3xl font-black sm:text-4xl lg:text-5xl">Have an electrical or solar project in mind?</h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-900">
+        Tell us about your requirements and contact TNSE Electrical Projects today to discuss the ideal electrical or energy solution for your property.
+      </p>
+
+      <div class="mt-9 flex flex-wrap justify-center gap-4">
+        <a href="contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-8 py-4 font-bold text-white shadow-xl transition hover:bg-slate-800">
+          <span class="material-symbols-outlined">request_quote</span>
+          Request a Quote
+        </a>
+        <a href="tel:+27818276288" class="inline-flex items-center gap-2 rounded-xl border-2 border-slate-950 px-8 py-4 font-bold text-slate-950 transition hover:bg-amber-300">
+          <span class="material-symbols-outlined">call</span>
+          Call Us Now
+        </a>
+      </div>
     </div>
-    <button 
-      onclick="closeImageDrawer()" 
-      class="rounded-full bg-slate-800 p-2 text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition-colors"
-      aria-label="Close image drawer"
-    >
-      <span class="material-symbols-outlined block">close</span>
-    </button>
-  </div>
+  </section>
 
-  <!-- Center Area: Main Image & Navigation Arrows -->
-  <div class="relative flex-1 flex items-center justify-center px-4 py-6 overflow-hidden">
-    <!-- Previous Button -->
-    <button 
-      onclick="prevImage()" 
-      class="absolute left-4 z-10 rounded-full bg-slate-900/80 border border-slate-700 p-3 text-white hover:bg-amber-400 hover:text-slate-950 transition-all shadow-xl"
-      aria-label="Previous image"
-    >
-      <span class="material-symbols-outlined block">chevron_left</span>
-    </button>
+  <!-- =========================================================
+       11. CONTACT INFORMATION & GOOGLE MAPS
+  ========================================================= -->
+  <section class="py-24 bg-slate-950 text-white border-t border-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="font-bold uppercase tracking-[0.2em] text-amber-400 text-sm">Get in Touch</p>
+          <h2 class="mt-3 text-3xl font-black sm:text-4xl">Contact TNSE Electrical Projects</h2>
+          <p class="mt-4 text-lg text-slate-400 leading-relaxed">
+            Reach out to our team for professional consultations, quotation inquiries, or emergency electrical support in Polokwane and Limpopo.
+          </p>
 
-    <!-- Main Active Image Container -->
-    <div class="max-w-4xl max-h-[65vh] flex flex-col items-center text-center">
-      <img 
-        id="drawerMainImage" 
-        src="" 
-        alt="Enlarged project view" 
-        class="max-h-[55vh] max-w-full object-contain rounded-xl shadow-2xl border border-slate-800 select-none"
+          <div class="mt-8 space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-400 border border-slate-800">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-slate-400">Location</p>
+                <p class="text-base font-semibold text-white mt-0.5">Moletjie, Polokwane, Limpopo, South Africa</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-400 border border-slate-800">
+                <span class="material-symbols-outlined">call</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-slate-400">Phone (Johannes)</p>
+                <a href="tel:+27818276288" class="text-base font-semibold text-white mt-0.5 hover:text-amber-400 transition">+27 81 827 6288</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-amber-400 border border-slate-800">
+                <span class="material-symbols-outlined">mail</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-slate-400">Email Address</p>
+                <a href="mailto:tnse.electricalprojects@gmail.com" class="text-base font-semibold text-white mt-0.5 hover:text-amber-400 transition">tnse.electricalprojects@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Container -->
+        <div class="relative h-[400px] w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115438.48421257416!2d29.38718695!3d-23.9045357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d7f7c5e4a3b1%3A0x40df8e76472d820!2sPolokwane!5e0!3m2!1sen!2sza!4v1650000000000!5m2!1sen!2sza" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="TNSE Electrical Projects Location Map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       IMAGE DRAWER / LIGHTBOX MODAL COMPONENT
+  ========================================================= -->
+  <div 
+    id="imageDrawerModal" 
+    class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-md opacity-0 transition-opacity duration-300 flex flex-col justify-between"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image Lightbox Drawer"
+  >
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800/80 bg-slate-900/50">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-amber-400">photo_library</span>
+        <p id="drawerImageCounter" class="text-sm font-bold text-slate-300">1 / 6</p>
+      </div>
+      <button 
+        onclick="closeImageDrawer()" 
+        class="rounded-full bg-slate-800 p-2 text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition-colors"
+        aria-label="Close image drawer"
       >
-      <div class="mt-4">
-        <h3 id="drawerImageTitle" class="text-lg font-black text-white"></h3>
-        <p id="drawerImageCaption" class="text-sm text-slate-400 mt-1 max-w-xl"></p>
+        <span class="material-symbols-outlined block">close</span>
+      </button>
+    </div>
+
+    <!-- Center Stage -->
+    <div class="relative flex-1 flex items-center justify-center px-4 py-6 overflow-hidden">
+      <button 
+        onclick="prevImage()" 
+        class="absolute left-4 z-10 rounded-full bg-slate-900/80 border border-slate-700 p-3 text-white hover:bg-amber-400 hover:text-slate-950 transition-all shadow-xl"
+        aria-label="Previous image"
+      >
+        <span class="material-symbols-outlined block">chevron_left</span>
+      </button>
+
+      <div class="max-w-4xl max-h-[65vh] flex flex-col items-center text-center">
+        <img 
+          id="drawerMainImage" 
+          src="" 
+          alt="Enlarged project view" 
+          class="max-h-[55vh] max-w-full object-contain rounded-xl shadow-2xl border border-slate-800 select-none"
+        >
+        <div class="mt-4">
+          <h3 id="drawerImageTitle" class="text-lg font-black text-white"></h3>
+          <p id="drawerImageCaption" class="text-sm text-slate-400 mt-1 max-w-xl"></p>
+        </div>
+      </div>
+
+      <button 
+        onclick="nextImage()" 
+        class="absolute right-4 z-10 rounded-full bg-slate-900/80 border border-slate-700 p-3 text-white hover:bg-amber-400 hover:text-slate-950 transition-all shadow-xl"
+        aria-label="Next image"
+      >
+        <span class="material-symbols-outlined block">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- Bottom Thumbnail Strip -->
+    <div class="border-t border-slate-800/80 bg-slate-900/80 px-6 py-3 overflow-x-auto">
+      <div id="drawerThumbnailsContainer" class="flex items-center justify-center gap-3 min-w-max">
+        <!-- Populated via JavaScript -->
       </div>
     </div>
-
-    <!-- Next Button -->
-    <button 
-      onclick="nextImage()" 
-      class="absolute right-4 z-10 rounded-full bg-slate-900/80 border border-slate-700 p-3 text-white hover:bg-amber-400 hover:text-slate-950 transition-all shadow-xl"
-      aria-label="Next image"
-    >
-      <span class="material-symbols-outlined block">chevron_right</span>
-    </button>
   </div>
 
-  <!-- Bottom Bar: Thumbnail Navigation Strip -->
-  <div class="border-t border-slate-800/80 bg-slate-900/80 px-6 py-3 overflow-x-auto">
-    <div id="drawerThumbnailsContainer" class="flex items-center justify-center gap-3 min-w-max">
-      <!-- Thumbnails populated dynamically -->
-    </div>
-  </div>
-</div>
+  <!-- =========================================================
+       JAVASCRIPT CONTROLLERS (Hero Carousel & Image Drawer)
+  ========================================================= -->
+  <script>
+    /* --- Hero Background Slideshow --- */
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    function nextHeroSlide() {
+      if (slides.length === 0) return;
+      slides[currentSlide].classList.remove('opacity-100');
+      slides[currentSlide].classList.add('opacity-0');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.remove('opacity-0');
+      slides[currentSlide].classList.add('opacity-100');
+    }
+    if (slides.length > 1) {
+      setInterval(nextHeroSlide, 5000);
+    }
 
-<!-- =========================================================
-     11. JAVASCRIPT CONTROLLER FOR IMAGE DRAWER
-========================================================= -->
-<script>
-let galleryItems = [];
-let currentIndex = 0;
+    /* --- Image Drawer Lightbox Logic --- */
+    let galleryItems = [];
+    let currentIndex = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const triggers = document.querySelectorAll('[onclick*="openImageDrawer"]');
-  galleryItems = Array.from(triggers).map(el => ({
-    src: el.getAttribute('data-image-src'),
-    title: el.getAttribute('data-image-title') || 'TNSE Project Image',
-    caption: el.getAttribute('data-image-caption') || 'Professional electrical and energy solutions execution.'
-  }));
+    document.addEventListener('DOMContentLoaded', () => {
+      const triggers = document.querySelectorAll('[onclick*="openImageDrawer"]');
+      galleryItems = Array.from(triggers).map(el => ({
+        src: el.getAttribute('data-image-src'),
+        title: el.getAttribute('data-image-title') || 'TNSE Project Image',
+        caption: el.getAttribute('data-image-caption') || 'Professional electrical and energy solutions execution.'
+      }));
 
-  buildThumbnails();
-  setupTouchGestures();
-});
-
-function buildThumbnails() {
-  const container = document.getElementById('drawerThumbnailsContainer');
-  if (!container) return;
-  container.innerHTML = '';
-
-  galleryItems.forEach((item, idx) => {
-    const thumb = document.createElement('button');
-    thumb.className = `relative h-14 w-20 rounded-lg overflow-hidden border-2 transition-all ${idx === currentIndex ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
-    thumb.onclick = () => goToImage(idx);
-    thumb.innerHTML = `<img src="${item.src}" alt="Thumbnail ${idx + 1}" class="h-full w-full object-cover">`;
-    container.appendChild(thumb);
-  });
-}
-
-function openImageDrawer(index) {
-  currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
-  updateDrawerContent();
-
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal) {
-    modal.classList.remove('hidden');
-    setTimeout(() => modal.classList.remove('opacity-0'), 10);
-    document.body.classList.add('overflow-hidden');
-  }
-}
-
-function closeImageDrawer() {
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal) {
-    modal.classList.add('opacity-0');
-    setTimeout(() => {
-      modal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }, 300);
-  }
-}
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  updateDrawerContent();
-}
-
-function prevImage() {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  updateDrawerContent();
-}
-
-function goToImage(index) {
-  currentIndex = index;
-  updateDrawerContent();
-}
-
-function updateDrawerContent() {
-  const item = galleryItems[currentIndex];
-  document.getElementById('drawerMainImage').src = item.src;
-  document.getElementById('drawerImageTitle').textContent = item.title;
-  document.getElementById('drawerImageCaption').textContent = item.caption;
-  document.getElementById('drawerImageCounter').textContent = `${currentIndex + 1} / ${galleryItems.length}`;
-  
-  const container = document.getElementById('drawerThumbnailsContainer');
-  if (container) {
-    Array.from(container.children).forEach((child, idx) => {
-      if (idx === currentIndex) {
-        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-amber-400 scale-105 transition-all";
-        child.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
-      } else {
-        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-slate-800 opacity-60 hover:opacity-100 transition-all";
-      }
+      buildThumbnails();
+      setupTouchGestures();
     });
-  }
-}
 
-document.addEventListener('keydown', (e) => {
-  const modal = document.getElementById('imageDrawerModal');
-  if (!modal || modal.classList.contains('hidden')) return;
+    function buildThumbnails() {
+      const container = document.getElementById('drawerThumbnailsContainer');
+      if (!container) return;
+      container.innerHTML = '';
 
-  if (e.key === 'Escape') closeImageDrawer();
-  if (e.key === 'ArrowRight') nextImage();
-  if (e.key === 'ArrowLeft') prevImage();
-});
+      galleryItems.forEach((item, idx) => {
+        const thumb = document.createElement('button');
+        thumb.className = `relative h-14 w-20 rounded-lg overflow-hidden border-2 transition-all ${idx === currentIndex ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
+        thumb.onclick = () => goToImage(idx);
+        thumb.innerHTML = `<img src="${item.src}" alt="Thumbnail ${idx + 1}" class="h-full w-full object-cover">`;
+        container.appendChild(thumb);
+      });
+    }
 
-function setupTouchGestures() {
-  const modal = document.getElementById('imageDrawerModal');
-  if (!modal) return;
+    function openImageDrawer(index) {
+      currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
+      updateDrawerContent();
 
-  let touchStartX = 0;
-  let touchEndX = 0;
+      const modal = document.getElementById('imageDrawerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        document.body.classList.add('overflow-hidden');
+      }
+    }
 
-  modal.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
+    function closeImageDrawer() {
+      const modal = document.getElementById('imageDrawerModal');
+      if (modal) {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }, 300);
+      }
+    }
 
-  modal.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchEndX < touchStartX - 50) nextImage();
-    if (touchEndX > touchStartX + 50) prevImage();
-  }, { passive: true });
-}
-</script>
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      updateDrawerContent();
+    }
 
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      updateDrawerContent();
+    }
 
+    function goToImage(index) {
+      currentIndex = index;
+      updateDrawerContent();
+    }
 
+    function updateDrawerContent() {
+      const item = galleryItems[currentIndex];
+      document.getElementById('drawerMainImage').src = item.src;
+      document.getElementById('drawerImageTitle').textContent = item.title;
+      document.getElementById('drawerImageCaption').textContent = item.caption;
+      document.getElementById('drawerImageCounter').textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+      
+      const container = document.getElementById('drawerThumbnailsContainer');
+      if (container) {
+        Array.from(container.children).forEach((child, idx) => {
+          if (idx === currentIndex) {
+            child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-amber-400 scale-105 transition-all";
+            child.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+          } else {
+            child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-slate-800 opacity-60 hover:opacity-100 transition-all";
+          }
+        });
+      }
+    }
 
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('imageDrawerModal');
+      if (!modal || modal.classList.contains('hidden')) return;
 
+      if (e.key === 'Escape') closeImageDrawer();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
 
+    function setupTouchGestures() {
+      const modal = document.getElementById('imageDrawerModal');
+      if (!modal) return;
+      let touchStartX = 0;
+      let touchEndX = 0;
 
-  
+      modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      modal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) nextImage();
+        if (touchEndX > touchStartX + 50) prevImage();
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>

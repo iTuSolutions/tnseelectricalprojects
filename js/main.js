@@ -227,7 +227,6 @@ const projectArchives = {
 let activeArchiveCategory = 'electrical';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Default main gallery pool starts with electrical items
   galleryItems = projectArchives.electrical.items;
   buildThumbnails();
   setupTouchGestures();
@@ -336,7 +335,7 @@ function setupTouchGestures() {
 
 
 // ==========================================
-// 12. Left-to-Right Archive Drawer Controller
+// 12. Right-to-Left Modern Archive Drawer Controller (92% Width)
 // ==========================================
 function openLeftDrawer(category) {
   activeArchiveCategory = category;
@@ -351,7 +350,7 @@ function openLeftDrawer(category) {
 
   archive.items.forEach((item, index) => {
     const card = document.createElement('div');
-    card.className = "group relative overflow-hidden rounded-xl bg-slate-950 border border-slate-800 cursor-pointer aspect-video shadow-md hover:border-amber-400 transition-all";
+    card.className = "group relative overflow-hidden rounded-xl bg-slate-950 border border-slate-800 cursor-pointer aspect-video shadow-md hover:border-amber-400 transition-all duration-300";
     card.onclick = () => {
       closeLeftDrawer();
       galleryItems = archive.items;
@@ -359,9 +358,9 @@ function openLeftDrawer(category) {
       openImageDrawer(index);
     };
     card.innerHTML = `
-      <img src="${item.src}" alt="${item.title}" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
-      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-2">
-        <p class="text-[10px] font-bold text-white truncate">${item.title}</p>
+      <img src="${item.src}" alt="${item.title}" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" loading="lazy">
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent p-2.5">
+        <p class="text-[11px] font-semibold text-white tracking-wide truncate">${item.title}</p>
       </div>
     `;
     gridContainer.appendChild(card);
@@ -371,10 +370,12 @@ function openLeftDrawer(category) {
   const panel = document.getElementById('leftDrawerPanel');
   const backdrop = document.getElementById('leftDrawerBackdrop');
 
+  // Ensure panel has modern styling and 92% width with right-to-left alignment
+  panel.className = "absolute right-0 top-0 h-full w-[92%] max-w-6xl bg-slate-900/95 backdrop-blur-xl border-l border-slate-800 shadow-2xl transition-transform duration-500 ease-out flex flex-col translate-x-0";
+
   drawer.classList.remove('pointer-events-none');
   backdrop.classList.remove('pointer-events-none', 'opacity-0');
   backdrop.classList.add('opacity-100');
-  panel.classList.remove('-translate-x-full');
   document.body.classList.add('overflow-hidden');
 }
 
@@ -383,7 +384,9 @@ function closeLeftDrawer() {
   const panel = document.getElementById('leftDrawerPanel');
   const backdrop = document.getElementById('leftDrawerBackdrop');
 
-  panel.classList.add('-translate-x-full');
+  // Slide panel back to the right
+  panel.classList.add('translate-x-full');
+  panel.classList.remove('translate-x-0');
   backdrop.classList.remove('opacity-100');
   backdrop.classList.add('opacity-0');
 
@@ -392,5 +395,5 @@ function closeLeftDrawer() {
     backdrop.classList.add('pointer-events-none');
     if (!document.getElementById('imageDrawerModal').classList.contains('hidden')) return;
     document.body.classList.remove('overflow-hidden');
-  }, 300);
+  }, 400);
 }

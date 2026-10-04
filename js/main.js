@@ -1,6 +1,6 @@
-// ==========================================================
-// TNSE Electrical Projects - Main Site & Gallery Script
-// ==========================================================
+// ==========================================
+// TNSE Electrical Projects - Main Site Script
+// ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -124,41 +124,41 @@ window.toggleAccordion = function(id, button) {
 };
 
 
-// ==========================================================
-// 10. Hero Background Carousel Controller
-// ==========================================================
+// ==========================================
+// 10. Hero Background Carousel Script
+// ==========================================
 document.addEventListener("DOMContentLoaded", function () {
     let imageArray = [
-        "tnseelectricalprojects/images/hero/tnse (1).jpg",
-        "tnseelectricalprojects/images/hero/tnse (2).jpg",
-        "tnseelectricalprojects/images/hero/tnse (3).jpg",
-        "tnseelectricalprojects/images/hero/tnse (4).jpg",
-        "tnseelectricalprojects/images/hero/tnse (5).jpg",
-        "tnseelectricalprojects/images/hero/tnse (6).jpg",
-        "tnseelectricalprojects/images/hero/tnse (7).jpg",
-        "tnseelectricalprojects/images/hero/tnse (8).jpg",
-        "tnseelectricalprojects/images/hero/tnse (9).jpg",
-        "tnseelectricalprojects/images/hero/tnse (10).jpg",
-        "tnseelectricalprojects/images/hero/tnse (11).jpg",
-        "tnseelectricalprojects/images/hero/tnse (12).jpg",
-        "tnseelectricalprojects/images/hero/tnse (13).jpg",
-        "tnseelectricalprojects/images/hero/tnse (14).jpg",
-        "tnseelectricalprojects/images/hero/tnse (15).jpg",
-        "tnseelectricalprojects/images/hero/tnse (16).jpg",
-        "tnseelectricalprojects/images/hero/tnse (17).jpg",
-        "tnseelectricalprojects/images/hero/tnse (18).jpg",
-        "tnseelectricalprojects/images/hero/tnse (19).jpg",
-        "tnseelectricalprojects/images/hero/tnse (20).jpg",
-        "tnseelectricalprojects/images/hero/tnse (21).jpg",
-        "tnseelectricalprojects/images/hero/tnse (22).jpg",
-        "tnseelectricalprojects/images/hero/tnse (23).jpg",
-        "tnseelectricalprojects/images/hero/tnse (24).jpg",
-        "tnseelectricalprojects/images/hero/tnse (25).jpg",
-        "tnseelectricalprojects/images/hero/tnse (26).jpg",
-        "tnseelectricalprojects/images/hero/tnse (27).jpg",
-        "tnseelectricalprojects/images/hero/tnse (28).jpg",
-        "tnseelectricalprojects/images/hero/tnse (29).jpg",
-        "tnseelectricalprojects/images/hero/tnse (30).jpg"
+        "/tnseelectricalprojects/images/hero/tnse (1).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (2).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (3).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (4).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (5).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (6).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (7).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (8).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (9).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (10).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (11).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (12).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (13).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (14).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (15).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (16).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (17).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (18).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (19).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (20).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (21).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (22).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (23).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (24).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (25).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (26).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (27).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (28).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (29).jpg",
+        "/tnseelectricalprojects/images/hero/tnse (30).jpg"
     ];
 
     // Shuffle array randomly
@@ -194,18 +194,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ==========================================================
-// 11. Full 30-Item Datasets for Electrical & Solar Archives
-// ==========================================================
+// ==========================================
+// 11. Image Drawer / Lightbox Controller & 30-Item Archives
+// ==========================================
+let galleryItems = [];
+let currentIndex = 0;
+
+// Full 30-item mapping for both Electrical & Solar project catalogs
 const projectArchives = {
   electrical: {
     title: "Electrical Installations",
     subtitle: "/images/projects/electrical/",
     icon: "electrical_services",
     items: Array.from({ length: 30 }, (_, i) => ({
-      src: `tnseelectricalprojects/images/projects/electrical/tnse (${i + 1}).jpg`,
+      src: `/tnseelectricalprojects/images/projects/electrical/tnse (${i + 1}).jpg`,
       title: `Electrical Project ${i + 1}`,
-      caption: `High-standard commercial and residential electrical execution #${i + 1}`
+      caption: `High-standard commercial and residential electrical execution #${i + 1} across Polokwane.`
     }))
   },
   solar: {
@@ -213,102 +217,22 @@ const projectArchives = {
     subtitle: "/images/projects/solar/",
     icon: "solar_power",
     items: Array.from({ length: 30 }, (_, i) => ({
-      src: `tnseelectricalprojects/images/projects/solar/tnse (${i + 1}).jpg`,
+      src: `/tnseelectricalprojects/images/projects/solar/tnse (${i + 1}).jpg`,
       title: `Solar Installation ${i + 1}`,
-      caption: `Turnkey hybrid inverter & lithium battery system setup #${i + 1}`
+      caption: `Turnkey hybrid inverter & lithium battery system setup #${i + 1}.`
     }))
   }
 };
 
 let activeArchiveCategory = 'electrical';
-let galleryItems = [];
-let currentIndex = 0;
 
-// Initialize gallery items automatically from triggers on load
 document.addEventListener('DOMContentLoaded', () => {
-  const triggers = document.querySelectorAll('[onclick*="openImageDrawer"]');
-  galleryItems = Array.from(triggers).map(el => ({
-    src: el.getAttribute('data-image-src'),
-    title: el.getAttribute('data-image-title') || 'TNSE Project Image',
-    caption: el.getAttribute('data-image-caption') || 'Professional electrical and energy solutions execution.'
-  }));
-
-  if (galleryItems.length === 0) {
-    galleryItems = projectArchives.electrical.items;
-  }
-
+  // Default main gallery pool starts with electrical items
+  galleryItems = projectArchives.electrical.items;
   buildThumbnails();
   setupTouchGestures();
 });
 
-
-// ==========================================================
-// 12. Left-to-Right Archive Drawer Controller
-// ==========================================================
-function openLeftDrawer(category) {
-  activeArchiveCategory = category;
-  const archive = projectArchives[category] || projectArchives.electrical;
-
-  document.getElementById('leftDrawerTitle').textContent = archive.title;
-  document.getElementById('leftDrawerSubtitle').textContent = archive.subtitle;
-  document.getElementById('leftDrawerIcon').textContent = archive.icon;
-
-  const gridContainer = document.getElementById('leftDrawerGrid');
-  gridContainer.innerHTML = '';
-
-  archive.items.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = "group relative overflow-hidden rounded-xl bg-slate-950 border border-slate-800 cursor-pointer aspect-video shadow-md hover:border-amber-400 transition-all";
-    card.onclick = () => {
-      closeLeftDrawer();
-      galleryItems = archive.items;
-      openImageDrawer(index);
-    };
-    card.innerHTML = `
-      <img src="${item.src}" alt="${item.title}" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
-      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-2">
-        <p class="text-[10px] font-bold text-white truncate">${item.title}</p>
-      </div>
-    `;
-    gridContainer.appendChild(card);
-  });
-
-  const drawer = document.getElementById('leftArchiveDrawer');
-  const panel = document.getElementById('leftDrawerPanel');
-  const backdrop = document.getElementById('leftDrawerBackdrop');
-
-  if (drawer && panel && backdrop) {
-    drawer.classList.remove('pointer-events-none');
-    backdrop.classList.remove('pointer-events-none', 'opacity-0');
-    backdrop.classList.add('opacity-100');
-    panel.classList.remove('-translate-x-full');
-    document.body.classList.add('overflow-hidden');
-  }
-}
-
-function closeLeftDrawer() {
-  const drawer = document.getElementById('leftArchiveDrawer');
-  const panel = document.getElementById('leftDrawerPanel');
-  const backdrop = document.getElementById('leftDrawerBackdrop');
-
-  if (drawer && panel && backdrop) {
-    panel.classList.add('-translate-x-full');
-    backdrop.classList.remove('opacity-100');
-    backdrop.classList.add('opacity-0');
-
-    setTimeout(() => {
-      drawer.classList.add('pointer-events-none');
-      backdrop.classList.add('pointer-events-none');
-      if (!document.getElementById('imageDrawerModal')?.classList.contains('hidden')) return;
-      document.body.classList.remove('overflow-hidden');
-    }, 300);
-  }
-}
-
-
-// ==========================================================
-// 13. Image Drawer / Lightbox Controller
-// ==========================================================
 function buildThumbnails() {
   const container = document.getElementById('drawerThumbnailsContainer');
   if (!container) return;
@@ -325,7 +249,6 @@ function buildThumbnails() {
 
 function openImageDrawer(index) {
   currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
-  buildThumbnails();
   updateDrawerContent();
 
   const modal = document.getElementById('imageDrawerModal');
@@ -364,17 +287,10 @@ function goToImage(index) {
 
 function updateDrawerContent() {
   const item = galleryItems[currentIndex];
-  if (!item) return;
-
-  const mainImg = document.getElementById('drawerMainImage');
-  const titleEl = document.getElementById('drawerImageTitle');
-  const captionEl = document.getElementById('drawerImageCaption');
-  const counterEl = document.getElementById('drawerImageCounter');
-
-  if (mainImg) mainImg.src = item.src;
-  if (titleEl) titleEl.textContent = item.title;
-  if (captionEl) captionEl.textContent = item.caption;
-  if (counterEl) counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+  document.getElementById('drawerMainImage').src = item.src;
+  document.getElementById('drawerImageTitle').textContent = item.title;
+  document.getElementById('drawerImageCaption').textContent = item.caption;
+  document.getElementById('drawerImageCounter').textContent = `${currentIndex + 1} / ${galleryItems.length}`;
   
   const container = document.getElementById('drawerThumbnailsContainer');
   if (container) {
@@ -394,15 +310,12 @@ document.addEventListener('keydown', (e) => {
   const modal = document.getElementById('imageDrawerModal');
   if (!modal || modal.classList.contains('hidden')) return;
 
-  if (e.key === 'Escape') {
-    closeImageDrawer();
-    closeLeftDrawer();
-  }
+  if (e.key === 'Escape') closeImageDrawer();
   if (e.key === 'ArrowRight') nextImage();
   if (e.key === 'ArrowLeft') prevImage();
 });
 
-// Touch / Swipe Support for Mobile Devices in Lightbox
+// Touch / Swipe Support for Mobile Devices
 function setupTouchGestures() {
   const modal = document.getElementById('imageDrawerModal');
   if (!modal) return;
@@ -416,12 +329,68 @@ function setupTouchGestures() {
 
   modal.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-      nextImage();
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      prevImage();
-    }
+    if (touchEndX < touchStartX - 50) nextImage();
+    if (touchEndX > touchStartX + 50) prevImage();
   }, { passive: true });
+}
+
+
+// ==========================================
+// 12. Left-to-Right Archive Drawer Controller
+// ==========================================
+function openLeftDrawer(category) {
+  activeArchiveCategory = category;
+  const archive = projectArchives[category] || projectArchives.electrical;
+
+  document.getElementById('leftDrawerTitle').textContent = archive.title;
+  document.getElementById('leftDrawerSubtitle').textContent = archive.subtitle;
+  document.getElementById('leftDrawerIcon').textContent = archive.icon;
+
+  const gridContainer = document.getElementById('leftDrawerGrid');
+  gridContainer.innerHTML = '';
+
+  archive.items.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = "group relative overflow-hidden rounded-xl bg-slate-950 border border-slate-800 cursor-pointer aspect-video shadow-md hover:border-amber-400 transition-all";
+    card.onclick = () => {
+      closeLeftDrawer();
+      galleryItems = archive.items;
+      buildThumbnails();
+      openImageDrawer(index);
+    };
+    card.innerHTML = `
+      <img src="${item.src}" alt="${item.title}" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-2">
+        <p class="text-[10px] font-bold text-white truncate">${item.title}</p>
+      </div>
+    `;
+    gridContainer.appendChild(card);
+  });
+
+  const drawer = document.getElementById('leftArchiveDrawer');
+  const panel = document.getElementById('leftDrawerPanel');
+  const backdrop = document.getElementById('leftDrawerBackdrop');
+
+  drawer.classList.remove('pointer-events-none');
+  backdrop.classList.remove('pointer-events-none', 'opacity-0');
+  backdrop.classList.add('opacity-100');
+  panel.classList.remove('-translate-x-full');
+  document.body.classList.add('overflow-hidden');
+}
+
+function closeLeftDrawer() {
+  const drawer = document.getElementById('leftArchiveDrawer');
+  const panel = document.getElementById('leftDrawerPanel');
+  const backdrop = document.getElementById('leftDrawerBackdrop');
+
+  panel.classList.add('-translate-x-full');
+  backdrop.classList.remove('opacity-100');
+  backdrop.classList.add('opacity-0');
+
+  setTimeout(() => {
+    drawer.classList.add('pointer-events-none');
+    backdrop.classList.add('pointer-events-none');
+    if (!document.getElementById('imageDrawerModal').classList.contains('hidden')) return;
+    document.body.classList.remove('overflow-hidden');
+  }, 300);
 }

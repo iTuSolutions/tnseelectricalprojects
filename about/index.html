@@ -415,15 +415,23 @@
 <main>
 
   <!-- =========================================================
-        ABOUT HERO
+        ABOUT HERO WITH PARALLAX & CAROUSEL BACKGROUND
   ========================================================== -->
   <section class="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
-    <div class="hero-grid absolute inset-0 opacity-40"></div>
+    <!-- Parallax / Carousel Image Background Container -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <div id="hero-carousel" class="absolute inset-0 transition-opacity duration-1000">
+        <img src="../images/parallax/tnse-project-hero-1.jpg" alt="TNSE Electrical Projects Hero Background" class="h-full w-full object-cover object-center transform scale-105 animate-pulse duration-[10000ms]" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/60"></div>
+    </div>
 
-    <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl"></div>
-    <div class="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+    <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
 
-    <div class="relative mx-auto max-w-7xl px-5">
+    <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl z-10"></div>
+    <div class="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl z-10"></div>
+
+    <div class="relative z-20 mx-auto max-w-7xl px-5">
       <div class="max-w-4xl">
 
         <div class="flex items-center gap-3">
@@ -438,7 +446,7 @@
         </h1>
 
         <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-          TNSE Electrical Projects is an electrical, solar and energy solutions
+          TNSE Electrical Projects is an electrical and energy solutions
           company established in 2017. We provide practical solutions designed
           around the needs of residential, commercial and project environments.
         </p>
@@ -463,41 +471,30 @@
 
 
   <!-- =========================================================
-        COMPANY INTRODUCTION
+        COMPANY INTRODUCTION WITH DYNAMIC PROJECT IMAGE
   ========================================================== -->
   <section class="bg-white py-20 dark:bg-slate-950 lg:py-28">
     <div class="mx-auto max-w-7xl px-5">
 
       <div class="grid items-center gap-14 lg:grid-cols-2">
 
-        <!-- Visual -->
+        <!-- Visual / Parallax Image Container -->
         <div class="reveal relative">
           <div class="overflow-hidden rounded-[2rem] bg-slate-900 p-2 shadow-2xl">
 
             <div class="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 via-slate-900 to-black">
 
-              <!-- Replace this background with a real company/project image -->
+              <!-- Company Project Parallax Image -->
+              <img src="../images/parallax/tnse-installation-preview.jpg" alt="TNSE Electrical Field Installation" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+
               <div class="absolute inset-0 opacity-30"
                    style="background-image: linear-gradient(rgba(15,23,42,.25),rgba(15,23,42,.9));">
               </div>
 
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-
-                  <div class="mx-auto grid h-20 w-20 place-items-center rounded-2xl bg-amber-400 text-slate-950">
-                    <span class="material-symbols-outlined text-4xl">
-                      electrical_services
-                    </span>
-                  </div>
-
-                  <p class="mt-5 text-sm font-bold uppercase tracking-[.25em] text-amber-400">
-                    TNSE Electrical Projects
-                  </p>
-
-                  <h3 class="mt-2 text-3xl font-black text-white">
-                    Established 2017
-                  </h3>
-
+              <div class="absolute inset-0 flex items-center justify-end p-6">
+                <div class="rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/10 px-4 py-2 text-right">
+                  <p class="text-xs font-bold uppercase tracking-widest text-amber-400">Field Operations</p>
+                  <p class="text-sm font-semibold text-white">Limpopo Region</p>
                 </div>
               </div>
 
@@ -528,13 +525,12 @@
           <p class="mt-6 leading-8 text-slate-600 dark:text-slate-400">
             TNSE Electrical Projects was established in 2017 with a focus on
             providing practical electrical solutions and supporting clients
-            with their power and energy requirements.
+            with their power requirements.
           </p>
 
           <p class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
             Our services cover electrical installations, maintenance,
-            repairs, fault finding, solar energy systems, backup power,
-            battery storage and related energy solutions.
+            repairs, fault finding, backup power, and related energy solutions.
           </p>
 
           <p class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
@@ -632,9 +628,79 @@
 
 
   <!-- =========================================================
+        PROJECT GALLERY CAROUSEL SECTION
+  ========================================================== -->
+  <section class="bg-white py-20 dark:bg-slate-950 lg:py-28 overflow-hidden">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
+            Visual Showcase
+          </p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-slate-950 dark:text-white md:text-4xl">
+            Recent Projects & Execution Gallery
+          </h2>
+        </div>
+        <div class="mt-6 md:mt-0 flex gap-3">
+          <button id="carousel-prev" aria-label="Previous Slide" class="grid h-12 w-12 place-items-center rounded-xl border border-slate-300 dark:border-white/20 text-slate-900 dark:text-white hover:bg-amber-400 hover:text-slate-950 transition">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button id="carousel-next" aria-label="Next Slide" class="grid h-12 w-12 place-items-center rounded-xl border border-slate-300 dark:border-white/20 text-slate-900 dark:text-white hover:bg-amber-400 hover:text-slate-950 transition">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Carousel Track / Grid -->
+      <div class="relative overflow-hidden rounded-3xl">
+        <div id="project-carousel-track" class="flex transition-transform duration-500 ease-out gap-6">
+          
+          <!-- Carousel Item 1 -->
+          <div class="min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] relative aspect-[16/10] rounded-2xl overflow-hidden group shadow-lg">
+            <img src="../images/parallax/tnse-project-1.jpg" alt="Commercial Electrical Panel Installation" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Commercial</span>
+              <h3 class="text-lg font-bold text-white mt-1">Distribution Board Upgrade</h3>
+            </div>
+          </div>
+
+          <!-- Carousel Item 2 -->
+          <div class="min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] relative aspect-[16/10] rounded-2xl overflow-hidden group shadow-lg">
+            <img src="../images/parallax/tnse-project-2.jpg" alt="Industrial Fault Finding and Maintenance" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Industrial</span>
+              <h3 class="text-lg font-bold text-white mt-1">System Fault Diagnostics</h3>
+            </div>
+          </div>
+
+          <!-- Carousel Item 3 -->
+          <div class="min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] relative aspect-[16/10] rounded-2xl overflow-hidden group shadow-lg">
+            <img src="../images/parallax/tnse-project-3.jpg" alt="Backup Power & Inverter Configuration" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Backup Power</span>
+              <h3 class="text-lg font-bold text-white mt-1">Inverter & Battery Integration</h3>
+            </div>
+          </div>
+
+          <!-- Carousel Item 4 -->
+          <div class="min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] relative aspect-[16/10] rounded-2xl overflow-hidden group shadow-lg">
+            <img src="../images/parallax/tnse-project-4.jpg" alt="Residential Wiring & Maintenance" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Residential</span>
+              <h3 class="text-lg font-bold text-white mt-1">Infrastructure Maintenance</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
         OUR STORY
   ========================================================== -->
-  <section class="bg-white py-20 dark:bg-slate-950 lg:py-28">
+  <section class="bg-slate-50 py-20 dark:bg-slate-900/50 lg:py-28">
     <div class="mx-auto max-w-7xl px-5">
 
       <div class="mx-auto max-w-3xl text-center reveal">
@@ -649,8 +715,8 @@
 
         <p class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
           TNSE has developed its service offering around the changing needs
-          of clients who require dependable electrical infrastructure,
-          renewable energy and backup power solutions.
+          of clients who require dependable electrical infrastructure
+          and backup power solutions.
         </p>
 
       </div>
@@ -717,26 +783,26 @@
           </div>
 
 
-          <!-- Solar -->
+          <!-- Energy & Backup -->
           <div class="reveal relative md:pl-16">
 
             <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
-              <span class="material-symbols-outlined">solar_power</span>
+              <span class="material-symbols-outlined">bolt</span>
             </div>
 
             <div class="rounded-3xl border border-slate-200 bg-white p-7 dark:border-white/10 dark:bg-slate-900">
 
               <span class="text-sm font-black text-amber-500">
-                SOLAR & ENERGY
+                ENERGY & POWER SOLUTIONS
               </span>
 
               <h3 class="mt-2 text-xl font-bold text-slate-950 dark:text-white">
-                Moving toward sustainable energy solutions
+                Moving toward reliable energy solutions
               </h3>
 
               <p class="mt-3 leading-7 text-slate-600 dark:text-slate-400">
-                TNSE's offering extends into solar energy, inverter systems,
-                battery storage and backup-power solutions.
+                TNSE's offering extends into power continuity systems,
+                inverter installations, battery storage and backup solutions.
               </p>
 
             </div>
@@ -754,7 +820,7 @@
   <!-- =========================================================
         MISSION VISION VALUES
   ========================================================== -->
-  <section class="bg-slate-50 py-20 dark:bg-slate-900/50 lg:py-28">
+  <section class="bg-white py-20 dark:bg-slate-950 lg:py-28">
     <div class="mx-auto max-w-7xl px-5">
 
       <div class="max-w-3xl reveal">
@@ -771,7 +837,7 @@
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
 
         <!-- Mission -->
-        <div class="reveal lift rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-slate-900">
+        <div class="reveal lift rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-white/10 dark:bg-slate-900">
 
           <div class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-100 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">
@@ -793,7 +859,7 @@
 
 
         <!-- Vision -->
-        <div class="reveal lift rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-slate-900">
+        <div class="reveal lift rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-white/10 dark:bg-slate-900">
 
           <div class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-100 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">
@@ -807,7 +873,7 @@
 
           <p class="mt-4 leading-8 text-slate-600 dark:text-slate-400">
             To build a trusted South African engineering brand recognised
-            for quality service, practical innovation and sustainable energy
+            for quality service, practical innovation and dependable energy
             solutions.
           </p>
 
@@ -815,7 +881,7 @@
 
 
         <!-- Values -->
-        <div class="reveal lift rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-slate-900">
+        <div class="reveal lift rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-white/10 dark:bg-slate-900">
 
           <div class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-100 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">
@@ -877,7 +943,7 @@
   <!-- =========================================================
         OUR CAPABILITIES
   ========================================================== -->
-  <section class="bg-white py-20 dark:bg-slate-950 lg:py-28">
+  <section class="bg-slate-50 py-20 dark:bg-slate-900/50 lg:py-28">
     <div class="mx-auto max-w-7xl px-5">
 
       <div class="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
@@ -893,9 +959,9 @@
           </h2>
 
           <p class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
-            TNSE combines electrical expertise with solar and energy
+            TNSE combines technical electrical expertise with power backup
             capabilities to provide clients with a broader range of
-            power-related services.
+            services.
           </p>
 
           <a href="../contact/index.html"
@@ -909,7 +975,7 @@
 
         <div class="grid gap-4 sm:grid-cols-2">
 
-          <div class="reveal rounded-2xl border border-slate-200 p-6 dark:border-white/10">
+          <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-slate-900">
             <span class="material-symbols-outlined text-amber-500">
               electrical_services
             </span>
@@ -924,7 +990,7 @@
           </div>
 
 
-          <div class="reveal rounded-2xl border border-slate-200 p-6 dark:border-white/10">
+          <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-slate-900">
             <span class="material-symbols-outlined text-amber-500">
               engineering
             </span>
@@ -939,7 +1005,7 @@
           </div>
 
 
-          <div class="reveal rounded-2xl border border-slate-200 p-6 dark:border-white/10">
+          <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-slate-900">
             <span class="material-symbols-outlined text-amber-500">
               build
             </span>
@@ -949,27 +1015,12 @@
             </h3>
 
             <p class="mt-2 text-sm leading-7 text-slate-500">
-              Troubleshooting and repair support for electrical systems.
+              Troubleshooting, tripping rectification and repair support.
             </p>
           </div>
 
 
-          <div class="reveal rounded-2xl border border-slate-200 p-6 dark:border-white/10">
-            <span class="material-symbols-outlined text-amber-500">
-              solar_power
-            </span>
-
-            <h3 class="mt-4 font-bold text-slate-950 dark:text-white">
-              Solar Energy
-            </h3>
-
-            <p class="mt-2 text-sm leading-7 text-slate-500">
-              Solar panels, inverters, batteries and backup power solutions.
-            </p>
-          </div>
-
-
-          <div class="reveal rounded-2xl border border-slate-200 p-6 dark:border-white/10">
+          <div class="reveal rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-slate-900">
             <span class="material-symbols-outlined text-amber-500">
               battery_charging_full
             </span>
@@ -980,21 +1031,6 @@
 
             <p class="mt-2 text-sm leading-7 text-slate-500">
               Battery storage and energy continuity solutions.
-            </p>
-          </div>
-
-
-          <div class="reveal rounded-2xl border border-slate-200 p-6 dark:border-white/10">
-            <span class="material-symbols-outlined text-amber-500">
-              energy_savings_leaf
-            </span>
-
-            <h3 class="mt-4 font-bold text-slate-950 dark:text-white">
-              Energy Solutions
-            </h3>
-
-            <p class="mt-2 text-sm leading-7 text-slate-500">
-              Renewable energy and energy-efficiency focused solutions.
             </p>
           </div>
 
@@ -1044,7 +1080,7 @@
           </h3>
 
           <p class="mt-3 leading-7 text-slate-400">
-            Electrical installations, repairs, solar systems and backup
+            Electrical installations, repairs, and backup
             power solutions for residential properties.
           </p>
 
@@ -1083,216 +1119,6 @@
             Electrical and energy support for larger projects and
             industrial environments.
           </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-        OUR APPROACH
-  ========================================================== -->
-  <section class="bg-white py-20 dark:bg-slate-950 lg:py-28">
-
-    <div class="mx-auto max-w-7xl px-5">
-
-      <div class="text-center reveal">
-
-        <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
-          Our Approach
-        </p>
-
-        <h2 class="mt-4 text-3xl font-black text-slate-950 dark:text-white md:text-4xl">
-          From understanding the need to delivering the solution
-        </h2>
-
-      </div>
-
-
-      <div class="mt-14 grid gap-5 md:grid-cols-5">
-
-        <div class="reveal rounded-3xl border border-slate-200 p-6 dark:border-white/10">
-
-          <span class="text-4xl font-black text-slate-200 dark:text-slate-700">
-            01
-          </span>
-
-          <h3 class="mt-6 font-bold text-slate-950 dark:text-white">
-            Consultation
-          </h3>
-
-          <p class="mt-3 text-sm leading-7 text-slate-500">
-            Understand your objectives, requirements and expectations.
-          </p>
-
-        </div>
-
-
-        <div class="reveal rounded-3xl border border-slate-200 p-6 dark:border-white/10">
-
-          <span class="text-4xl font-black text-slate-200 dark:text-slate-700">
-            02
-          </span>
-
-          <h3 class="mt-6 font-bold text-slate-950 dark:text-white">
-            Assessment
-          </h3>
-
-          <p class="mt-3 text-sm leading-7 text-slate-500">
-            Review the project environment and identify requirements.
-          </p>
-
-        </div>
-
-
-        <div class="reveal rounded-3xl border border-slate-200 p-6 dark:border-white/10">
-
-          <span class="text-4xl font-black text-slate-200 dark:text-slate-700">
-            03
-          </span>
-
-          <h3 class="mt-6 font-bold text-slate-950 dark:text-white">
-            Solution Design
-          </h3>
-
-          <p class="mt-3 text-sm leading-7 text-slate-500">
-            Develop a practical approach suited to the project.
-          </p>
-
-        </div>
-
-
-        <div class="reveal rounded-3xl border border-slate-200 p-6 dark:border-white/10">
-
-          <span class="text-4xl font-black text-slate-200 dark:text-slate-700">
-            04
-          </span>
-
-          <h3 class="mt-6 font-bold text-slate-950 dark:text-white">
-            Implementation
-          </h3>
-
-          <p class="mt-3 text-sm leading-7 text-slate-500">
-            Carry out the agreed electrical or energy work.
-          </p>
-
-        </div>
-
-
-        <div class="reveal rounded-3xl border border-slate-200 p-6 dark:border-white/10">
-
-          <span class="text-4xl font-black text-slate-200 dark:text-slate-700">
-            05
-          </span>
-
-          <h3 class="mt-6 font-bold text-slate-950 dark:text-white">
-            Support
-          </h3>
-
-          <p class="mt-3 text-sm leading-7 text-slate-500">
-            Provide ongoing maintenance and support where required.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================================
-        SAFETY & QUALITY
-  ========================================================== -->
-  <section class="bg-slate-50 py-20 dark:bg-slate-900/50 lg:py-28">
-
-    <div class="mx-auto max-w-7xl px-5">
-
-      <div class="grid gap-10 lg:grid-cols-2">
-
-        <div class="reveal">
-
-          <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
-            Quality & Safety
-          </p>
-
-          <h2 class="mt-4 text-3xl font-black text-slate-950 dark:text-white md:text-4xl">
-            Responsible work starts with the right approach.
-          </h2>
-
-          <p class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
-            Electrical and energy projects require careful planning,
-            responsible execution and attention to system performance.
-          </p>
-
-          <p class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
-            TNSE's approach places importance on understanding the work,
-            communicating requirements clearly and supporting reliable
-            project outcomes.
-          </p>
-
-        </div>
-
-
-        <div class="grid gap-4 sm:grid-cols-2">
-
-          <div class="reveal rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
-            <span class="material-symbols-outlined text-amber-500">
-              health_and_safety
-            </span>
-            <h3 class="mt-4 font-bold text-slate-950 dark:text-white">
-              Safety-conscious
-            </h3>
-            <p class="mt-2 text-sm leading-7 text-slate-500">
-              Safety remains an important consideration throughout project
-              planning and execution.
-            </p>
-          </div>
-
-
-          <div class="reveal rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
-            <span class="material-symbols-outlined text-amber-500">
-              fact_check
-            </span>
-            <h3 class="mt-4 font-bold text-slate-950 dark:text-white">
-              Structured
-            </h3>
-            <p class="mt-2 text-sm leading-7 text-slate-500">
-              Projects are approached through clear stages and defined
-              requirements.
-            </p>
-          </div>
-
-
-          <div class="reveal rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
-            <span class="material-symbols-outlined text-amber-500">
-              support_agent
-            </span>
-            <h3 class="mt-4 font-bold text-slate-950 dark:text-white">
-              Communication
-            </h3>
-            <p class="mt-2 text-sm leading-7 text-slate-500">
-              We value clear communication with clients throughout the work.
-            </p>
-          </div>
-
-
-          <div class="reveal rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
-            <span class="material-symbols-outlined text-amber-500">
-              trending_up
-            </span>
-            <h3 class="mt-4 font-bold text-slate-950 dark:text-white">
-              Continuous Improvement
-            </h3>
-            <p class="mt-2 text-sm leading-7 text-slate-500">
-              We aim to continually improve our services and solutions.
-            </p>
-          </div>
 
         </div>
 
@@ -1359,7 +1185,7 @@
               Location
             </p>
             <p class="mt-2 font-bold text-slate-950 dark:text-white">
-              Moletjie, Polokwane, Limpopo
+              Seshego-B, Polokwane, Limpopo
             </p>
           </div>
 
@@ -1368,15 +1194,10 @@
       </div>
 
     </div>
-
   </section>
 
-
-  <!-- =========================================================
-        FINAL CTA
-  ========================================================== -->
+  <!-- CTA Section -->
   <section class="px-5 pb-20 lg:pb-28">
-
     <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-amber-400 px-7 py-12 text-slate-950 md:px-12 lg:flex lg:items-center lg:justify-between">
 
       <div class="max-w-2xl">
@@ -1390,25 +1211,20 @@
         </h2>
 
         <p class="mt-4 leading-7 text-slate-800">
-          Whether you need electrical services, solar installation,
+          Whether you need electrical installations, maintenance,
           backup power or an energy solution, talk to TNSE about your
           requirements.
         </p>
-
       </div>
-
       <div class="mt-8 lg:mt-0">
-        <a href="../contact/index.html"
-           class="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-8 py-4 font-bold text-white transition hover:bg-slate-800">
+        <a href="../contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 font-bold text-white transition hover:bg-slate-900">
           Get in Touch
           <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
 
     </div>
-
   </section>
-
 </main>
 
    

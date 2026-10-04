@@ -1,5 +1,5 @@
 // ==========================================================
-// TNSE Electrical Projects - Main Site Script (Unified)
+// TNSE Electrical Projects - Main Site & Gallery Script
 // ==========================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -91,17 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   );
 
-  // 9. Hero Parallax Background Carousel Initializer
-  initHeroCarousel();
-
-  // 10. Lightbox Gallery Initialization
-  initLightboxGallery();
-  setupTouchGestures();
 });
 
-// ==========================================
-// Exclusive Mobile Navigation Accordion Toggle
-// ==========================================
+// 9. Exclusive Mobile Navigation Accordion Toggle
 window.toggleAccordion = function(id, button) {
   const content = document.getElementById(id);
   const isHidden = content.classList.contains('hidden');
@@ -131,214 +123,87 @@ window.toggleAccordion = function(id, button) {
   }
 };
 
-// ==========================================
-// Hero Background Carousel Logic
-// ==========================================
-function initHeroCarousel() {
-  let imageArray = [
-    "/tnseelectricalprojects/images/parallax/tnse (1).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (2).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (3).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (4).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (5).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (6).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (7).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (8).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (9).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (10).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (11).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (12).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (13).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (14).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (15).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (16).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (17).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (18).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (19).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (20).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (21).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (22).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (23).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (24).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (25).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (26).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (27).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (28).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (29).jpg",
-    "/tnseelectricalprojects/images/parallax/tnse (30).jpg"
-  ];
 
-  for (let i = imageArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [imageArray[i], imageArray[j]] = [imageArray[j], imageArray[i]];
-  }
-
-  const carouselContainer = document.getElementById("heroCarousel");
-  if (!carouselContainer) return;
-
-  imageArray.forEach((src, index) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `TNSE Electrical Project Background ${index + 1}`;
-    img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
-    carouselContainer.appendChild(img);
-  });
-
-  let currentIndex = 0;
-  const slides = carouselContainer.querySelectorAll("img");
-  if (slides.length === 0) return;
-
-  setInterval(() => {
-    slides[currentIndex].classList.remove("opacity-100");
-    slides[currentIndex].classList.add("opacity-0");
-
-    currentIndex = (currentIndex + 1) % slides.length;
-
-    slides[currentIndex].classList.remove("opacity-0");
-    slides[currentIndex].classList.add("opacity-100");
-  }, 4500);
-}
-
-// ==========================================
-// Image Drawer / Lightbox Controller
-// ==========================================
-let galleryItems = [];
-let currentIndex = 0;
-
-function initLightboxGallery() {
-  const triggers = document.querySelectorAll('[onclick*="openImageDrawer"]');
-  galleryItems = Array.from(triggers).map(el => ({
-    src: el.getAttribute('data-image-src'),
-    title: el.getAttribute('data-image-title') || 'TNSE Project Image',
-    caption: el.getAttribute('data-image-caption') || 'Professional electrical and energy solutions execution.'
-  }));
-
-  if (galleryItems.length === 0) {
-    galleryItems = [
-      { src: "/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg", title: "Commercial DB Installation", caption: "Three-phase distribution board wiring and rigorous labeling." },
-      { src: "/tnseelectricalprojects/images/projects/electrical/tnse (2).jpg", title: "Fault Finding & Diagnostics", caption: "Advanced multimeter and insulation testing procedures." },
-      { src: "/tnseelectricalprojects/images/projects/solar/tnse (1).jpg", title: "Hybrid Inverter Setup", caption: "Clean backup power integration with automated changeover." },
-      { src: "/tnseelectricalprojects/images/projects/solar/tnse (2).jpg", title: "Lithium Battery Bank", caption: "High-capacity energy storage installation." }
+// ==========================================================
+// 10. Hero Background Carousel Controller
+// ==========================================================
+document.addEventListener("DOMContentLoaded", function () {
+    let imageArray = [
+        "tnseelectricalprojects/images/hero/tnse (1).jpg",
+        "tnseelectricalprojects/images/hero/tnse (2).jpg",
+        "tnseelectricalprojects/images/hero/tnse (3).jpg",
+        "tnseelectricalprojects/images/hero/tnse (4).jpg",
+        "tnseelectricalprojects/images/hero/tnse (5).jpg",
+        "tnseelectricalprojects/images/hero/tnse (6).jpg",
+        "tnseelectricalprojects/images/hero/tnse (7).jpg",
+        "tnseelectricalprojects/images/hero/tnse (8).jpg",
+        "tnseelectricalprojects/images/hero/tnse (9).jpg",
+        "tnseelectricalprojects/images/hero/tnse (10).jpg",
+        "tnseelectricalprojects/images/hero/tnse (11).jpg",
+        "tnseelectricalprojects/images/hero/tnse (12).jpg",
+        "tnseelectricalprojects/images/hero/tnse (13).jpg",
+        "tnseelectricalprojects/images/hero/tnse (14).jpg",
+        "tnseelectricalprojects/images/hero/tnse (15).jpg",
+        "tnseelectricalprojects/images/hero/tnse (16).jpg",
+        "tnseelectricalprojects/images/hero/tnse (17).jpg",
+        "tnseelectricalprojects/images/hero/tnse (18).jpg",
+        "tnseelectricalprojects/images/hero/tnse (19).jpg",
+        "tnseelectricalprojects/images/hero/tnse (20).jpg",
+        "tnseelectricalprojects/images/hero/tnse (21).jpg",
+        "tnseelectricalprojects/images/hero/tnse (22).jpg",
+        "tnseelectricalprojects/images/hero/tnse (23).jpg",
+        "tnseelectricalprojects/images/hero/tnse (24).jpg",
+        "tnseelectricalprojects/images/hero/tnse (25).jpg",
+        "tnseelectricalprojects/images/hero/tnse (26).jpg",
+        "tnseelectricalprojects/images/hero/tnse (27).jpg",
+        "tnseelectricalprojects/images/hero/tnse (28).jpg",
+        "tnseelectricalprojects/images/hero/tnse (29).jpg",
+        "tnseelectricalprojects/images/hero/tnse (30).jpg"
     ];
-  }
 
-  buildThumbnails();
-}
+    // Shuffle array randomly
+    for (let i = imageArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [imageArray[i], imageArray[j]] = [imageArray[j], imageArray[i]];
+    }
 
-function buildThumbnails() {
-  const container = document.getElementById('drawerThumbnailsContainer');
-  if (!container) return;
-  container.innerHTML = '';
+    const carouselContainer = document.getElementById("heroCarousel");
+    if (!carouselContainer) return;
 
-  galleryItems.forEach((item, idx) => {
-    const thumb = document.createElement('button');
-    thumb.className = `relative h-14 w-20 rounded-lg overflow-hidden border-2 transition-all ${idx === currentIndex ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
-    thumb.onclick = () => goToImage(idx);
-    thumb.innerHTML = `<img src="${item.src}" alt="Thumb ${idx + 1}" class="h-full w-full object-cover">`;
-    container.appendChild(thumb);
-  });
-}
-
-function openImageDrawer(index) {
-  currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
-  updateDrawerContent();
-
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal) {
-    modal.classList.remove('hidden');
-    setTimeout(() => modal.classList.remove('opacity-0'), 10);
-    document.body.classList.add('overflow-hidden');
-  }
-}
-
-function closeImageDrawer() {
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal) {
-    modal.classList.add('opacity-0');
-    setTimeout(() => {
-      modal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }, 300);
-  }
-}
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  updateDrawerContent();
-}
-
-function prevImage() {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  updateDrawerContent();
-}
-
-function goToImage(index) {
-  currentIndex = index;
-  updateDrawerContent();
-}
-
-function updateDrawerContent() {
-  if (galleryItems.length === 0) return;
-  const item = galleryItems[currentIndex];
-  
-  const mainImg = document.getElementById('drawerMainImage');
-  const titleEl = document.getElementById('drawerImageTitle');
-  const captionEl = document.getElementById('drawerImageCaption');
-  const counterEl = document.getElementById('drawerImageCounter');
-
-  if (mainImg) mainImg.src = item.src;
-  if (titleEl) titleEl.textContent = item.title;
-  if (captionEl) captionEl.textContent = item.caption;
-  if (counterEl) counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
-  
-  const container = document.getElementById('drawerThumbnailsContainer');
-  if (container) {
-    Array.from(container.children).forEach((child, idx) => {
-      if (idx === currentIndex) {
-        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-amber-400 scale-105 transition-all";
-        child.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
-      } else {
-        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-slate-800 opacity-60 hover:opacity-100 transition-all";
-      }
+    imageArray.forEach((src, index) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = `TNSE Electrical Project Background ${index + 1}`;
+      img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+      carouselContainer.appendChild(img);
     });
-  }
-}
 
-// Keyboard Listeners for Lightbox
-document.addEventListener('keydown', (e) => {
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal && !modal.classList.contains('hidden')) {
-    if (e.key === 'Escape') closeImageDrawer();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
-  }
+    let currentIndex = 0;
+    const slides = carouselContainer.querySelectorAll("img");
+    if (slides.length === 0) return;
+
+    setInterval(() => {
+      slides[currentIndex].classList.remove("opacity-100");
+      slides[currentIndex].classList.add("opacity-0");
+
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      slides[currentIndex].classList.remove("opacity-0");
+      slides[currentIndex].classList.add("opacity-100");
+    }, 4500);
 });
 
-// Touch / Swipe Support
-function setupTouchGestures() {
-  const modal = document.getElementById('imageDrawerModal');
-  if (!modal) return;
-  let touchStartX = 0;
-  let touchEndX = 0;
 
-  modal.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  modal.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchEndX < touchStartX - 50) nextImage();
-    if (touchEndX > touchStartX + 50) prevImage();
-  }, { passive: true });
-}
-
-// ==========================================
-// Project Directories & Left Archive Drawer Controller
-// ==========================================
+// ==========================================================
+// 11. Full 30-Item Datasets for Electrical & Solar Archives
+// ==========================================================
 const projectArchives = {
   electrical: {
     title: "Electrical Installations",
     subtitle: "/images/projects/electrical/",
     icon: "electrical_services",
-    items: Array.from({ length: 15 }, (_, i) => ({
-      src: `/tnseelectricalprojects/images/projects/electrical/tnse (${i + 1}).jpg`,
+    items: Array.from({ length: 30 }, (_, i) => ({
+      src: `tnseelectricalprojects/images/projects/electrical/tnse (${i + 1}).jpg`,
       title: `Electrical Project ${i + 1}`,
       caption: `High-standard commercial and residential electrical execution #${i + 1}`
     }))
@@ -347,15 +212,41 @@ const projectArchives = {
     title: "Solar & Energy Solutions",
     subtitle: "/images/projects/solar/",
     icon: "solar_power",
-    items: Array.from({ length: 15 }, (_, i) => ({
-      src: `/tnseelectricalprojects/images/projects/solar/tnse (${i + 1}).jpg`,
+    items: Array.from({ length: 30 }, (_, i) => ({
+      src: `tnseelectricalprojects/images/projects/solar/tnse (${i + 1}).jpg`,
       title: `Solar Installation ${i + 1}`,
       caption: `Turnkey hybrid inverter & lithium battery system setup #${i + 1}`
     }))
   }
 };
 
+let activeArchiveCategory = 'electrical';
+let galleryItems = [];
+let currentIndex = 0;
+
+// Initialize gallery items automatically from triggers on load
+document.addEventListener('DOMContentLoaded', () => {
+  const triggers = document.querySelectorAll('[onclick*="openImageDrawer"]');
+  galleryItems = Array.from(triggers).map(el => ({
+    src: el.getAttribute('data-image-src'),
+    title: el.getAttribute('data-image-title') || 'TNSE Project Image',
+    caption: el.getAttribute('data-image-caption') || 'Professional electrical and energy solutions execution.'
+  }));
+
+  if (galleryItems.length === 0) {
+    galleryItems = projectArchives.electrical.items;
+  }
+
+  buildThumbnails();
+  setupTouchGestures();
+});
+
+
+// ==========================================================
+// 12. Left-to-Right Archive Drawer Controller
+// ==========================================================
 function openLeftDrawer(category) {
+  activeArchiveCategory = category;
   const archive = projectArchives[category] || projectArchives.electrical;
 
   document.getElementById('leftDrawerTitle').textContent = archive.title;
@@ -363,7 +254,6 @@ function openLeftDrawer(category) {
   document.getElementById('leftDrawerIcon').textContent = archive.icon;
 
   const gridContainer = document.getElementById('leftDrawerGrid');
-  if (!gridContainer) return;
   gridContainer.innerHTML = '';
 
   archive.items.forEach((item, index) => {
@@ -372,7 +262,6 @@ function openLeftDrawer(category) {
     card.onclick = () => {
       closeLeftDrawer();
       galleryItems = archive.items;
-      buildThumbnails();
       openImageDrawer(index);
     };
     card.innerHTML = `
@@ -414,4 +303,125 @@ function closeLeftDrawer() {
       document.body.classList.remove('overflow-hidden');
     }, 300);
   }
+}
+
+
+// ==========================================================
+// 13. Image Drawer / Lightbox Controller
+// ==========================================================
+function buildThumbnails() {
+  const container = document.getElementById('drawerThumbnailsContainer');
+  if (!container) return;
+  container.innerHTML = '';
+
+  galleryItems.forEach((item, idx) => {
+    const thumb = document.createElement('button');
+    thumb.className = `relative h-14 w-20 rounded-lg overflow-hidden border-2 transition-all ${idx === currentIndex ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
+    thumb.onclick = () => goToImage(idx);
+    thumb.innerHTML = `<img src="${item.src}" alt="Thumbnail ${idx + 1}" class="h-full w-full object-cover">`;
+    container.appendChild(thumb);
+  });
+}
+
+function openImageDrawer(index) {
+  currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
+  buildThumbnails();
+  updateDrawerContent();
+
+  const modal = document.getElementById('imageDrawerModal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    document.body.classList.add('overflow-hidden');
+  }
+}
+
+function closeImageDrawer() {
+  const modal = document.getElementById('imageDrawerModal');
+  if (modal) {
+    modal.classList.add('opacity-0');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }, 300);
+  }
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  updateDrawerContent();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  updateDrawerContent();
+}
+
+function goToImage(index) {
+  currentIndex = index;
+  updateDrawerContent();
+}
+
+function updateDrawerContent() {
+  const item = galleryItems[currentIndex];
+  if (!item) return;
+
+  const mainImg = document.getElementById('drawerMainImage');
+  const titleEl = document.getElementById('drawerImageTitle');
+  const captionEl = document.getElementById('drawerImageCaption');
+  const counterEl = document.getElementById('drawerImageCounter');
+
+  if (mainImg) mainImg.src = item.src;
+  if (titleEl) titleEl.textContent = item.title;
+  if (captionEl) captionEl.textContent = item.caption;
+  if (counterEl) counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+  
+  const container = document.getElementById('drawerThumbnailsContainer');
+  if (container) {
+    Array.from(container.children).forEach((child, idx) => {
+      if (idx === currentIndex) {
+        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-amber-400 scale-105 transition-all";
+        child.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+      } else {
+        child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-slate-800 opacity-60 hover:opacity-100 transition-all";
+      }
+    });
+  }
+}
+
+// Keyboard Navigation Support (ESC, Left & Right Arrows)
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('imageDrawerModal');
+  if (!modal || modal.classList.contains('hidden')) return;
+
+  if (e.key === 'Escape') {
+    closeImageDrawer();
+    closeLeftDrawer();
+  }
+  if (e.key === 'ArrowRight') nextImage();
+  if (e.key === 'ArrowLeft') prevImage();
+});
+
+// Touch / Swipe Support for Mobile Devices in Lightbox
+function setupTouchGestures() {
+  const modal = document.getElementById('imageDrawerModal');
+  if (!modal) return;
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      nextImage();
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+      prevImage();
+    }
+  }, { passive: true });
 }

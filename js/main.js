@@ -356,3 +356,266 @@ function setupTouchGestures() {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Left-to-Right Hamburger Menu Drawer Toggle */
+    function toggleLeftDrawer() {
+      const drawer = document.getElementById('leftHamburgerDrawer');
+      const panel = document.getElementById('drawerPanel');
+      const backdrop = document.getElementById('drawerBackdrop');
+
+      if (panel.classList.contains('-translate-x-full')) {
+        drawer.classList.remove('pointer-events-none');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        panel.classList.remove('-translate-x-full');
+        document.body.classList.add('overflow-hidden');
+      } else {
+        panel.classList.add('-translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        drawer.classList.add('pointer-events-none');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    /* Image Drawer / Lightbox Controller */
+    let galleryItems = [];
+    let currentIndex = 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Build comprehensive gallery pool mapping to /tnseelectricalprojects/images/ structure
+      galleryItems = [
+        // Electrical Projects (tnse 1 to 5 sample pool)
+        { src: "/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg", title: "Commercial DB Installation", caption: "Three-phase distribution board wiring and rigorous labeling." },
+        { src: "/tnseelectricalprojects/images/projects/electrical/tnse (2).jpg", title: "Fault Finding & Diagnostics", caption: "Advanced multimeter and insulation testing procedures." },
+        { src: "/tnseelectricalprojects/images/projects/electrical/tnse (3).jpg", title: "Industrial Maintenance", caption: "Scheduled electrical upkeep for commercial complexes." },
+        { src: "/tnseelectricalprojects/images/projects/electrical/tnse (4).jpg", title: "Sub-circuit Protection", caption: "High-grade circuit breaker setup." },
+        { src: "/tnseelectricalprojects/images/projects/electrical/tnse (5).jpg", title: "Lighting Integration", caption: "Energy efficient lighting layout execution." },
+
+        // Solar Projects (tnse 1 to 5 sample pool)
+        { src: "/tnseelectricalprojects/images/projects/solar/tnse (1).jpg", title: "Hybrid Inverter Setup", caption: "Clean backup power integration with automated changeover." },
+        { src: "/tnseelectricalprojects/images/projects/solar/tnse (2).jpg", title: "Lithium Battery Bank", caption: "High-capacity energy storage installation." },
+        { src: "/tnseelectricalprojects/images/projects/solar/tnse (3).jpg", title: "Rooftop PV Solar Array", caption: "Secure mounting and DC wiring implementation." },
+        { src: "/tnseelectricalprojects/images/projects/solar/tnse (4).jpg", title: "MPPT Charge Controller", caption: "Optimized solar panel voltage regulation." },
+        { src: "/tnseelectricalprojects/images/projects/solar/tnse (5).jpg", title: "Off-Grid Configuration", caption: "Reliable power backup system setup." }
+      ];
+
+      buildThumbnails();
+      setupTouchGestures();
+    });
+
+    function buildThumbnails() {
+      const container = document.getElementById('drawerThumbnailsContainer');
+      if (!container) return;
+      container.innerHTML = '';
+
+      galleryItems.forEach((item, idx) => {
+        const thumb = document.createElement('button');
+        thumb.className = `relative h-14 w-20 rounded-lg overflow-hidden border-2 transition-all ${idx === currentIndex ? 'border-amber-400 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
+        thumb.onclick = () => goToImage(idx);
+        thumb.innerHTML = `<img src="${item.src}" alt="Thumb ${idx + 1}" class="h-full w-full object-cover">`;
+        container.appendChild(thumb);
+      });
+    }
+
+    function openImageDrawer(index) {
+      currentIndex = index >= 0 && index < galleryItems.length ? index : 0;
+      updateDrawerContent();
+
+      const modal = document.getElementById('imageDrawerModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    function closeImageDrawer() {
+      const modal = document.getElementById('imageDrawerModal');
+      if (modal) {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }, 300);
+      }
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      updateDrawerContent();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      updateDrawerContent();
+    }
+
+    function goToImage(index) {
+      currentIndex = index;
+      updateDrawerContent();
+    }
+
+    function updateDrawerContent() {
+      const item = galleryItems[currentIndex];
+      document.getElementById('drawerMainImage').src = item.src;
+      document.getElementById('drawerImageTitle').textContent = item.title;
+      document.getElementById('drawerImageCaption').textContent = item.caption;
+      document.getElementById('drawerImageCounter').textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+      
+      const container = document.getElementById('drawerThumbnailsContainer');
+      if (container) {
+        Array.from(container.children).forEach((child, idx) => {
+          if (idx === currentIndex) {
+            child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-amber-400 scale-105 transition-all";
+            child.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+          } else {
+            child.className = "relative h-14 w-20 rounded-lg overflow-hidden border-2 border-slate-800 opacity-60 hover:opacity-100 transition-all";
+          }
+        });
+      }
+    }
+
+    /* Keyboard & Touch Event Listeners */
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('imageDrawerModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeImageDrawer();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    });
+
+    function setupTouchGestures() {
+      const modal = document.getElementById('imageDrawerModal');
+      if (!modal) return;
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      modal.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+      modal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) nextImage();
+        if (touchEndX > touchStartX + 50) prevImage();
+      }, { passive: true });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* =========================================================
+   PROJECT DIRECTORIES & DRAWER CONTROLLER
+   ========================================================= */
+
+// Dataset mappings based on directory structures
+const projectArchives = {
+  electrical: {
+    title: "Electrical Installations",
+    subtitle: "/images/projects/electrical/",
+    icon: "electrical_services",
+    items: Array.from({ length: 15 }, (_, i) => ({
+      src: `/tnseelectricalprojects/images/projects/electrical/tnse (${i + 1}).jpg`,
+      title: `Electrical Project ${i + 1}`,
+      caption: `High-standard commercial and residential electrical execution #${i + 1}`
+    }))
+  },
+  solar: {
+    title: "Solar & Energy Solutions",
+    subtitle: "/images/projects/solar/",
+    icon: "solar_power",
+    items: Array.from({ length: 15 }, (_, i) => ({
+      src: `/tnseelectricalprojects/images/projects/solar/tnse (${i + 1}).jpg`,
+      title: `Solar Installation ${i + 1}`,
+      caption: `Turnkey hybrid inverter & lithium battery system setup #${i + 1}`
+    }))
+  }
+};
+
+let activeArchiveCategory = 'electrical';
+
+// Open Left-to-Right Archive Drawer
+function openLeftDrawer(category) {
+  activeArchiveCategory = category;
+  const archive = projectArchives[category] || projectArchives.electrical;
+
+  // Populate Header info
+  document.getElementById('leftDrawerTitle').textContent = archive.title;
+  document.getElementById('leftDrawerSubtitle').textContent = archive.subtitle;
+  document.getElementById('leftDrawerIcon').textContent = archive.icon;
+
+  // Populate Grid items
+  const gridContainer = document.getElementById('leftDrawerGrid');
+  gridContainer.innerHTML = '';
+
+  archive.items.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = "group relative overflow-hidden rounded-xl bg-slate-950 border border-slate-800 cursor-pointer aspect-video shadow-md hover:border-amber-400 transition-all";
+    card.onclick = () => {
+      // Close left drawer and open main high-res image lightbox at index
+      closeLeftDrawer();
+      // Set global gallery items to this archive so next/prev works seamlessly across category
+      galleryItems = archive.items;
+      openImageDrawer(index);
+    };
+    card.innerHTML = `
+      <img src="${item.src}" alt="${item.title}" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy">
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent p-2">
+        <p class="text-[10px] font-bold text-white truncate">${item.title}</p>
+      </div>
+    `;
+    gridContainer.appendChild(card);
+  });
+
+  // Display drawer with left-to-right slide animation
+  const drawer = document.getElementById('leftArchiveDrawer');
+  const panel = document.getElementById('leftDrawerPanel');
+  const backdrop = document.getElementById('leftDrawerBackdrop');
+
+  drawer.classList.remove('pointer-events-none');
+  backdrop.classList.remove('pointer-events-none', 'opacity-0');
+  backdrop.classList.add('opacity-100');
+  panel.classList.remove('-translate-x-full');
+  document.body.classList.add('overflow-hidden');
+}
+
+// Close Left-to-Right Archive Drawer
+function closeLeftDrawer() {
+  const drawer = document.getElementById('leftArchiveDrawer');
+  const panel = document.getElementById('leftDrawerPanel');
+  const backdrop = document.getElementById('leftDrawerBackdrop');
+
+  panel.classList.add('-translate-x-full');
+  backdrop.classList.remove('opacity-100');
+  backdrop.classList.add('opacity-0');
+
+  setTimeout(() => {
+    drawer.classList.add('pointer-events-none');
+    backdrop.classList.add('pointer-events-none');
+    if (!document.getElementById('imageDrawerModal').classList.contains('hidden')) return;
+    document.body.classList.remove('overflow-hidden');
+  }, 300);
+}

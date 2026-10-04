@@ -414,61 +414,58 @@
 
 <main>
 
-  <!-- =========================================================
-        ABOUT HERO WITH PARALLAX & CAROUSEL BACKGROUND
-  ========================================================== -->
-  <section class="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
-    <!-- Parallax / Carousel Image Background Container -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <div id="hero-carousel" class="absolute inset-0 transition-opacity duration-1000">
-        <img src="../images/parallax/tnse-project-hero-1.jpg" alt="TNSE Electrical Projects Hero Background" class="h-full w-full object-cover object-center transform scale-105 animate-pulse duration-[10000ms]" />
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/60"></div>
-    </div>
+<!-- =========================================================
+      ABOUT HERO WITH DYNAMIC CAROUSEL BACKGROUND
+========================================================== -->
+<section class="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
+  
+  <!-- Dynamic Background Carousel Container (Targeted by script ID #heroCarousel) -->
+  <div id="heroCarousel" class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/60 z-10"></div>
+  </div>
 
-    <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
+  <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
 
-    <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl z-10"></div>
-    <div class="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl z-10"></div>
+  <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl z-10"></div>
+  <div class="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl z-10"></div>
 
-    <div class="relative z-20 mx-auto max-w-7xl px-5">
-      <div class="max-w-4xl">
+  <div class="relative z-20 mx-auto max-w-7xl px-5">
+    <div class="max-w-4xl">
 
-        <div class="flex items-center gap-3">
-          <span class="h-px w-12 bg-amber-400"></span>
-          <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-400">
-            WHO WE ARE
-          </p>
-        </div>
-
-        <h1 class="mt-6 text-4xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
-          Powering progress with practical engineering solutions
-        </h1>
-
-        <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-          TNSE Electrical Projects is an electrical and energy solutions
-          company established in 2017. We provide practical solutions designed
-          around the needs of residential, commercial and project environments.
+      <div class="flex items-center gap-3">
+        <span class="h-px w-12 bg-amber-400"></span>
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-400">
+          WHO WE ARE
         </p>
-
-        <div class="mt-9 flex flex-wrap gap-4">
-          <a href="../contact/index.html"
-             class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3.5 font-bold text-slate-950 transition hover:bg-amber-300">
-            Discuss Your Project
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-
-          <a href="../projects/index.html"
-             class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 font-bold text-white transition hover:bg-white/10">
-            Explore Our Projects
-            <span class="material-symbols-outlined">arrow_outward</span>
-          </a>
-        </div>
-
       </div>
-    </div>
-  </section>
 
+      <h1 class="mt-6 text-4xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+        Powering progress with practical engineering solutions
+      </h1>
+
+      <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
+        TNSE Electrical Projects is an electrical, solar and energy solutions
+        company established in 2017. We provide practical solutions designed
+        around the needs of residential, commercial and project environments.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="../contact/index.html"
+           class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3.5 font-bold text-slate-950 transition hover:bg-amber-300">
+          Discuss Your Project
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+
+        <a href="../projects/index.html"
+           class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 font-bold text-white transition hover:bg-white/10">
+          Explore Our Projects
+          <span class="material-symbols-outlined">arrow_outward</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- =========================================================
         COMPANY INTRODUCTION WITH DYNAMIC PROJECT IMAGE

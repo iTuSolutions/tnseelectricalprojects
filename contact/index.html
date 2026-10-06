@@ -410,17 +410,22 @@
       
 <main>
 
-  <!-- =========================================================
-       CONTACT HERO
+<!-- =========================================================
+       CONTACT HERO WITH DYNAMIC CAROUSEL BACKGROUND
   ========================================================== -->
   <section class="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
 
-    <div class="hero-grid absolute inset-0 opacity-40"></div>
+    <!-- Dynamic Background Carousel Container (Targeted by script ID #heroCarousel) -->
+    <div id="heroCarousel" class="absolute inset-0 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/60 z-10"></div>
+    </div>
 
-    <div class="absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-amber-400/10 blur-3xl"></div>
-    <div class="absolute -bottom-40 -left-40 h-[30rem] w-[30rem] rounded-full bg-blue-500/10 blur-3xl"></div>
+    <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
 
-    <div class="relative mx-auto max-w-7xl px-5">
+    <div class="absolute -right-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-amber-400/10 blur-3xl z-10"></div>
+    <div class="absolute -bottom-40 -left-40 h-[30rem] w-[30rem] rounded-full bg-blue-500/10 blur-3xl z-10"></div>
+
+    <div class="relative z-25 mx-auto max-w-7xl px-5">
 
       <div class="max-w-4xl">
 
@@ -455,12 +460,13 @@
 
           </a>
 
-          <a href="https://wa.me/27818276288"
+          <!-- Updated WhatsApp Link to Frans (+27 81 550 7926) -->
+          <a href="https://wa.me/27815507926"
              target="_blank"
              rel="noopener"
              class="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 font-bold text-white transition hover:bg-white/10">
 
-            WhatsApp TNSE
+            WhatsApp Frans
 
             <span class="material-symbols-outlined">
               chat

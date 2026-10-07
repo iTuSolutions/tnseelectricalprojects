@@ -693,123 +693,121 @@
   </section>
 
 <!-- =========================================================
-       OUR STORY WITH FIXED PARALLAX BACKGROUND
-  ========================================================== -->
-  <section class="relative overflow-hidden py-20 lg:py-28">
-    
-    <!-- Fixed Parallax Background Container (Scoped exclusively to this section) -->
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-      <div id="parallaxBg" class="absolute inset-0 w-full h-full"></div>
-      <!-- Dark overlay for high contrast and readability against text cards -->
-      <div class="absolute inset-0 bg-slate-950/85 dark:bg-slate-950/90 z-10"></div>
+     OUR STORY (PARALLAX BACKGROUND CONFINED TO THIS SECTION ONLY)
+========================================================== -->
+<section class="relative overflow-hidden py-20 lg:py-28">
+  
+  <!-- Scoped Background Container (Absolute positioning keeps it inside this section only) -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div id="parallaxBg" class="absolute inset-0 w-full h-full"></div>
+    <!-- Dark overlay for high contrast and readability -->
+    <div class="absolute inset-0 bg-slate-950/85 dark:bg-slate-950/90 z-10"></div>
+  </div>
+
+  <!-- Section Content Layer -->
+  <div class="relative z-20 mx-auto max-w-7xl px-5">
+
+    <div class="mx-auto max-w-3xl text-center reveal">
+
+      <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-400">
+        Our Story
+      </p>
+
+      <h2 class="mt-4 text-3xl font-black tracking-tight text-white md:text-4xl">
+        From electrical services to integrated energy solutions
+      </h2>
+
+      <p class="mt-5 leading-8 text-slate-300">
+        TNSE has developed its service offering around the changing needs
+        of clients who require dependable electrical infrastructure
+        and backup power solutions.
+      </p>
+
     </div>
 
-    <!-- Section Content Layer -->
-    <div class="relative z-20 mx-auto max-w-7xl px-5">
 
-      <div class="mx-auto max-w-3xl text-center reveal">
+    <div class="relative mt-16">
 
-        <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-400">
-          Our Story
-        </p>
+      <!-- Timeline line -->
+      <div class="absolute left-5 top-0 hidden h-full w-px bg-white/10 md:block"></div>
 
-        <h2 class="mt-4 text-3xl font-black tracking-tight text-white md:text-4xl">
-          From electrical services to integrated energy solutions
-        </h2>
+      <div class="space-y-10">
 
-        <p class="mt-5 leading-8 text-slate-300">
-          TNSE has developed its service offering around the changing needs
-          of clients who require dependable electrical infrastructure
-          and backup power solutions.
-        </p>
+        <!-- 2017 -->
+        <div class="reveal relative md:pl-16">
 
-      </div>
+          <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
+            <span class="material-symbols-outlined">flag</span>
+          </div>
 
+          <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
 
-      <div class="relative mt-16">
+            <span class="text-sm font-black text-amber-400">
+              2017
+            </span>
 
-        <!-- Timeline line -->
-        <div class="absolute left-5 top-0 hidden h-full w-px bg-white/10 md:block"></div>
+            <h3 class="mt-2 text-xl font-bold text-white">
+              TNSE Electrical Projects established
+            </h3>
 
-        <div class="space-y-10">
-
-          <!-- 2017 -->
-          <div class="reveal relative md:pl-16">
-
-            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
-              <span class="material-symbols-outlined">flag</span>
-            </div>
-
-            <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
-
-              <span class="text-sm font-black text-amber-400">
-                2017
-              </span>
-
-              <h3 class="mt-2 text-xl font-bold text-white">
-                TNSE Electrical Projects established
-              </h3>
-
-              <p class="mt-3 leading-7 text-slate-300">
-                TNSE Electrical Projects was established with a focus on
-                providing electrical services and practical project solutions.
-              </p>
-
-            </div>
+            <p class="mt-3 leading-7 text-slate-300">
+              TNSE Electrical Projects was established with a focus on
+              providing electrical services and practical project solutions.
+            </p>
 
           </div>
 
+        </div>
 
-          <!-- Electrical -->
-          <div class="reveal relative md:pl-16">
 
-            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-slate-950 text-amber-400 border border-amber-400/30 md:grid">
-              <span class="material-symbols-outlined">bolt</span>
-            </div>
+        <!-- Electrical -->
+        <div class="reveal relative md:pl-16">
 
-            <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
+          <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-slate-950 text-amber-400 border border-amber-400/30 md:grid">
+            <span class="material-symbols-outlined">bolt</span>
+          </div>
 
-              <span class="text-sm font-black text-amber-400">
-                ELECTRICAL SERVICES
-              </span>
+          <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
 
-              <h3 class="mt-2 text-xl font-bold text-white">
-                Expanding electrical capabilities
-              </h3>
+            <span class="text-sm font-black text-amber-400">
+              ELECTRICAL SERVICES
+            </span>
 
-              <p class="mt-3 leading-7 text-slate-300">
-                The service offering includes electrical installations,
-                maintenance, repairs, wiring, distribution and fault finding.
-              </p>
+            <h3 class="mt-2 text-xl font-bold text-white">
+              Expanding electrical capabilities
+            </h3>
 
-            </div>
+            <p class="mt-3 leading-7 text-slate-300">
+              The service offering includes electrical installations,
+              maintenance, repairs, wiring, distribution and fault finding.
+            </p>
 
           </div>
 
+        </div>
 
-          <!-- Energy & Backup -->
-          <div class="reveal relative md:pl-16">
 
-            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
-              <span class="material-symbols-outlined">bolt</span>
-            </div>
+        <!-- Energy & Backup -->
+        <div class="reveal relative md:pl-16">
 
-            <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
+          <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
+            <span class="material-symbols-outlined">bolt</span>
+          </div>
 
-              <span class="text-sm font-black text-amber-400">
-                ENERGY & POWER SOLUTIONS
-              </span>
+          <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
 
-              <h3 class="mt-2 text-xl font-bold text-white">
-                Moving toward reliable energy solutions
-              </h3>
+            <span class="text-sm font-black text-amber-400">
+              ENERGY & POWER SOLUTIONS
+            </span>
 
-              <p class="mt-3 leading-7 text-slate-300">
-                TNSE's offering extends into power continuity systems,
-                inverter installations, battery storage and backup solutions.
-              </p>
+            <h3 class="mt-2 text-xl font-bold text-white">
+              Moving toward reliable energy solutions
+            </h3>
 
-            </div>
+            <p class="mt-3 leading-7 text-slate-300">
+              TNSE's offering extends into power continuity systems,
+              inverter installations, battery storage and backup solutions.
+            </p>
 
           </div>
 
@@ -818,8 +816,9 @@
       </div>
 
     </div>
-  </section>
 
+  </div>
+</section>
 
   <!-- =========================================================
         MISSION VISION VALUES

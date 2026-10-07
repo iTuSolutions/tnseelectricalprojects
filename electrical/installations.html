@@ -405,17 +405,22 @@
                                                       
     <main>
 
-  <!-- =========================================================
-       ELECTRICAL INSTALLATIONS HERO
+<!-- =========================================================
+       ELECTRICAL INSTALLATIONS HERO WITH DYNAMIC CAROUSEL
   ========================================================== -->
   <section class="relative overflow-hidden bg-slate-950 py-24 md:py-32">
 
-    <div class="hero-grid absolute inset-0 opacity-40"></div>
+    <!-- Dynamic Background Carousel Container (Targeted by script ID #heroCarousel) -->
+    <div id="heroCarousel" class="absolute inset-0 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/70 z-10"></div>
+    </div>
 
-    <div class="absolute -right-32 top-10 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl"></div>
-    <div class="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+    <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
 
-    <div class="relative mx-auto max-w-7xl px-5">
+    <div class="absolute -right-32 top-10 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl z-10"></div>
+    <div class="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl z-10"></div>
+
+    <div class="relative z-20 mx-auto max-w-7xl px-5">
 
       <div class="max-w-4xl">
 
@@ -474,7 +479,7 @@
       <!-- Hero highlights -->
       <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 backdrop-blur">
 
           <span class="material-symbols-outlined text-amber-400">
             home
@@ -491,7 +496,7 @@
         </div>
 
 
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 backdrop-blur">
 
           <span class="material-symbols-outlined text-amber-400">
             business
@@ -508,7 +513,7 @@
         </div>
 
 
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 backdrop-blur">
 
           <span class="material-symbols-outlined text-amber-400">
             cable
@@ -525,7 +530,7 @@
         </div>
 
 
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 backdrop-blur">
 
           <span class="material-symbols-outlined text-amber-400">
             electrical_panel
@@ -545,7 +550,6 @@
 
     </div>
   </section>
-
 
   <!-- =========================================================
        INTRODUCTION

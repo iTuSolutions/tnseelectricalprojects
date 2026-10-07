@@ -693,15 +693,15 @@
   </section>
 
 <!-- =========================================================
-       OUR STORY — PARALLAX FIXED SCROLL SECTION
+       OUR STORY WITH FIXED PARALLAX BACKGROUND
   ========================================================== -->
-  <section class="relative overflow-hidden bg-slate-950 py-20 lg:py-28">
-
-    <!-- Fixed Parallax Background Container (Targeted by script ID #parallaxBg) -->
+  <section class="relative overflow-hidden py-20 lg:py-28">
+    
+    <!-- Fixed Parallax Background Container (Scoped exclusively to this section) -->
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       <div id="parallaxBg" class="absolute inset-0 w-full h-full"></div>
-      <!-- Dark Overlay for Readability -->
-      <div class="absolute inset-0 bg-slate-950/85 z-10"></div>
+      <!-- Dark overlay for high contrast and readability against text cards -->
+      <div class="absolute inset-0 bg-slate-950/85 dark:bg-slate-950/90 z-10"></div>
     </div>
 
     <!-- Section Content Layer -->
@@ -736,11 +736,11 @@
           <!-- 2017 -->
           <div class="reveal relative md:pl-16">
 
-            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid shadow-lg">
+            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
               <span class="material-symbols-outlined">flag</span>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-slate-900/90 p-7 backdrop-blur shadow-xl">
+            <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
 
               <span class="text-sm font-black text-amber-400">
                 2017
@@ -763,11 +763,11 @@
           <!-- Electrical -->
           <div class="reveal relative md:pl-16">
 
-            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full border border-white/20 bg-slate-950 text-amber-400 md:grid shadow-lg">
+            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-slate-950 text-amber-400 border border-amber-400/30 md:grid">
               <span class="material-symbols-outlined">bolt</span>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-slate-900/90 p-7 backdrop-blur shadow-xl">
+            <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
 
               <span class="text-sm font-black text-amber-400">
                 ELECTRICAL SERVICES
@@ -790,11 +790,11 @@
           <!-- Energy & Backup -->
           <div class="reveal relative md:pl-16">
 
-            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid shadow-lg">
+            <div class="absolute left-0 hidden h-10 w-10 place-items-center rounded-full bg-amber-400 text-slate-950 md:grid">
               <span class="material-symbols-outlined">bolt</span>
             </div>
 
-            <div class="rounded-3xl border border-white/10 bg-slate-900/90 p-7 backdrop-blur shadow-xl">
+            <div class="rounded-3xl border border-white/10 bg-slate-900/80 p-7 backdrop-blur">
 
               <span class="text-sm font-black text-amber-400">
                 ENERGY & POWER SOLUTIONS

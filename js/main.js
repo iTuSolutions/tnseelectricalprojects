@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
 // ==========================================
 // 2. Image Carousel Script
 // ==========================================
@@ -167,10 +166,37 @@ document.addEventListener("DOMContentLoaded", function () {
         "/tnseelectricalprojects/images/hero/tnse (30).jpg"
     ];
 
-    // Carousel initialization logic can be attached here using CarouselImages
-    console.log("Carousel images loaded:", CarouselImages.length);
-});
+    // Shuffle array randomly
+    for (let i = CarouselImages.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [CarouselImages[i], CarouselImages[j]] = [CarouselImages[j], CarouselImages[i]];
+    }
 
+    const carouselContainer = document.getElementById("heroCarousel");
+    if (!carouselContainer) return;
+
+    CarouselImages.forEach((src, index) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `TNSE Electrical Project Background ${index + 1}`;
+        img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+        carouselContainer.appendChild(img);
+    });
+
+    let currentIndex = 0;
+    const slides = carouselContainer.querySelectorAll("img");
+    if (slides.length === 0) return;
+
+    setInterval(() => {
+        slides[currentIndex].classList.remove("opacity-100");
+        slides[currentIndex].classList.add("opacity-0");
+
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        slides[currentIndex].classList.remove("opacity-0");
+        slides[currentIndex].classList.add("opacity-100");
+    }, 4500);
+});
 
 // ==========================================
 // 3. Drawer & Lightbox Script

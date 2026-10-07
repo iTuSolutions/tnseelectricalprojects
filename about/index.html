@@ -1364,161 +1364,6 @@
       
       <div class="text-center reveal max-w-3xl mx-auto">
         <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
-          Project Gallery & Archives
-        </p>
-        <h2 class="mt-4 text-3xl font-black text-slate-950 dark:text-white md:text-4xl">
-          Captured Field Execution
-        </h2>
-        <p class="mt-4 text-slate-600 dark:text-slate-400 leading-8">
-          Explore our extensive project catalogs. Access full 30-item archives for Electrical Installations and Solar Solutions.
-        </p>
-      </div>
-
-      <!-- Archive Category Trigger Cards -->
-      <div class="mt-12 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-        
-        <!-- Electrical Archive Trigger -->
-        <div onclick="openLeftDrawer('electrical')" class="reveal group relative overflow-hidden rounded-3xl bg-slate-950 border border-slate-200 dark:border-white/10 p-8 cursor-pointer shadow-xl hover:border-amber-400 transition-all duration-300">
-          <div class="flex items-center gap-4">
-            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-400/10 text-amber-400">
-              <span class="material-symbols-outlined text-3xl">electrical_services</span>
-            </div>
-            <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-amber-400">30-Item Archive</span>
-              <h3 class="text-2xl font-black text-white mt-1">Electrical Installations</h3>
-            </div>
-          </div>
-          <p class="mt-4 text-slate-400 leading-7">
-            Browse through our complete collection of commercial, industrial, and residential electrical works.
-          </p>
-          <div class="mt-6 inline-flex items-center gap-2 font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
-            Open Electrical Catalog <span class="material-symbols-outlined">arrow_forward</span>
-          </div>
-        </div>
-
-        <!-- Solar Archive Trigger -->
-        <div onclick="openLeftDrawer('solar')" class="reveal group relative overflow-hidden rounded-3xl bg-slate-950 border border-slate-200 dark:border-white/10 p-8 cursor-pointer shadow-xl hover:border-amber-400 transition-all duration-300">
-          <div class="flex items-center gap-4">
-            <div class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-400/10 text-amber-400">
-              <span class="material-symbols-outlined text-3xl">solar_power</span>
-            </div>
-            <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-amber-400">30-Item Archive</span>
-              <h3 class="text-2xl font-black text-white mt-1">Solar & Energy Solutions</h3>
-            </div>
-          </div>
-          <p class="mt-4 text-slate-400 leading-7">
-            Explore our hybrid inverter setups, solar array configurations, and high-capacity battery banks.
-          </p>
-          <div class="mt-6 inline-flex items-center gap-2 font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
-            Open Solar Catalog <span class="material-symbols-outlined">arrow_forward</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Quick Featured Gallery Grid -->
-      <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="reveal group relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-950 shadow-md cursor-pointer" onclick="galleryItems = projectArchives.electrical.items; buildThumbnails(); openImageDrawer(0);">
-          <img src="/tnseelectricalprojects/images/electrical/installations/tnse (1).jpg" alt="Gallery Project 1" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-            <span class="text-white font-bold text-sm">View in Full Drawer</span>
-          </div>
-        </div>
-        <div class="reveal group relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-950 shadow-md cursor-pointer" onclick="galleryItems = projectArchives.electrical.items; buildThumbnails(); openImageDrawer(1);">
-          <img src="/tnseelectricalprojects/images/electrical/installations/tnse (2).jpg" alt="Gallery Project 2" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-            <span class="text-white font-bold text-sm">View in Full Drawer</span>
-          </div>
-        </div>
-        <div class="reveal group relative aspect-[4/3] overflow-hidden rounded-3xl bg-slate-950 shadow-md cursor-pointer" onclick="galleryItems = projectArchives.solar.items; buildThumbnails(); openImageDrawer(0);">
-          <img src="/tnseelectricalprojects/images/solar/installations/tnse (1).jpg" alt="Gallery Project 3" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-6">
-            <span class="text-white font-bold text-sm">View in Full Drawer</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- =========================================================
-        COMPANY CREDENTIALS
-  ========================================================== -->
-  <section class="bg-white py-20 dark:bg-slate-950 lg:py-24">
-
-    <div class="mx-auto max-w-5xl px-5">
-
-      <div class="text-center reveal">
-
-        <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
-          Company Information
-        </p>
-
-        <h2 class="mt-4 text-3xl font-black text-slate-950 dark:text-white">
-          TNSE Electrical Projects
-        </h2>
-
-      </div>
-
-
-      <div class="mt-10 overflow-hidden rounded-3xl border border-slate-200 dark:border-white/10">
-
-        <div class="grid divide-y divide-slate-200 dark:divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0">
-
-          <div class="p-6">
-            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
-              Established
-            </p>
-            <p class="mt-2 font-bold text-slate-950 dark:text-white">
-              2017
-            </p>
-          </div>
-
-          <div class="p-6">
-            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
-              Registration Number
-            </p>
-            <p class="mt-2 font-bold text-slate-950 dark:text-white">
-              2017/417275/07
-            </p>
-          </div>
-
-          <div class="p-6">
-            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
-              BEE Status
-            </p>
-            <p class="mt-2 font-bold text-slate-950 dark:text-white">
-              Level 1 Contributor
-            </p>
-          </div>
-
-          <div class="p-6">
-            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
-              Location
-            </p>
-            <p class="mt-2 font-bold text-slate-950 dark:text-white">
-              Moletjie, Polokwane, Limpopo
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-<!-- =========================================================
-        IMAGE GALLERY & DRAWER SHOWCASE
-  ========================================================== -->
-  <section class="bg-slate-50 py-20 dark:bg-slate-900/50 lg:py-28">
-    <div class="mx-auto max-w-7xl px-5">
-      
-      <div class="text-center reveal max-w-3xl mx-auto">
-        <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
           Project Portfolios
         </p>
         <h2 class="mt-4 text-3xl font-black text-slate-950 dark:text-white md:text-4xl">
@@ -1592,6 +1437,75 @@
             <span class="text-white font-bold text-sm">View in Full Drawer</span>
           </div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- =========================================================
+        COMPANY CREDENTIALS
+  ========================================================== -->
+  <section class="bg-white py-20 dark:bg-slate-950 lg:py-24">
+
+    <div class="mx-auto max-w-5xl px-5">
+
+      <div class="text-center reveal">
+
+        <p class="text-sm font-bold uppercase tracking-[.22em] text-amber-500">
+          Company Information
+        </p>
+
+        <h2 class="mt-4 text-3xl font-black text-slate-950 dark:text-white">
+          TNSE Electrical Projects
+        </h2>
+
+      </div>
+
+
+      <div class="mt-10 overflow-hidden rounded-3xl border border-slate-200 dark:border-white/10">
+
+        <div class="grid divide-y divide-slate-200 dark:divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0">
+
+          <div class="p-6">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
+              Established
+            </p>
+            <p class="mt-2 font-bold text-slate-950 dark:text-white">
+              2017
+            </p>
+          </div>
+
+          <div class="p-6">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
+              Registration Number
+            </p>
+            <p class="mt-2 font-bold text-slate-950 dark:text-white">
+              2017/417275/07
+            </p>
+          </div>
+
+          <div class="p-6">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
+              BEE Status
+            </p>
+            <p class="mt-2 font-bold text-slate-950 dark:text-white">
+              Level 1 Contributor
+            </p>
+          </div>
+
+          <div class="p-6">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500">
+              Location
+            </p>
+            <p class="mt-2 font-bold text-slate-950 dark:text-white">
+              Moletjie, Polokwane, Limpopo
+            </p>
+          </div>
+
+        </div>
+
       </div>
 
     </div>

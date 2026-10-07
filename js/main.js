@@ -1,6 +1,41 @@
 // ==========================================
 // 1. TNSE Electrical Projects - Main Site Script
 // ==========================================
+
+// Global helper for mobile accordions (referenced in inline onclick attributes)
+window.toggleAccordion = function (id, button) {
+  const content = document.getElementById(id);
+  if (!content) return;
+
+  const isHidden = content.classList.contains('hidden');
+  const mobileNav = document.getElementById('mobileNav');
+
+  // Close other open accordions in the mobile menu
+  if (mobileNav) {
+    mobileNav.querySelectorAll('[id$="Accordion"]').forEach(el => {
+      if (el.id !== id) {
+        el.classList.add('hidden');
+      }
+    });
+    mobileNav.querySelectorAll('button[onclick^="toggleAccordion"]').forEach(btn => {
+      if (btn !== button) {
+        const btnIcon = btn.querySelector('.material-symbols-outlined:last-child');
+        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
+  const icon = button.querySelector('.material-symbols-outlined:last-child');
+
+  if (isHidden) {
+    content.classList.remove('hidden');
+    if (icon) icon.style.transform = 'rotate(180deg)';
+  } else {
+    content.classList.add('hidden');
+    if (icon) icon.style.transform = 'rotate(0deg)';
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Menu Toggle
@@ -8,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.getElementById('mobileNav');
   const menuIcon = document.getElementById('menuIcon');
 
-  if (mobileMenuButton && mobileNav) {
+  if (mobileMenuButton && mobileNav && menuIcon) {
     mobileMenuButton.addEventListener('click', () => {
       mobileNav.classList.toggle('hidden');
       if (mobileNav.classList.contains('hidden')) {
@@ -19,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Theme Toggle (Syncs both #themeToggle & #mobileThemeToggle & [data-theme])
+  // Theme Toggle (Syncs both #themeToggle & #mobileThemeToggle)
   const root = document.documentElement;
   const saved = localStorage.getItem('tnse-theme');
 
@@ -43,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Custom Mobile Toggles
   document.querySelectorAll('[data-mobile-toggle]').forEach(b => 
     b.addEventListener('click', () => {
-      document.getElementById(b.dataset.mobileToggle)?.classList.toggle('open');
+      const target = document.getElementById(b.dataset.mobileToggle);
+      if (target) target.classList.toggle('open');
     })
   );
 
@@ -53,7 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const a = b.nextElementSibling;
       if (a) {
         a.classList.toggle('hidden');
-        b.querySelector('[data-icon]')?.classList.toggle('rotate-45');
+        const icon = b.querySelector('[data-icon]');
+        if (icon) icon.classList.toggle('rotate-45');
       }
     })
   );
@@ -91,36 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
 });
-
-// Exclusive Mobile Navigation Accordion Toggle
-window.toggleAccordion = function(id, button) {
-  const content = document.getElementById(id);
-  const isHidden = content.classList.contains('hidden');
-
-  const mobileNav = document.getElementById('mobileNav');
-  if (mobileNav) {
-    mobileNav.querySelectorAll('[id$="Accordion"]').forEach(el => {
-      if (el.id !== id) {
-        el.classList.add('hidden');
-      }
-    });
-    mobileNav.querySelectorAll('button[onclick^="toggleAccordion"]').forEach(btn => {
-      if (btn !== button) {
-        const btnIcon = btn.querySelector('.material-symbols-outlined:last-child');
-        if (btnIcon) btnIcon.style.transform = 'rotate(0deg)';
-      }
-    });
-  }
-
-  const icon = button.querySelector('.material-symbols-outlined:last-child');
-  if (isHidden) {
-    content.classList.remove('hidden');
-    if (icon) icon.style.transform = 'rotate(180deg)';
-  } else {
-    content.classList.add('hidden');
-    if (icon) icon.style.transform = 'rotate(0deg)';
-  }
-};
 
 
 // ==========================================

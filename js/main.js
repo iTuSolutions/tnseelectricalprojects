@@ -397,3 +397,77 @@ function closeLeftDrawer() {
     document.body.classList.remove('overflow-hidden');
   }, 400);
 }
+
+
+
+// ==========================================
+// Parallax Background Fixed Scroll Script
+// ==========================================
+document.addEventListener("DOMContentLoaded", function () {
+    let parallaxImages = [
+        "/tnseelectricalprojects/images/parallax/tnse (1).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (2).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (3).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (4).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (5).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (6).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (7).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (8).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (9).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (10).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (11).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (12).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (13).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (14).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (15).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (16).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (17).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (18).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (19).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (20).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (21).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (22).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (23).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (24).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (25).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (26).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (27).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (28).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (29).jpg",
+        "/tnseelectricalprojects/images/parallax/tnse (30).jpg"
+    ];
+
+    // Randomly shuffle the array on load
+    for (let i = parallaxImages.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [parallaxImages[i], parallaxImages[j]] = [parallaxImages[j], parallaxImages[i]];
+    }
+
+    const parallaxContainer = document.getElementById("parallaxBg");
+    if (!parallaxContainer) return;
+
+    // Inject image elements into the container
+    parallaxImages.forEach((src, index) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `TNSE Parallax Background ${index + 1}`;
+        img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`;
+        parallaxContainer.appendChild(img);
+    });
+
+    let currentIndex = 0;
+    const slides = parallaxContainer.querySelectorAll("img");
+    if (slides.length === 0) return;
+
+    // Crossfade images every 5 seconds
+    setInterval(() => {
+        slides[currentIndex].classList.remove("opacity-100");
+        slides[currentIndex].classList.add("opacity-0");
+
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        slides[currentIndex].classList.remove("opacity-0");
+        slides[currentIndex].classList.add("opacity-100");
+    }, 5000);
+});
+

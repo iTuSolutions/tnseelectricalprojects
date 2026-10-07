@@ -405,13 +405,19 @@
                                                   
   <main>
 
-  <!-- =========================================================
-       HERO — ELECTRICAL MAINTENANCE
+<!-- =========================================================
+       HERO — ELECTRICAL MAINTENANCE WITH CAROUSEL BACKGROUND
   ========================================================== -->
   <section class="relative overflow-hidden bg-slate-950 py-24 md:py-32">
-    <div class="hero-grid absolute inset-0 opacity-40"></div>
+    
+    <!-- Dynamic Background Carousel Container (Targeted by script ID #heroCarousel) -->
+    <div id="heroCarousel" class="absolute inset-0 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/60 z-10"></div>
+    </div>
 
-    <div class="relative mx-auto max-w-7xl px-5">
+    <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
+
+    <div class="relative z-20 mx-auto max-w-7xl px-5">
       <div class="max-w-4xl">
         <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-400">
           ELECTRICAL / MAINTENANCE

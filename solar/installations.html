@@ -400,16 +400,23 @@
                                                 
 <main>
 
-  <!-- =========================================================
-       HERO — SOLAR INSTALLATIONS
+<!-- =========================================================
+       HERO — SOLAR INSTALLATIONS (WITH DYNAMIC CAROUSEL)
   ========================================================== -->
   <section class="relative overflow-hidden bg-slate-950 py-24 md:py-32">
-    <div class="hero-grid absolute inset-0 opacity-40"></div>
+    
+    <!-- Dynamic Background Carousel Container (Targeted by script ID #heroCarousel) -->
+    <div id="heroCarousel" class="absolute inset-0 z-0 overflow-hidden">
+      <!-- Dark overlay gradient to ensure text remains clearly readable over photos -->
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/70 z-10"></div>
+    </div>
 
-    <div class="absolute -right-20 top-20 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl"></div>
-    <div class="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"></div>
+    <div class="hero-grid absolute inset-0 opacity-40 z-10"></div>
 
-    <div class="relative mx-auto max-w-7xl px-5">
+    <div class="absolute -right-20 top-20 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl z-10"></div>
+    <div class="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl z-10"></div>
+
+    <div class="relative z-20 mx-auto max-w-7xl px-5">
       <div class="max-w-4xl">
 
         <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/10 px-4 py-2">
@@ -448,7 +455,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- =========================================================
        INTRODUCTION

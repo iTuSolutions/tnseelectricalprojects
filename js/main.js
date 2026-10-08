@@ -398,3 +398,20 @@ document.addEventListener("DOMContentLoaded", function () {
       caption: `High-standard electrical installation project capture #${i + 1}.`
     }));
 });
+
+
+
+
+
+
+// ==========================================
+// Section Parallax Background Script (Picsum)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const bgImg = document.getElementById("parallaxBg");
+    if (bgImg) {
+        // Generates a random Picsum ID between 10 and 100 on every page load
+        const randomId = Math.floor(Math.random() * 90) + 10;
+        bgImg.src = `https://picsum.photos/id/${randomId}/1920/1080`;
+    }
+});

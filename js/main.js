@@ -199,8 +199,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ==========================================
-// 3. Drawer & Lightbox Script
+// 3. Drawer & Lightbox Script (with 30-Item Thumbnails Grid)
 // ==========================================
+let drawerGalleryItems = [];
+let drawerCurrentIndex = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     let DrawerImages = [
         "/tnseelectricalprojects/images/drawer/tnse (1).jpg",
@@ -235,78 +238,125 @@ document.addEventListener("DOMContentLoaded", function () {
         "/tnseelectricalprojects/images/drawer/tnse (30).jpg"
     ];
 
-    // Initialize Drawer items and touch/fullscreen capabilities
     drawerGalleryItems = DrawerImages.map((src, i) => ({
-      src: src,
-      title: `Drawer Project ${i + 1}`,
-      caption: `Field installation record #${i + 1} from drawer archive.`
+        src: src,
+        title: `Drawer Project ${i + 1}`,
+        caption: `Field installation record #${i + 1} from drawer archive.`
     }));
+
+    // Populate Thumbnail Grid on Load
+    const thumbGrid = document.getElementById('drawerThumbnailGrid');
+    if (thumbGrid) {
+        thumbGrid.innerHTML = '';
+        drawerGalleryItems.forEach((item, index) => {
+            const thumbBtn = document.createElement('button');
+            thumbBtn.type = 'button';
+            thumbBtn.className = `group relative aspect-square overflow-hidden rounded-xl border border-slate-800 bg-slate-950 transition hover:border-amber-400 focus:outline-none`;
+            thumbBtn.onclick = () => openImageDrawer(index);
+            thumbBtn.innerHTML = `
+                <img src="${item.src}" alt="${item.title}" class="h-full w-full object-cover transition duration-300 group-hover:scale-110" loading="lazy">
+                <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-transparent transition"></div>
+            `;
+            thumbGrid.appendChild(thumbBtn);
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener("keydown", function (e) {
+        const modal = document.getElementById('imageDrawerModal');
+        if (!modal || modal.classList.contains('hidden')) return;
+
+        if (e.key === "ArrowRight") nextDrawerImage();
+        else if (e.key === "ArrowLeft") prevDrawerImage();
+        else if (e.key === "Escape") closeImageDrawer();
+    });
+
+    // Parallax background randomization
+    const bgImg = document.getElementById("parallaxBg");
+    if (bgImg) {
+        const randomId = Math.floor(Math.random() * 90) + 10;
+        bgImg.style.backgroundImage = `url('https://picsum.photos/id/${randomId}/1920/1080')`;
+    }
 });
 
-let drawerGalleryItems = [];
-let drawerCurrentIndex = 0;
-
 function openImageDrawer(index) {
-  drawerCurrentIndex = index >= 0 && index < drawerGalleryItems.length ? index : 0;
-  updateDrawerModalContent();
+    drawerCurrentIndex = index >= 0 && index < drawerGalleryItems.length ? index : 0;
+    updateDrawerModalContent();
 
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal) {
-    modal.classList.remove('hidden');
-    setTimeout(() => modal.classList.remove('opacity-0'), 10);
-    document.body.classList.add('overflow-hidden');
-  }
+    const modal = document.getElementById('imageDrawerModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        document.body.classList.add('overflow-hidden');
+    }
 }
 
 function closeImageDrawer() {
-  if (document.fullscreenElement) {
-    document.exitFullscreen().catch(() => {});
-  }
-  const modal = document.getElementById('imageDrawerModal');
-  if (modal) {
-    modal.classList.add('opacity-0');
-    setTimeout(() => {
-      modal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }, 300);
-  }
+    if (document.fullscreenElement) {
+        document.exitFullscreen().catch(() => {});
+    }
+    const modal = document.getElementById('imageDrawerModal');
+    if (modal) {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    }
 }
 
 function nextDrawerImage() {
-  drawerCurrentIndex = (drawerCurrentIndex + 1) % drawerGalleryItems.length;
-  updateDrawerModalContent();
+    if (drawerGalleryItems.length === 0) return;
+    drawerCurrentIndex = (drawerCurrentIndex + 1) % drawerGalleryItems.length;
+    updateDrawerModalContent();
 }
 
 function prevDrawerImage() {
-  drawerCurrentIndex = (drawerCurrentIndex - 1 + drawerGalleryItems.length) % drawerGalleryItems.length;
-  updateDrawerModalContent();
+    if (drawerGalleryItems.length === 0) return;
+    drawerCurrentIndex = (drawerCurrentIndex - 1 + drawerGalleryItems.length) % drawerGalleryItems.length;
+    updateDrawerModalContent();
 }
 
 function updateDrawerModalContent() {
-  if (drawerGalleryItems.length === 0) return;
-  const item = drawerGalleryItems[drawerCurrentIndex];
-  const mainImage = document.getElementById('drawerMainImage');
-  if (mainImage) mainImage.src = item.src;
-  
-  const titleElem = document.getElementById('drawerImageTitle');
-  if (titleElem) titleElem.textContent = item.title;
-  
-  const captionElem = document.getElementById('drawerImageCaption');
-  if (captionElem) captionElem.textContent = item.caption;
-  
-  const counterElem = document.getElementById('drawerImageCounter');
-  if (counterElem) counterElem.textContent = `${drawerCurrentIndex + 1} / ${drawerGalleryItems.length}`;
+    if (drawerGalleryItems.length === 0) return;
+    const item = drawerGalleryItems[drawerCurrentIndex];
+    
+    const mainImage = document.getElementById('drawerMainImage');
+    if (mainImage) mainImage.src = item.src;
+    
+    const titleElem = document.getElementById('drawerImageTitle');
+    if (titleElem) titleElem.textContent = item.title;
+    
+    const captionElem = document.getElementById('drawerImageCaption');
+    if (captionElem) captionElem.textContent = item.caption;
+    
+    const counterElem = document.getElementById('drawerImageCounter');
+    if (counterElem) counterElem.textContent = `${drawerCurrentIndex + 1} / ${drawerGalleryItems.length}`;
+
+    // Highlight active thumbnail
+    const thumbGrid = document.getElementById('drawerThumbnailGrid');
+    if (thumbGrid) {
+        const buttons = thumbGrid.querySelectorAll('button');
+        buttons.forEach((btn, idx) => {
+            if (idx === drawerCurrentIndex) {
+                btn.classList.add('border-amber-400', 'ring-2', 'ring-amber-400/50');
+            } else {
+                btn.classList.remove('border-amber-400', 'ring-2', 'ring-amber-400/50');
+            }
+        });
+    }
 }
 
 function toggleDrawerFullScreen() {
-  const container = document.getElementById('imageDrawerModalContent') || document.getElementById('imageDrawerModal');
-  if (!document.fullscreenElement) {
-    container.requestFullscreen().catch(err => console.error(err));
-  } else {
-    document.exitFullscreen().catch(() => {});
-  }
+    const container = document.getElementById('imageDrawerModalContent') || document.getElementById('imageDrawerModal');
+    if (!container) return;
+    
+    if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(err => console.error(err));
+    } else {
+        document.exitFullscreen().catch(() => {});
+    }
 }
-
 
 // ==========================================
 // 4. Parallax Background Fixed Scroll Script

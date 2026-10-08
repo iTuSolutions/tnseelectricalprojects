@@ -1416,6 +1416,73 @@
 
   </div>
 
+<!-- =========================================================
+     SOLAR PROJECT SECTION WITH EMBEDDED ARCHIVE DRAWER
+========================================================== -->
+<section class="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+  
+  <!-- Parallax Fixed Background Image from Picsum (Randomized on load / fixed on scroll) -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-slate-950/85 z-10"></div> <!-- Dark overlay for text readability -->
+    <img id="parallaxBg" src="https://picsum.photos/1920/1080?random=1" alt="TNSE Electrical Projects Background" class="w-full h-full object-cover fixed inset-0 transform scale-105 filter brightness-50">
+  </div>
+
+  <div class="hero-grid absolute inset-0 opacity-40 z-10 pointer-events-none"></div>
+
+  <div class="absolute -right-32 top-10 h-96 w-96 rounded-full bg-amber-400/10 blur-3xl z-10 pointer-events-none"></div>
+  <div class="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl z-10 pointer-events-none"></div>
+
+  <div class="relative z-20 mx-auto max-w-7xl px-5">
+
+    <div class="max-w-4xl">
+
+      <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2">
+        <span class="material-symbols-outlined text-lg text-amber-400">
+          solar_power
+        </span>
+
+        <span class="text-sm font-bold uppercase tracking-[.2em] text-amber-400">
+          COMMERCIAL & RESIDENTIAL SOLAR INSTALLATIONS
+        </span>
+      </div>
+
+      <h1 class="mt-6 text-4xl font-black leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+        High-Performance Solar Systems Engineered For
+        <span class="text-amber-400">Uninterrupted Power.</span>
+      </h1>
+
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
+        TNSE Electrical Projects delivers end-to-end solar power solutions. From bespoke commercial photovoltaic integration and high-capacity battery storage arrays to rigorous maintenance and compliance auditing.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+
+        <a href="../../contact/index.html"
+           class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-6 py-3.5 font-bold text-slate-950 transition hover:bg-amber-300 shadow-lg">
+
+          Request a Consultation
+
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+
+        </a>
+
+        <!-- Trigger Button to Open the Archive Drawer -->
+        <button 
+          type="button" 
+          onclick="openImageDrawer(0)" 
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900/90 border border-slate-700 px-6 py-3.5 font-bold text-white transition hover:bg-slate-800 hover:border-amber-400 shadow-lg">
+          <span class="material-symbols-outlined text-amber-400">folder_open</span>
+          Explore Project Archive Catalog
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <!-- =========================================================
        IMAGE DRAWER & LIGHTBOX MODAL CONTAINER
   ========================================================== -->
@@ -1434,8 +1501,8 @@
             <span class="material-symbols-outlined text-2xl">electrical_services</span>
           </div>
           <div>
-            <h3 id="drawerImageTitle" class="text-lg font-black text-white">Project Catalog</h3>
-            <p id="drawerImageCaption" class="text-xs text-slate-400">/tnseelectricalprojects/images/drawer/</p>
+            <h3 id="drawerImageTitle" class="text-lg font-black text-white">TNSE Verified Field Installation Portfolio</h3>
+            <p id="drawerImageCaption" class="text-xs text-slate-400">Professional Engineering Record Catalog</p>
           </div>
         </div>
 
@@ -1476,6 +1543,18 @@
 
     </div>
   </div>
+
+  <!-- Inline Script for Randomizing Parallax Background -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bgImg = document.getElementById("parallaxBg");
+      if (bgImg) {
+        // Generates a random Picsum ID between 10 and 100 for a fresh high-quality engineering/industrial look on every load
+        const randomId = Math.floor(Math.random() * 90) + 10;
+        bgImg.src = `https://picsum.photos/id/${randomId}/1920/1080`;
+      }
+    });
+  </script>
 
 </section>
 

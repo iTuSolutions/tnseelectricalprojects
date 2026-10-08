@@ -1459,7 +1459,7 @@
         </div>
       </div>
 
-      <!-- Drawer Body / Main Preview Area -->
+      <!-- Drawer Body / Main Preview Area & Thumbnails Grid -->
       <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
         
         <!-- Featured Preview Area -->
@@ -1476,6 +1476,17 @@
 
           <div id="drawerImageCounter" class="absolute bottom-4 right-4 rounded-lg bg-slate-900/90 px-3 py-1 text-xs font-bold text-amber-400 border border-slate-800">
             1 / 30
+          </div>
+        </div>
+
+        <!-- All 30 Image Collections Grid (Thumbnails Below Slides) -->
+        <div class="mt-4">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300">Project Archive Collection (30 Records)</h4>
+            <span class="text-xs text-amber-400 font-medium">Click any thumbnail to preview</span>
+          </div>
+          <div id="drawerThumbnailGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-3">
+            <!-- Populated dynamically via updated JS -->
           </div>
         </div>
 

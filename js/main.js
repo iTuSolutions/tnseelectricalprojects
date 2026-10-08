@@ -240,8 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     drawerGalleryItems = DrawerImages.map((src, i) => ({
         src: src,
-        title: `Drawer Project ${i + 1}`,
-        caption: `Field installation record #${i + 1} from drawer archive.`
+        title: `Project ${i + 1}`,
+        caption: `Field installation record #${i + 1} from all projects images.`
     }));
 
     // Populate Thumbnail Grid on Load

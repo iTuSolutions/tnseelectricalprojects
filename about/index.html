@@ -1421,10 +1421,10 @@
 ========================================================== -->
 <section class="relative overflow-hidden bg-slate-950 py-24 md:py-32">
   
-  <!-- Parallax Fixed Background Image from Picsum (Randomized via separate JS script) -->
+  <!-- Parallax Background Container (Strictly Scoped to This Section Only) -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
     <div class="absolute inset-0 bg-slate-950/85 z-10"></div> <!-- Dark overlay for text readability -->
-    <img id="parallaxBg" src="https://picsum.photos/1920/1080?random=1" alt="TNSE Electrical Projects Background" class="w-full h-full object-cover fixed inset-0 transform scale-105 filter brightness-50">
+    <div id="parallaxBg" class="absolute inset-0 w-full h-full bg-cover bg-center transform scale-105 filter brightness-50" style="background-image: url('https://picsum.photos/1920/1080?random=1'); background-attachment: fixed;"></div>
   </div>
 
   <div class="hero-grid absolute inset-0 opacity-40 z-10 pointer-events-none"></div>

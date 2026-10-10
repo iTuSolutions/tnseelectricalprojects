@@ -998,13 +998,19 @@
 
 
 
-<body class="m-0 flex h-screen items-center justify-center overflow-hidden bg-black [font-family:Inter,sans-serif]">
-	<div class="shrink-0 [--carousel-transition-duration:250ms] [--carousel-transition-ease:ease-out] [--carousel-bg-color-rgb:0,0,0] [--carousel-shadow-color-rgb:128,128,128] [--carousel-item-width:11.5rem] [--carousel-item-height:17.5rem] [--carousel-item-hover-effect:1.075] [--carousel-item-reflection-blur:0.25rem] [--carousel-item-empty-color-rgb:255,255,255] [--carousel-item-glow-color-rgb:255,255,255] [--carousel-item-glow-size:5rem] [--carousel-diameter:50rem] [--carousel-3d-perspective:1000px] [--carousel-3d-perspective-origin:50%_20%] [--carousel-control-button-width:1.25rem] [--carousel-control-button-height:4rem] [--carousel-control-color-rgb:255,255,255] [--carousel-animation-duration:25s] [--carousel-animation-play-state:running] [--carousel-direction-animation-play-state:paused] [--_diameter:50rem] [--_radius:calc(var(--_diameter)/2)] [--_item-width:11.5rem] [--_item-height:17.5rem] [perspective:1000px] [perspective-origin:50%_20%] size-[var(--_diameter)] has-[.left_input:checked]:[--carousel-direction-animation-play-state:running] has-[.right_input:checked]:[--carousel-direction-animation-play-state:paused] max-[48rem]:[--_diameter:37.5rem] max-[48rem]:[--_item-width:8.625rem] max-[48rem]:[--_item-height:13.125rem] max-[32rem]:[--_diameter:30rem] max-[32rem]:[--_item-width:6.9rem] max-[32rem]:[--_item-height:10.5rem] max-[16rem]:[--_diameter:12.5rem] max-[16rem]:[--_item-width:2.875rem] max-[16rem]:[--_item-height:4.375rem]">
+	<section id="gallery" class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black px-5 py-12 text-white">
+		<div class="mb-4 max-w-3xl text-center">
+			<p class="text-sm font-bold uppercase tracking-[.25em] text-amber-400">Execution Showcase</p>
+			<h1 class="mt-3 text-3xl font-black tracking-tight md:text-5xl">Witness Precision Engineering &amp; Solar Excellence</h1>
+			<p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-300">Explore professional electrical installations, robust power distribution systems, and clean energy deployments.</p>
+			<button id="open-gallery" class="mt-5 rounded-full bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-amber-300" type="button">View All Project Images</button>
+		</div>
+		<div class="relative shrink-0 [--carousel-transition-duration:250ms] [--carousel-transition-ease:ease-out] [--carousel-bg-color-rgb:0,0,0] [--carousel-shadow-color-rgb:128,128,128] [--carousel-item-width:4.2rem] [--carousel-item-height:6.4rem] [--carousel-item-hover-effect:1.075] [--carousel-item-reflection-blur:0.25rem] [--carousel-item-empty-color-rgb:255,255,255] [--carousel-item-glow-color-rgb:255,255,255] [--carousel-item-glow-size:5rem] [--carousel-diameter:50rem] [--carousel-3d-perspective:1000px] [--carousel-3d-perspective-origin:50%_20%] [--carousel-control-button-width:1.25rem] [--carousel-control-button-height:4rem] [--carousel-control-color-rgb:255,255,255] [--carousel-animation-duration:25s] [--carousel-animation-play-state:running] [--carousel-direction-animation-play-state:paused] [--_diameter:50rem] [--_radius:calc(var(--_diameter)/2)] [--_item-width:4.2rem] [--_item-height:6.4rem] [perspective:1000px] [perspective-origin:50%_20%] size-[var(--_diameter)] has-[.left_input:checked]:[--carousel-direction-animation-play-state:running] has-[.right_input:checked]:[--carousel-direction-animation-play-state:paused] max-[48rem]:[--_diameter:37.5rem] max-[48rem]:[--_item-width:3.15rem] max-[48rem]:[--_item-height:4.8rem] max-[32rem]:[--_diameter:30rem] max-[32rem]:[--_item-width:2.52rem] max-[32rem]:[--_item-height:3.84rem] max-[16rem]:[--_diameter:12.5rem] max-[16rem]:[--_item-width:1.05rem] max-[16rem]:[--_item-height:1.6rem]">
 		<div class="left absolute left-0 top-[calc(var(--_radius)-var(--carousel-control-button-height)/2)] z-[1] h-[var(--carousel-control-button-height)] w-[var(--carousel-control-button-width)] bg-white opacity-20 transition-opacity duration-[250ms] ease-out hover:opacity-40 has-[:checked]:opacity-80 [clip-path:polygon(0%_50%,100%_0%,100%_100%)]">
-			<input class="size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel left">
+			<input class="left_input size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel left">
 		</div>
 		<div class="right absolute right-0 top-[calc(var(--_radius)-var(--carousel-control-button-height)/2)] z-[1] h-[var(--carousel-control-button-height)] w-[var(--carousel-control-button-width)] bg-white opacity-20 transition-opacity duration-[250ms] ease-out hover:opacity-40 has-[:checked]:opacity-80 [clip-path:polygon(0%_0%,100%_50%,0%_100%)]">
-			<input class="size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel right" checked>
+			<input class="right_input size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel right" checked>
 		</div>
 
 		<div class="has-[.group:hover]:[--carousel-animation-play-state:paused] has-[.group:hover]:[--_direction-animation-play-state:paused] [--_direction-animation-play-state:var(--carousel-direction-animation-play-state)] [--_z:calc(var(--_radius)*-1)] [transform:translateZ(var(--_z))] [transform-style:preserve-3d] [animation:carousel-rotation-reverse_calc(var(--carousel-animation-duration)/2)_reverse_linear_infinite_var(--_direction-animation-play-state)] transition-all duration-[250ms] ease-out">
@@ -1013,189 +1019,63 @@
 			</ul>
 		</div>
 	</div>
-	<dialog id="gallery-lightbox" class="m-auto max-h-[90vh] max-w-[90vw] overflow-auto rounded-xl bg-neutral-950 p-6 text-white shadow-2xl backdrop:bg-black/90">
-		<div class="flex items-center justify-between gap-6">
-			<h2 id="lightbox-title" class="text-lg font-semibold"></h2>
-			<button id="lightbox-close" class="rounded-md border border-white/30 px-3 py-1 hover:bg-white/10" type="button">Close</button>
+	</section>
+
+	<section class="bg-white py-20 dark:bg-slate-950">
+		<div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:items-center">
+			<div>
+				<p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">Specification Standards</p>
+				<h2 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">Complete Transparency in Every Installation</h2>
+				<p class="mt-6 leading-8 text-slate-600 dark:text-slate-400">Every project breakdown provides verified details concerning deployment geography, technical classification, scope of execution, and authentic site photography.</p>
+			</div>
+			<div class="space-y-4">
+				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">location_on</span>
+					<div><h3 class="font-bold text-slate-900 dark:text-white">Deployment Geography</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Active regional service footprint spanning Polokwane, Moletjie, and Limpopo districts.</p></div>
+				</div>
+				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">category</span>
+					<div><h3 class="font-bold text-slate-900 dark:text-white">Technical Classification</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Specialized division across heavy electrical engineering, solar integration, and backup storage.</p></div>
+				</div>
+				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">task_alt</span>
+					<div><h3 class="font-bold text-slate-900 dark:text-white">Scope of Execution</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Rigorous breakdown of professional diagnostics, wiring layouts, and compliance standards delivered.</p></div>
+				</div>
+				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">photo_library</span>
+					<div><h3 class="font-bold text-slate-900 dark:text-white">Verified Visual Records</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">High-definition media libraries integrated directly into every professional portfolio entry.</p></div>
+				</div>
+			</div>
 		</div>
-		<img id="lightbox-image" class="mt-4 max-h-[70vh] max-w-full object-contain" alt="">
-		<p id="lightbox-caption" class="mt-3 text-sm text-neutral-300"></p>
-		<div class="mt-4 flex justify-between gap-3">
-			<button id="lightbox-previous" class="rounded-md border border-white/30 px-4 py-2 hover:bg-white/10" type="button">Previous</button>
-			<button id="lightbox-next" class="rounded-md border border-white/30 px-4 py-2 hover:bg-white/10" type="button">Next</button>
-		</div>
-	</dialog>
+	</section>
 
-    
-
-<!-- =========================================================
-     PROJECT GALLERY (/images/gallery & /images/drawer)
-========================================================== -->
-<section id="gallery" class="bg-slate-50 py-20 dark:bg-slate-900/60">
-  <div class="mx-auto max-w-7xl px-5">
-
-    <div class="text-center reveal">
-      <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">
-        Execution Showcase
-      </p>
-      <h2 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">
-        Witness Precision Engineering & Solar Excellence
-      </h2>
-      <p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-600 dark:text-slate-400">
-        Explore our comprehensive visual records highlighting professional electrical installations, robust power distribution systems, and clean energy deployments.
-      </p>
-    </div>
-
-    <div class="mt-12 grid gap-6 md:grid-cols-2">
-      
-      <!-- Electrical Gallery Folder Trigger -->
-      <div onclick="openImageDrawer(0)" class="reveal lift group relative h-80 overflow-hidden rounded-3xl bg-slate-900 cursor-pointer border border-slate-800 hover:border-amber-400 transition">
-        <img src="/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg" alt="Electrical Gallery" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60" />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-8 flex flex-col justify-end">
-          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">Electrical Infrastructure</p>
-          <h3 class="mt-1 text-2xl font-bold text-white">Advanced Electrical Installations</h3>
-          <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
-            View Live Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </span>
-        </div>
-      </div>
-
-      <!-- Solar Gallery Folder Trigger -->
-      <div onclick="openImageDrawer(0)" class="reveal lift group relative h-80 overflow-hidden rounded-3xl bg-slate-900 cursor-pointer border border-slate-800 hover:border-amber-400 transition">
-        <img src="/tnseelectricalprojects/images/projects/solar/tnse (1).jpg" alt="Solar Gallery" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60" />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-8 flex flex-col justify-end">
-          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">Renewable Energy</p>
-          <h3 class="mt-1 text-2xl font-bold text-white">Solar Photovoltaic & Storage Systems</h3>
-          <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
-            View Live Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================================
-     PROJECT DOCUMENTATION
-========================================================== -->
-<section class="bg-white py-20 dark:bg-slate-950">
-  <div class="mx-auto max-w-7xl px-5">
-    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-
-      <div class="reveal">
-        <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">
-          Specification Standards
-        </p>
-        <h2 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">
-          Complete Transparency in Every Installation
-        </h2>
-        <p class="mt-6 leading-8 text-slate-600 dark:text-slate-400">
-          Every project breakdown provides verified details concerning deployment geography, technical classification, scope of execution, and authentic site photography.
-        </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-          <span class="material-symbols-outlined text-amber-500 text-3xl">location_on</span>
-          <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Deployment Geography</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Active regional service footprint spanning Polokwane, Moletjie, and Limpopo districts.</p>
-          </div>
-        </div>
-
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-          <span class="material-symbols-outlined text-amber-500 text-3xl">category</span>
-          <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Technical Classification</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Specialized division across heavy electrical engineering, solar integration, and backup storage.</p>
-          </div>
-        </div>
-
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-          <span class="material-symbols-outlined text-amber-500 text-3xl">task_alt</span>
-          <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Scope of Execution</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Rigorous breakdown of professional diagnostics, wiring layouts, and compliance standards delivered.</p>
-          </div>
-        </div>
-
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-          <span class="material-symbols-outlined text-amber-500 text-3xl">photo_library</span>
-          <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Verified Visual Records</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">High-definition media libraries integrated directly into every professional portfolio entry.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     IMAGE DRAWER MODAL (Full-screen viewer, captions, zoom, thumbs)
-========================================================== -->
-<div id="imageDrawerModal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 overflow-hidden pointer-events-auto">
-  <div onclick="closeImageDrawer()" class="absolute inset-0 bg-slate-950/90 backdrop-blur-md"></div>
-
-  <div id="imageDrawerModalContent" class="absolute right-0 top-0 h-full w-[92%] max-w-6xl bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col z-10">
-    
-    <!-- Drawer Header -->
-    <div class="flex items-center justify-between border-b border-slate-800 px-6 py-5 bg-slate-950/50">
-      <div class="flex items-center gap-3">
-        <div class="grid h-10 w-10 place-items-center rounded-xl bg-amber-400/10 text-amber-400">
-          <span class="material-symbols-outlined text-2xl">electrical_services</span>
-        </div>
-        <div>
-          <h3 id="drawerImageTitle" class="text-lg font-black text-white">Project Portfolio Viewer</h3>
-          <p id="drawerImageCaption" class="text-xs text-slate-400">TNSE Field Engineering Records</p>
-        </div>
-      </div>
-
-      <div class="flex items-center gap-3">
-        <button type="button" onclick="toggleDrawerFullScreen()" aria-label="Toggle Fullscreen" class="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">
-          <span class="material-symbols-outlined">fullscreen</span>
-        </button>
-        <button type="button" onclick="closeImageDrawer()" aria-label="Close Drawer" class="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Drawer Body -->
-    <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
-      
-      <!-- Main Viewer Screen with Previous / Next Controls -->
-      <div class="relative rounded-2xl bg-slate-950 border border-slate-800 p-4 flex items-center justify-center min-h-[350px] md:min-h-[450px]">
-        <button onclick="prevDrawerImage()" class="absolute left-4 z-10 grid h-12 w-12 place-items-center rounded-full bg-slate-900/80 text-white hover:bg-amber-400 hover:text-slate-950 transition border border-slate-700">
-          <span class="material-symbols-outlined">chevron_left</span>
-        </button>
-
-        <img id="drawerMainImage" src="" alt="Selected Drawer Project" class="max-h-[400px] object-contain rounded-xl shadow-lg transition-transform duration-300">
-
-        <button onclick="nextDrawerImage()" class="absolute right-4 z-10 grid h-12 w-12 place-items-center rounded-full bg-slate-900/80 text-white hover:bg-amber-400 hover:text-slate-950 transition border border-slate-700">
-          <span class="material-symbols-outlined">chevron_right</span>
-        </button>
-
-        <div id="drawerImageCounter" class="absolute bottom-4 right-4 rounded-lg bg-slate-900/90 px-3 py-1 text-xs font-bold text-amber-400 border border-slate-800">
-          1 / 30
-        </div>
-      </div>
-
-      <!-- Thumbnail Strip Bar -->
-      <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Portfolio Selection Strip</h4>
-        <div id="drawerThumbnailGrid" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-10 gap-2">
-          <!-- Populated dynamically -->
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
+	<div id="imageDrawerModal" class="pointer-events-none fixed inset-0 z-50 hidden overflow-hidden opacity-0 transition-opacity duration-300" aria-hidden="true">
+		<button id="drawer-backdrop" class="absolute inset-0 size-full cursor-default bg-slate-950/90 backdrop-blur-md" type="button" aria-label="Close project gallery"></button>
+		<section id="imageDrawerModalContent" class="absolute right-0 top-0 z-10 flex h-full w-[92%] max-w-6xl translate-x-full flex-col border-l border-slate-800 bg-slate-900 text-white shadow-2xl transition-transform duration-300" role="dialog" aria-modal="true" aria-labelledby="drawerImageTitle" tabindex="-1">
+			<header class="flex items-center justify-between border-b border-slate-800 bg-slate-950/50 px-6 py-5">
+				<div class="flex items-center gap-3">
+					<div class="grid size-10 place-items-center rounded-xl bg-amber-400/10 text-amber-400"><span class="material-symbols-outlined text-2xl" aria-hidden="true">electrical_services</span></div>
+					<div><h2 id="drawerImageTitle" class="text-lg font-black">Project Portfolio Viewer</h2><p id="drawerImageCaption" class="text-xs text-slate-400">TNSE Field Engineering Records</p></div>
+				</div>
+				<div class="flex items-center gap-3">
+					<button id="drawer-fullscreen" type="button" aria-label="Toggle fullscreen" class="grid size-10 place-items-center rounded-full bg-white/5 text-slate-300 transition hover:bg-amber-400 hover:text-slate-950"><span class="material-symbols-outlined" aria-hidden="true">fullscreen</span></button>
+					<button id="drawer-close" type="button" aria-label="Close drawer" class="grid size-10 place-items-center rounded-full bg-white/5 text-slate-300 transition hover:bg-amber-400 hover:text-slate-950"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+				</div>
+			</header>
+			<div class="flex flex-1 flex-col gap-6 overflow-y-auto p-6">
+				<div class="relative flex min-h-[350px] items-center justify-center rounded-2xl border border-slate-800 bg-slate-950 p-4 md:min-h-[450px]">
+					<button id="drawer-previous" type="button" aria-label="Previous image" class="absolute left-4 z-10 grid size-12 place-items-center rounded-full border border-slate-700 bg-slate-900/80 text-white transition hover:bg-amber-400 hover:text-slate-950"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button>
+					<img id="drawerMainImage" src="" alt="" class="max-h-[400px] max-w-full rounded-xl object-contain shadow-lg transition-transform duration-300">
+					<button id="drawer-next" type="button" aria-label="Next image" class="absolute right-4 z-10 grid size-12 place-items-center rounded-full border border-slate-700 bg-slate-900/80 text-white transition hover:bg-amber-400 hover:text-slate-950"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button>
+					<div id="drawerImageCounter" class="absolute bottom-4 right-4 rounded-lg border border-slate-800 bg-slate-900/90 px-3 py-1 text-xs font-bold text-amber-400" aria-live="polite"></div>
+				</div>
+				<div>
+					<h3 class="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Portfolio Selection Strip</h3>
+					<div id="drawerThumbnailGrid" class="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-10"></div>
+				</div>
+			</div>
+		</section>
+	</div>
 
 
   <!-- =========================================================

@@ -406,47 +406,109 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // ==========================================
-// 5. Gallery Lightbox Controller
+// Gallery lightbox and carousel
 // ==========================================
-document.addEventListener("DOMContentLoaded", function () {
-    let GalleryImages = [
-        "/tnseelectricalprojects/images/gallery/tnse (1).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (2).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (3).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (4).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (5).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (6).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (7).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (8).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (9).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (10).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (11).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (12).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (13).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (14).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (15).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (16).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (17).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (18).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (19).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (20).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (21).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (22).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (23).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (24).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (25).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (26).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (27).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (28).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (29).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (30).jpg"
-    ];
+document.addEventListener("DOMContentLoaded", () => {
+    const GalleryImages = Array.from(
+        { length: 30 },
+        (_, index) => `/tnseelectricalprojects/images/gallery/tnse (${index + 1}).jpg`
+    );
 
-    window.galleryItems = GalleryImages.map((src, i) => ({
-      src: src,
-      title: `Gallery Project ${i + 1}`,
-      caption: `High-standard electrical installation project capture #${i + 1}.`
+    window.galleryItems = GalleryImages.map((src, index) => ({
+        src,
+        title: `Gallery Project ${index + 1}`,
+        caption: `High-standard electrical installation project capture #${index + 1}.`
     }));
+
+    const track = document.querySelector("#gallery-track");
+    const ground = track?.querySelector(".carousel-ground");
+    const lightbox = document.querySelector("#gallery-lightbox");
+    const lightboxImage = document.querySelector("#lightbox-image");
+    const lightboxTitle = document.querySelector("#lightbox-title");
+    const lightboxCaption = document.querySelector("#lightbox-caption");
+    const closeButton = document.querySelector("#lightbox-close");
+    const previousButton = document.querySelector("#lightbox-previous");
+    const nextButton = document.querySelector("#lightbox-next");
+
+    if (
+        !(track instanceof HTMLUListElement) ||
+        !(ground instanceof HTMLLIElement) ||
+        !(lightbox instanceof HTMLDialogElement) ||
+        !(lightboxImage instanceof HTMLImageElement) ||
+        !(lightboxTitle instanceof HTMLHeadingElement) ||
+        !(lightboxCaption instanceof HTMLParagraphElement) ||
+        !(closeButton instanceof HTMLButtonElement) ||
+        !(previousButton instanceof HTMLButtonElement) ||
+        !(nextButton instanceof HTMLButtonElement)
+    ) {
+        throw new Error("Gallery carousel or lightbox markup is missing.");
+    }
+
+    track.replaceChildren(ground);
+    track.style.setProperty("--_num-elements", String(window.galleryItems.length));
+
+    const itemClasses =
+        "group absolute left-[calc(var(--_radius)-var(--_item-width)/2)] top-[calc(var(--_radius)-var(--_item-height)/2)] h-[var(--_item-height)] w-[var(--_item-width)] [--_rotation:calc(360/var(--_num-elements)*var(--_index)*1deg)] [transform:rotateY(var(--_rotation))_translateZ(var(--_radius))] [transform-style:inherit] [box-shadow:0_0_var(--carousel-item-glow-size)_transparent] transition-all duration-[250ms] ease-out hover:[box-shadow:0_0_var(--carousel-item-glow-size)_rgb(var(--carousel-item-glow-color-rgb))] hover:[transform:rotateY(var(--_rotation))_translateZ(calc(var(--_radius)*var(--carousel-item-hover-effect)))]";
+    const linkClasses =
+        "relative block size-full select-none [text-indent:-9999px] [background-color:rgba(var(--carousel-item-empty-color-rgb),0.5)] [background-image:var(--_image-url)] bg-cover bg-center bg-no-repeat focus:outline-none before:absolute before:block before:pointer-events-none before:h-[inherit] before:w-[inherit] before:content-[''] before:[background-color:rgba(var(--carousel-item-empty-color-rgb),0.5)] before:[background-image:linear-gradient(to_top,rgba(var(--carousel-bg-color-rgb),0.25)_0%,rgba(var(--carousel-bg-color-rgb),1)_75%),var(--_image-url)] before:bg-cover before:bg-center before:bg-no-repeat before:[filter:blur(var(--carousel-item-reflection-blur))_grayscale(100%)] before:transition-[filter] before:duration-[250ms] before:ease-out before:[transform-style:inherit] before:[transform-origin:center_bottom] before:[transform:rotateX(90deg)_rotateZ(180deg)_rotateY(180deg)]";
+    const imageClasses =
+        "absolute inset-0 size-full object-cover grayscale transition-[filter] duration-[250ms] ease-out group-hover:grayscale-0";
+
+    window.galleryItems.forEach((item, index) => {
+        const card = document.createElement("li");
+        card.className = itemClasses;
+        card.style.setProperty("--_index", String(index + 1));
+        card.style.setProperty("--_image-url", `url("${item.src}")`);
+        card.dataset.galleryIndex = String(index);
+
+        const link = document.createElement("a");
+        link.className = linkClasses;
+        link.href = item.src;
+        link.setAttribute("aria-label", item.title);
+        link.title = item.caption;
+        link.textContent = item.title;
+
+        const image = document.createElement("img");
+        image.className = imageClasses;
+        image.src = item.src;
+        image.alt = item.title;
+        image.decoding = "async";
+
+        link.append(image);
+        card.append(link);
+        track.insertBefore(card, ground);
+    });
+
+    let activeIndex = 0;
+
+    const showImage = (index) => {
+        activeIndex = (index + window.galleryItems.length) % window.galleryItems.length;
+        const item = window.galleryItems[activeIndex];
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.title;
+        lightboxTitle.textContent = item.title;
+        lightboxCaption.textContent = item.caption;
+    };
+
+    track.addEventListener("click", (event) => {
+        const link = event.target instanceof Element
+            ? event.target.closest("a")
+            : null;
+        const card = link?.closest("[data-gallery-index]");
+
+        if (!card) return;
+
+        event.preventDefault();
+        showImage(Number(card.dataset.galleryIndex));
+        lightbox.showModal();
+    });
+
+    closeButton.addEventListener("click", () => lightbox.close());
+    previousButton.addEventListener("click", () => showImage(activeIndex - 1));
+    nextButton.addEventListener("click", () => showImage(activeIndex + 1));
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) lightbox.close();
+    });
 });
 
 

@@ -417,10 +417,38 @@ document.addEventListener("DOMContentLoaded", function () {
 // Gallery carousel and image drawer
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    const imageSources = Array.from(
-        { length: 30 },
-        (_, index) => `/tnseelectricalprojects/images/gallery/tnse (${index + 1}).jpg`
-    );
+    const imageSources = [
+        "/tnseelectricalprojects/images/gallery/tnse (1).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (2).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (3).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (4).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (5).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (6).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (7).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (8).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (9).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (10).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (11).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (12).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (13).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (14).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (15).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (16).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (17).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (18).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (19).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (20).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (21).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (22).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (23).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (24).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (25).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (26).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (27).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (28).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (29).jpg",
+        "/tnseelectricalprojects/images/gallery/tnse (30).jpg"
+    ];
     const galleryItems = imageSources.map((src, index) => ({
         src,
         title: `Gallery Project ${index + 1}`,

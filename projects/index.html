@@ -1,4 +1,27 @@
-<!doctype html><html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Projects | TNSE Electrical Projects</title><meta name="description" content="Explore TNSE electrical, solar and energy project categories."><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={darkMode:'class',theme:{extend:{colors:{tnse:'#f59e0b'}}}}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><link rel="stylesheet" href="../css/styles.css"></head><body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
+<!doctype html>
+<html lang="en" class="dark">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Projects | TNSE Electrical Projects</title>
+    <meta name="description" content="Explore TNSE electrical, solar and energy project categories.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{tnse:'#f59e0b'}}}}</script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="../css/styles.css">
+    	<style>
+		@keyframes carousel-rotation-normal {
+			from { transform: rotateY(0deg); }
+			to { transform: rotateY(360deg); }
+		}
+
+		@keyframes carousel-rotation-reverse {
+			from { transform: translateZ(var(--_z)) rotateY(0deg); }
+			to { transform: translateZ(var(--_z)) rotateY(360deg); }
+		}
+	</style>
+  </head>
+  
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
 
 <header
   class="sticky top-0 z-50 bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 shadow-sm"
@@ -972,6 +995,38 @@
 
   </div>
 </section>
+
+
+
+<body class="m-0 flex h-screen items-center justify-center overflow-hidden bg-black [font-family:Inter,sans-serif]">
+	<div class="shrink-0 [--carousel-transition-duration:250ms] [--carousel-transition-ease:ease-out] [--carousel-bg-color-rgb:0,0,0] [--carousel-shadow-color-rgb:128,128,128] [--carousel-item-width:11.5rem] [--carousel-item-height:17.5rem] [--carousel-item-hover-effect:1.075] [--carousel-item-reflection-blur:0.25rem] [--carousel-item-empty-color-rgb:255,255,255] [--carousel-item-glow-color-rgb:255,255,255] [--carousel-item-glow-size:5rem] [--carousel-diameter:50rem] [--carousel-3d-perspective:1000px] [--carousel-3d-perspective-origin:50%_20%] [--carousel-control-button-width:1.25rem] [--carousel-control-button-height:4rem] [--carousel-control-color-rgb:255,255,255] [--carousel-animation-duration:25s] [--carousel-animation-play-state:running] [--carousel-direction-animation-play-state:paused] [--_diameter:50rem] [--_radius:calc(var(--_diameter)/2)] [--_item-width:11.5rem] [--_item-height:17.5rem] [perspective:1000px] [perspective-origin:50%_20%] size-[var(--_diameter)] has-[.left_input:checked]:[--carousel-direction-animation-play-state:running] has-[.right_input:checked]:[--carousel-direction-animation-play-state:paused] max-[48rem]:[--_diameter:37.5rem] max-[48rem]:[--_item-width:8.625rem] max-[48rem]:[--_item-height:13.125rem] max-[32rem]:[--_diameter:30rem] max-[32rem]:[--_item-width:6.9rem] max-[32rem]:[--_item-height:10.5rem] max-[16rem]:[--_diameter:12.5rem] max-[16rem]:[--_item-width:2.875rem] max-[16rem]:[--_item-height:4.375rem]">
+		<div class="left absolute left-0 top-[calc(var(--_radius)-var(--carousel-control-button-height)/2)] z-[1] h-[var(--carousel-control-button-height)] w-[var(--carousel-control-button-width)] bg-white opacity-20 transition-opacity duration-[250ms] ease-out hover:opacity-40 has-[:checked]:opacity-80 [clip-path:polygon(0%_50%,100%_0%,100%_100%)]">
+			<input class="size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel left">
+		</div>
+		<div class="right absolute right-0 top-[calc(var(--_radius)-var(--carousel-control-button-height)/2)] z-[1] h-[var(--carousel-control-button-height)] w-[var(--carousel-control-button-width)] bg-white opacity-20 transition-opacity duration-[250ms] ease-out hover:opacity-40 has-[:checked]:opacity-80 [clip-path:polygon(0%_0%,100%_50%,0%_100%)]">
+			<input class="size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel right" checked>
+		</div>
+
+		<div class="has-[.group:hover]:[--carousel-animation-play-state:paused] has-[.group:hover]:[--_direction-animation-play-state:paused] [--_direction-animation-play-state:var(--carousel-direction-animation-play-state)] [--_z:calc(var(--_radius)*-1)] [transform:translateZ(var(--_z))] [transform-style:preserve-3d] [animation:carousel-rotation-reverse_calc(var(--carousel-animation-duration)/2)_reverse_linear_infinite_var(--_direction-animation-play-state)] transition-all duration-[250ms] ease-out">
+			<ul id="gallery-track" class="relative m-0 size-[inherit] list-none [transform-style:inherit] [animation:carousel-rotation-normal_var(--carousel-animation-duration)_normal_linear_infinite_var(--carousel-animation-play-state)] transition-all duration-[250ms] ease-out has-[.group:hover]:[&_.carousel-ground]:opacity-75">
+				<li class="carousel-ground pointer-events-none absolute left-0 top-0 size-[var(--_diameter)] rounded-full [transform:rotateX(90deg)_translateZ(calc(var(--_item-height)/-2))] [background:radial-gradient(rgba(var(--carousel-shadow-color-rgb),0.75)_15%,rgba(var(--carousel-bg-color-rgb),0)_60%)] opacity-50 transition-opacity duration-[250ms] ease-out"></li>
+			</ul>
+		</div>
+	</div>
+	<dialog id="gallery-lightbox" class="m-auto max-h-[90vh] max-w-[90vw] overflow-auto rounded-xl bg-neutral-950 p-6 text-white shadow-2xl backdrop:bg-black/90">
+		<div class="flex items-center justify-between gap-6">
+			<h2 id="lightbox-title" class="text-lg font-semibold"></h2>
+			<button id="lightbox-close" class="rounded-md border border-white/30 px-3 py-1 hover:bg-white/10" type="button">Close</button>
+		</div>
+		<img id="lightbox-image" class="mt-4 max-h-[70vh] max-w-full object-contain" alt="">
+		<p id="lightbox-caption" class="mt-3 text-sm text-neutral-300"></p>
+		<div class="mt-4 flex justify-between gap-3">
+			<button id="lightbox-previous" class="rounded-md border border-white/30 px-4 py-2 hover:bg-white/10" type="button">Previous</button>
+			<button id="lightbox-next" class="rounded-md border border-white/30 px-4 py-2 hover:bg-white/10" type="button">Next</button>
+		</div>
+	</dialog>
+
+    
 
 <!-- =========================================================
      PROJECT GALLERY (/images/gallery & /images/drawer)

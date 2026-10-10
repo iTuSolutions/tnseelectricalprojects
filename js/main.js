@@ -458,6 +458,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const track = document.querySelector("#gallery-track");
     const ground = track?.querySelector(".carousel-ground");
+    const hoverPreview = document.querySelector("#gallery-hover-preview");
+    const hoverPreviewImage = document.querySelector("#gallery-hover-preview-image");
     const drawer = document.querySelector("#imageDrawerModal");
     const drawerContent = document.querySelector("#imageDrawerModalContent");
     const mainImage = document.querySelector("#drawerMainImage");
@@ -470,11 +472,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const previousButton = document.querySelector("#drawer-previous");
     const nextButton = document.querySelector("#drawer-next");
     const fullscreenButton = document.querySelector("#drawer-fullscreen");
-    const openButton = document.querySelector("#open-gallery");
-
     if (
         !(track instanceof HTMLUListElement) ||
         !(ground instanceof HTMLLIElement) ||
+        !(hoverPreview instanceof HTMLDivElement) ||
+        !(hoverPreviewImage instanceof HTMLImageElement) ||
         !(drawer instanceof HTMLDivElement) ||
         !(drawerContent instanceof HTMLElement) ||
         !(mainImage instanceof HTMLImageElement) ||
@@ -486,8 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !(backdrop instanceof HTMLButtonElement) ||
         !(previousButton instanceof HTMLButtonElement) ||
         !(nextButton instanceof HTMLButtonElement) ||
-        !(fullscreenButton instanceof HTMLButtonElement) ||
-        !(openButton instanceof HTMLButtonElement)
+        !(fullscreenButton instanceof HTMLButtonElement)
     ) {
         throw new Error("Gallery carousel or image drawer markup is missing.");
     }
@@ -551,8 +552,7 @@ document.addEventListener("DOMContentLoaded", () => {
             height: "100%",
             objectFit: "cover",
             opacity: "0",
-            filter: "grayscale(1)",
-            transition: "filter 250ms ease-out, opacity 500ms ease-out"
+            transition: "opacity 500ms ease-out"
         });
         image.alt = item.title;
         image.decoding = "async";
@@ -565,12 +565,18 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener("mouseenter", () => {
             card.style.transform = `rotateY(${rotation}) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)))`;
             card.style.boxShadow = "0 0 var(--carousel-item-glow-size) rgb(var(--carousel-item-glow-color-rgb))";
-            image.style.filter = "grayscale(0)";
+            hoverPreviewImage.src = item.src;
+            hoverPreviewImage.alt = item.title;
+            hoverPreview.classList.remove("opacity-0");
+            hoverPreview.classList.add("opacity-100");
+            hoverPreview.setAttribute("aria-hidden", "false");
         });
         card.addEventListener("mouseleave", () => {
             card.style.transform = transform;
             card.style.boxShadow = "0 0 var(--carousel-item-glow-size) transparent";
-            image.style.filter = "grayscale(1)";
+            hoverPreview.classList.remove("opacity-100");
+            hoverPreview.classList.add("opacity-0");
+            hoverPreview.setAttribute("aria-hidden", "true");
         });
 
         link.append(image);
@@ -660,7 +666,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (button) showImage(Number(button.dataset.galleryIndex));
     });
 
-    openButton.addEventListener("click", () => window.openImageDrawer(0));
     closeButton.addEventListener("click", closeDrawer);
     backdrop.addEventListener("click", closeDrawer);
     previousButton.addEventListener("click", () => showImage(activeIndex - 1));
@@ -682,6 +687,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "ArrowRight") showImage(activeIndex + 1);
     });
 });
+
 
 
 

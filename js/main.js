@@ -405,109 +405,253 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
+
+
+
+
+
 // ==========================================
-// Gallery lightbox and carousel
+// Gallery carousel and image drawer
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    const GalleryImages = Array.from(
+    const imageSources = Array.from(
         { length: 30 },
         (_, index) => `/tnseelectricalprojects/images/gallery/tnse (${index + 1}).jpg`
     );
-
-    window.galleryItems = GalleryImages.map((src, index) => ({
+    const galleryItems = imageSources.map((src, index) => ({
         src,
         title: `Gallery Project ${index + 1}`,
         caption: `High-standard electrical installation project capture #${index + 1}.`
     }));
+    window.galleryItems = galleryItems;
 
     const track = document.querySelector("#gallery-track");
     const ground = track?.querySelector(".carousel-ground");
-    const lightbox = document.querySelector("#gallery-lightbox");
-    const lightboxImage = document.querySelector("#lightbox-image");
-    const lightboxTitle = document.querySelector("#lightbox-title");
-    const lightboxCaption = document.querySelector("#lightbox-caption");
-    const closeButton = document.querySelector("#lightbox-close");
-    const previousButton = document.querySelector("#lightbox-previous");
-    const nextButton = document.querySelector("#lightbox-next");
+    const drawer = document.querySelector("#imageDrawerModal");
+    const drawerContent = document.querySelector("#imageDrawerModalContent");
+    const mainImage = document.querySelector("#drawerMainImage");
+    const drawerTitle = document.querySelector("#drawerImageTitle");
+    const drawerCaption = document.querySelector("#drawerImageCaption");
+    const counter = document.querySelector("#drawerImageCounter");
+    const thumbnailGrid = document.querySelector("#drawerThumbnailGrid");
+    const closeButton = document.querySelector("#drawer-close");
+    const backdrop = document.querySelector("#drawer-backdrop");
+    const previousButton = document.querySelector("#drawer-previous");
+    const nextButton = document.querySelector("#drawer-next");
+    const fullscreenButton = document.querySelector("#drawer-fullscreen");
+    const openButton = document.querySelector("#open-gallery");
 
     if (
         !(track instanceof HTMLUListElement) ||
         !(ground instanceof HTMLLIElement) ||
-        !(lightbox instanceof HTMLDialogElement) ||
-        !(lightboxImage instanceof HTMLImageElement) ||
-        !(lightboxTitle instanceof HTMLHeadingElement) ||
-        !(lightboxCaption instanceof HTMLParagraphElement) ||
+        !(drawer instanceof HTMLDivElement) ||
+        !(drawerContent instanceof HTMLElement) ||
+        !(mainImage instanceof HTMLImageElement) ||
+        !(drawerTitle instanceof HTMLHeadingElement) ||
+        !(drawerCaption instanceof HTMLParagraphElement) ||
+        !(counter instanceof HTMLDivElement) ||
+        !(thumbnailGrid instanceof HTMLDivElement) ||
         !(closeButton instanceof HTMLButtonElement) ||
+        !(backdrop instanceof HTMLButtonElement) ||
         !(previousButton instanceof HTMLButtonElement) ||
-        !(nextButton instanceof HTMLButtonElement)
+        !(nextButton instanceof HTMLButtonElement) ||
+        !(fullscreenButton instanceof HTMLButtonElement) ||
+        !(openButton instanceof HTMLButtonElement)
     ) {
-        throw new Error("Gallery carousel or lightbox markup is missing.");
+        throw new Error("Gallery carousel or image drawer markup is missing.");
     }
 
     track.replaceChildren(ground);
-    track.style.setProperty("--_num-elements", String(window.galleryItems.length));
+    track.style.setProperty("--_num-elements", String(galleryItems.length));
 
-    const itemClasses =
-        "group absolute left-[calc(var(--_radius)-var(--_item-width)/2)] top-[calc(var(--_radius)-var(--_item-height)/2)] h-[var(--_item-height)] w-[var(--_item-width)] [--_rotation:calc(360/var(--_num-elements)*var(--_index)*1deg)] [transform:rotateY(var(--_rotation))_translateZ(var(--_radius))] [transform-style:inherit] [box-shadow:0_0_var(--carousel-item-glow-size)_transparent] transition-all duration-[250ms] ease-out hover:[box-shadow:0_0_var(--carousel-item-glow-size)_rgb(var(--carousel-item-glow-color-rgb))] hover:[transform:rotateY(var(--_rotation))_translateZ(calc(var(--_radius)*var(--carousel-item-hover-effect)))]";
-    const linkClasses =
-        "relative block size-full select-none [text-indent:-9999px] [background-color:rgba(var(--carousel-item-empty-color-rgb),0.5)] [background-image:var(--_image-url)] bg-cover bg-center bg-no-repeat focus:outline-none before:absolute before:block before:pointer-events-none before:h-[inherit] before:w-[inherit] before:content-[''] before:[background-color:rgba(var(--carousel-item-empty-color-rgb),0.5)] before:[background-image:linear-gradient(to_top,rgba(var(--carousel-bg-color-rgb),0.25)_0%,rgba(var(--carousel-bg-color-rgb),1)_75%),var(--_image-url)] before:bg-cover before:bg-center before:bg-no-repeat before:[filter:blur(var(--carousel-item-reflection-blur))_grayscale(100%)] before:transition-[filter] before:duration-[250ms] before:ease-out before:[transform-style:inherit] before:[transform-origin:center_bottom] before:[transform:rotateX(90deg)_rotateZ(180deg)_rotateY(180deg)]";
-    const imageClasses =
-        "absolute inset-0 size-full object-cover grayscale transition-[filter] duration-[250ms] ease-out group-hover:grayscale-0";
+    const revealImage = (image, src) => {
+        if (image.naturalWidth === 0) {
+            console.error(`Gallery image failed to load: ${src}`);
+            return;
+        }
 
-    window.galleryItems.forEach((item, index) => {
+        image.style.opacity = "1";
+        image.classList.remove("opacity-0");
+        image.classList.add("opacity-100");
+    };
+
+    galleryItems.forEach((item, index) => {
         const card = document.createElement("li");
-        card.className = itemClasses;
-        card.style.setProperty("--_index", String(index + 1));
-        card.style.setProperty("--_image-url", `url("${item.src}")`);
+        const rotation = `${(360 * (index + 1)) / galleryItems.length}deg`;
+        const transform = `rotateY(${rotation}) translateZ(var(--_radius))`;
+        card.className = "group absolute";
+        Object.assign(card.style, {
+            left: "calc(var(--_radius) - var(--_item-width) / 2)",
+            top: "calc(var(--_radius) - var(--_item-height) / 2)",
+            width: "var(--_item-width)",
+            height: "var(--_item-height)",
+            transform,
+            transformStyle: "preserve-3d",
+            transition: "all 250ms ease-out",
+            boxShadow: "0 0 var(--carousel-item-glow-size) transparent"
+        });
         card.dataset.galleryIndex = String(index);
 
         const link = document.createElement("a");
-        link.className = linkClasses;
+        link.className = "select-none focus:outline-none";
         link.href = item.src;
+        Object.assign(link.style, {
+            position: "relative",
+            display: "block",
+            width: "100%",
+            height: "100%",
+            textIndent: "-9999px",
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            backgroundImage: `url("${item.src}")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover"
+        });
         link.setAttribute("aria-label", item.title);
         link.title = item.caption;
         link.textContent = item.title;
 
         const image = document.createElement("img");
-        image.className = imageClasses;
-        image.src = item.src;
+        image.className = "opacity-0";
+        Object.assign(image.style, {
+            position: "absolute",
+            inset: "0",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: "0",
+            filter: "grayscale(1)",
+            transition: "filter 250ms ease-out, opacity 500ms ease-out"
+        });
         image.alt = item.title;
         image.decoding = "async";
+        image.loading = "eager";
+        image.addEventListener("load", () => revealImage(image, item.src), { once: true });
+        image.addEventListener("error", () => revealImage(image, item.src), { once: true });
+        image.src = item.src;
+        if (image.complete) revealImage(image, item.src);
+
+        card.addEventListener("mouseenter", () => {
+            card.style.transform = `rotateY(${rotation}) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)))`;
+            card.style.boxShadow = "0 0 var(--carousel-item-glow-size) rgb(var(--carousel-item-glow-color-rgb))";
+            image.style.filter = "grayscale(0)";
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = transform;
+            card.style.boxShadow = "0 0 var(--carousel-item-glow-size) transparent";
+            image.style.filter = "grayscale(1)";
+        });
 
         link.append(image);
         card.append(link);
         track.insertBefore(card, ground);
+
+        const thumbnail = document.createElement("button");
+        thumbnail.type = "button";
+        thumbnail.className =
+            "aspect-square overflow-hidden rounded-lg border border-slate-700 transition hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400";
+        thumbnail.dataset.galleryIndex = String(index);
+        thumbnail.setAttribute("aria-label", `Show ${item.title}`);
+        thumbnail.setAttribute("aria-pressed", "false");
+
+        const thumbnailImage = document.createElement("img");
+        thumbnailImage.className = "size-full object-cover";
+        thumbnailImage.src = item.src;
+        thumbnailImage.alt = "";
+        thumbnailImage.loading = "lazy";
+        thumbnailImage.decoding = "async";
+        thumbnail.append(thumbnailImage);
+        thumbnailGrid.append(thumbnail);
     });
 
     let activeIndex = 0;
+    let lastFocusedElement = null;
 
     const showImage = (index) => {
-        activeIndex = (index + window.galleryItems.length) % window.galleryItems.length;
-        const item = window.galleryItems[activeIndex];
-        lightboxImage.src = item.src;
-        lightboxImage.alt = item.title;
-        lightboxTitle.textContent = item.title;
-        lightboxCaption.textContent = item.caption;
+        activeIndex = (index + galleryItems.length) % galleryItems.length;
+        const item = galleryItems[activeIndex];
+        mainImage.src = item.src;
+        mainImage.alt = item.title;
+        drawerTitle.textContent = item.title;
+        drawerCaption.textContent = item.caption;
+        counter.textContent = `${activeIndex + 1} / ${galleryItems.length}`;
+
+        thumbnailGrid.querySelectorAll("button[data-gallery-index]").forEach((button) => {
+            const isSelected = Number(button.dataset.galleryIndex) === activeIndex;
+            button.setAttribute("aria-pressed", String(isSelected));
+            button.classList.toggle("border-amber-400", isSelected);
+            button.classList.toggle("ring-2", isSelected);
+            button.classList.toggle("ring-amber-400", isSelected);
+            if (isSelected) button.scrollIntoView({ block: "nearest", inline: "nearest" });
+        });
     };
 
-    track.addEventListener("click", (event) => {
-        const link = event.target instanceof Element
-            ? event.target.closest("a")
-            : null;
-        const card = link?.closest("[data-gallery-index]");
+    const closeDrawer = () => {
+        if (drawer.classList.contains("hidden")) return;
+        drawer.classList.add("opacity-0", "pointer-events-none");
+        drawerContent.classList.add("translate-x-full");
+        drawer.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("overflow-hidden");
+        if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
+    };
 
-        if (!card) return;
+    window.openImageDrawer = (index = 0) => {
+        lastFocusedElement = document.activeElement;
+        showImage(index);
+        drawer.classList.remove("hidden", "pointer-events-none");
+        drawer.setAttribute("aria-hidden", "false");
+        document.body.classList.add("overflow-hidden");
+        requestAnimationFrame(() => {
+            drawer.classList.remove("opacity-0");
+            drawerContent.classList.remove("translate-x-full");
+            drawerContent.focus();
+        });
+    };
 
-        event.preventDefault();
-        showImage(Number(card.dataset.galleryIndex));
-        lightbox.showModal();
+    drawer.addEventListener("transitionend", (event) => {
+        if (event.target === drawer && drawer.classList.contains("opacity-0")) {
+            drawer.classList.add("hidden");
+        }
     });
 
-    closeButton.addEventListener("click", () => lightbox.close());
+    track.addEventListener("click", (event) => {
+        const link = event.target instanceof Element ? event.target.closest("a") : null;
+        const card = link?.closest("[data-gallery-index]");
+        if (!card) return;
+        event.preventDefault();
+        window.openImageDrawer(Number(card.dataset.galleryIndex));
+    });
+
+    thumbnailGrid.addEventListener("click", (event) => {
+        const button = event.target instanceof Element
+            ? event.target.closest("button[data-gallery-index]")
+            : null;
+        if (button) showImage(Number(button.dataset.galleryIndex));
+    });
+
+    openButton.addEventListener("click", () => window.openImageDrawer(0));
+    closeButton.addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
     previousButton.addEventListener("click", () => showImage(activeIndex - 1));
     nextButton.addEventListener("click", () => showImage(activeIndex + 1));
-    lightbox.addEventListener("click", (event) => {
-        if (event.target === lightbox) lightbox.close();
+
+    fullscreenButton.addEventListener("click", () => {
+        const fullscreenAction = document.fullscreenElement
+            ? document.exitFullscreen()
+            : drawerContent.requestFullscreen();
+        fullscreenAction.catch((error) => {
+            console.error("Unable to change gallery fullscreen mode.", error);
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (drawer.classList.contains("hidden")) return;
+        if (event.key === "Escape") closeDrawer();
+        if (event.key === "ArrowLeft") showImage(activeIndex - 1);
+        if (event.key === "ArrowRight") showImage(activeIndex + 1);
     });
 });
 

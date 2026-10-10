@@ -936,12 +936,15 @@
 <!-- =========================================================
      PARALLAX PORTFOLIO SECTION (/images/parallax)
 ========================================================== -->
-<section class="relative py-32 bg-slate-950 overflow-hidden">
+<section class="relative py-32 bg-slate-950 overflow-hidden [clip-path:inset(0)]">
   
-  <!-- Parallax Fixed Background Image from Picsum (Targeted by JS ID #parallaxBg) -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+  <!-- Scoped Parallax Background Container -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
     <div class="absolute inset-0 bg-slate-950/80 z-10"></div>
-    <img id="parallaxBg" src="https://picsum.photos/1920/1080?random=1" alt="TNSE Electrical Projects Parallax Background" class="w-full h-full object-cover fixed inset-0 filter brightness-50 transform scale-105">
+    <img id="parallaxBg" 
+         src="https://picsum.photos/1920/1080?random=1" 
+         alt="TNSE Electrical Projects Parallax Background" 
+         class="h-full w-full object-cover filter brightness-50">
   </div>
 
   <div class="relative z-20 mx-auto max-w-7xl px-5 text-center">
@@ -959,7 +962,9 @@
     </p>
     
     <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-      <button type="button" onclick="openImageDrawer(0)" class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-7 py-4 font-bold text-slate-950 hover:bg-amber-300 transition-all shadow-xl hover:scale-105">
+      <button type="button" 
+              onclick="openImageDrawer(0)" 
+              class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-7 py-4 font-bold text-slate-950 transition-all shadow-xl hover:bg-amber-300 hover:scale-105">
         <span class="material-symbols-outlined">visibility</span>
         View Project Portfolios
       </button>

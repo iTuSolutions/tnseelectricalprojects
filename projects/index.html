@@ -936,23 +936,35 @@
 <!-- =========================================================
      PARALLAX PORTFOLIO SECTION (/images/parallax)
 ========================================================== -->
-<section class="relative py-28 bg-slate-950 overflow-hidden">
-  <div class="absolute inset-0 z-0 pointer-events-none">
+<section class="relative py-32 bg-slate-950 overflow-hidden">
+  
+  <!-- Parallax Fixed Background Image from Picsum (Targeted by JS ID #parallaxBg) -->
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
     <div class="absolute inset-0 bg-slate-950/80 z-10"></div>
-    <img src="/tnseelectricalprojects/images/parallax/tnse-installation-preview.jpg" alt="Parallax Portfolio Background" class="w-full h-full object-cover fixed inset-0 filter brightness-50 transform scale-105">
+    <img id="parallaxBg" src="https://picsum.photos/1920/1080?random=1" alt="TNSE Electrical Projects Parallax Background" class="w-full h-full object-cover fixed inset-0 filter brightness-50 transform scale-105">
   </div>
 
   <div class="relative z-20 mx-auto max-w-7xl px-5 text-center">
-    <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-400">Parallax Portfolio</p>
-    <h2 class="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl">Engineering Excellence in Action</h2>
-    <p class="mx-auto mt-4 max-w-2xl text-slate-300">Browse through verified installation records across Limpopo.</p>
     
-    <div class="mt-8">
-      <button type="button" onclick="openImageDrawer(0)" class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3.5 font-bold text-slate-950 hover:bg-amber-300 transition shadow-lg">
-        <span class="material-symbols-outlined">folder_open</span>
-        Open Image Drawer Archive (30 Records)
+    <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-400">
+      Verified Field Engineering
+    </p>
+
+    <h2 class="mt-4 text-3xl font-black tracking-tight text-white md:text-5xl lg:text-6xl">
+      Powering Precision. <span class="text-amber-400">Securing Infrastructure.</span>
+    </h2>
+
+    <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+      Explore our comprehensive visual archives documenting advanced commercial installations, high-capacity solar integrations, and rigorous electrical maintenance executed to elite industry standards across Polokwane and the Limpopo province.
+    </p>
+    
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <button type="button" onclick="openImageDrawer(0)" class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-7 py-4 font-bold text-slate-950 hover:bg-amber-300 transition-all shadow-xl hover:scale-105">
+        <span class="material-symbols-outlined">visibility</span>
+        View Project Portfolios
       </button>
     </div>
+
   </div>
 </section>
 
@@ -964,13 +976,13 @@
 
     <div class="text-center reveal">
       <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">
-        Project Gallery
+        Execution Showcase
       </p>
       <h2 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">
-        Explore Electrical & Solar Collections
+        Witness Precision Engineering & Solar Excellence
       </h2>
       <p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-600 dark:text-slate-400">
-        Click any category below to access the full 30-item image drawer archive viewer.
+        Explore our comprehensive visual records highlighting professional electrical installations, robust power distribution systems, and clean energy deployments.
       </p>
     </div>
 
@@ -980,9 +992,11 @@
       <div onclick="openImageDrawer(0)" class="reveal lift group relative h-80 overflow-hidden rounded-3xl bg-slate-900 cursor-pointer border border-slate-800 hover:border-amber-400 transition">
         <img src="/tnseelectricalprojects/images/projects/electrical/tnse (1).jpg" alt="Electrical Gallery" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60" />
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-8 flex flex-col justify-end">
-          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">/tnseelectricalprojects/Electrical/images/gallery</p>
-          <h3 class="mt-1 text-2xl font-bold text-white">Electrical Installations (30 Items)</h3>
-          <span class="mt-2 text-sm text-slate-300 flex items-center gap-1">Open Drawer Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">Electrical Infrastructure</p>
+          <h3 class="mt-1 text-2xl font-bold text-white">Advanced Electrical Installations</h3>
+          <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
+            View Live Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </span>
         </div>
       </div>
 
@@ -990,9 +1004,11 @@
       <div onclick="openImageDrawer(0)" class="reveal lift group relative h-80 overflow-hidden rounded-3xl bg-slate-900 cursor-pointer border border-slate-800 hover:border-amber-400 transition">
         <img src="/tnseelectricalprojects/images/projects/solar/tnse (1).jpg" alt="Solar Gallery" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60" />
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-8 flex flex-col justify-end">
-          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">/tnseelectricalprojects/Solar/images/gallery</p>
-          <h3 class="mt-1 text-2xl font-bold text-white">Solar & Energy Solutions (30 Items)</h3>
-          <span class="mt-2 text-sm text-slate-300 flex items-center gap-1">Open Drawer Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400">Renewable Energy</p>
+          <h3 class="mt-1 text-2xl font-bold text-white">Solar Photovoltaic & Storage Systems</h3>
+          <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold text-amber-400 group-hover:translate-x-1 transition-transform">
+            View Live Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </span>
         </div>
       </div>
 
@@ -1010,46 +1026,46 @@
 
       <div class="reveal">
         <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">
-          Project Documentation
+          Specification Standards
         </p>
         <h2 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">
-          Make every project easier to understand.
+          Complete Transparency in Every Installation
         </h2>
         <p class="mt-6 leading-8 text-slate-600 dark:text-slate-400">
-          Each project entry provides structured information regarding location, category, work completed, and verified photography.
+          Every project breakdown provides verified details concerning deployment geography, technical classification, scope of execution, and authentic site photography.
         </p>
       </div>
 
       <div class="space-y-4">
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10">
-          <span class="material-symbols-outlined text-amber-500">location_on</span>
+        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+          <span class="material-symbols-outlined text-amber-500 text-3xl">location_on</span>
           <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Project Location</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Polokwane, Moletjie, and surrounding Limpopo sites.</p>
+            <h3 class="font-bold text-slate-900 dark:text-white">Deployment Geography</h3>
+            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Active regional service footprint spanning Polokwane, Moletjie, and Limpopo districts.</p>
           </div>
         </div>
 
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10">
-          <span class="material-symbols-outlined text-amber-500">category</span>
+        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+          <span class="material-symbols-outlined text-amber-500 text-3xl">category</span>
           <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Project Category</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Classified into electrical, solar, and backup energy.</p>
+            <h3 class="font-bold text-slate-900 dark:text-white">Technical Classification</h3>
+            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Specialized division across heavy electrical engineering, solar integration, and backup storage.</p>
           </div>
         </div>
 
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10">
-          <span class="material-symbols-outlined text-amber-500">task_alt</span>
+        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+          <span class="material-symbols-outlined text-amber-500 text-3xl">task_alt</span>
           <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Work Completed</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Detailed overview of installations and repairs performed.</p>
+            <h3 class="font-bold text-slate-900 dark:text-white">Scope of Execution</h3>
+            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Rigorous breakdown of professional diagnostics, wiring layouts, and compliance standards delivered.</p>
           </div>
         </div>
 
-        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10">
-          <span class="material-symbols-outlined text-amber-500">photo_library</span>
+        <div class="reveal flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
+          <span class="material-symbols-outlined text-amber-500 text-3xl">photo_library</span>
           <div>
-            <h3 class="font-bold text-slate-900 dark:text-white">Project Photography</h3>
-            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">High-definition drawer archives linked to every portfolio entry.</p>
+            <h3 class="font-bold text-slate-900 dark:text-white">Verified Visual Records</h3>
+            <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">High-definition media libraries integrated directly into every professional portfolio entry.</p>
           </div>
         </div>
       </div>
@@ -1073,8 +1089,8 @@
           <span class="material-symbols-outlined text-2xl">electrical_services</span>
         </div>
         <div>
-          <h3 id="drawerImageTitle" class="text-lg font-black text-white">Project Catalog</h3>
-          <p id="drawerImageCaption" class="text-xs text-slate-400">/tnseelectricalprojects/images/drawer/</p>
+          <h3 id="drawerImageTitle" class="text-lg font-black text-white">Project Portfolio Viewer</h3>
+          <p id="drawerImageCaption" class="text-xs text-slate-400">TNSE Field Engineering Records</p>
         </div>
       </div>
 
@@ -1110,7 +1126,7 @@
 
       <!-- Thumbnail Strip Bar -->
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Thumbnail Strip Collection</h4>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Portfolio Selection Strip</h4>
         <div id="drawerThumbnailGrid" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-10 gap-2">
           <!-- Populated dynamically -->
         </div>

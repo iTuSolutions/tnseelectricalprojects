@@ -414,41 +414,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // ==========================================
-// Gallery carousel and image drawer
+// Gallery image drawer
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-    const imageSources = [
-        "/tnseelectricalprojects/images/gallery/tnse (1).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (2).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (3).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (4).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (5).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (6).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (7).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (8).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (9).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (10).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (11).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (12).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (13).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (14).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (15).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (16).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (17).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (18).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (19).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (20).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (21).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (22).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (23).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (24).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (25).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (26).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (27).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (28).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (29).jpg",
-        "/tnseelectricalprojects/images/gallery/tnse (30).jpg"
-    ];
+    const imageSources = Array.from(
+        { length: 30 },
+        (_, index) => `/tnseelectricalprojects/images/gallery/tnse (${index + 1}).jpg`
+    );
     const galleryItems = imageSources.map((src, index) => ({
         src,
         title: `Gallery Project ${index + 1}`,
@@ -456,10 +428,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }));
     window.galleryItems = galleryItems;
 
-    const track = document.querySelector("#gallery-track");
-    const ground = track?.querySelector(".carousel-ground");
-    const hoverPreview = document.querySelector("#gallery-hover-preview");
-    const hoverPreviewImage = document.querySelector("#gallery-hover-preview-image");
     const drawer = document.querySelector("#imageDrawerModal");
     const drawerContent = document.querySelector("#imageDrawerModalContent");
     const mainImage = document.querySelector("#drawerMainImage");
@@ -472,11 +440,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const previousButton = document.querySelector("#drawer-previous");
     const nextButton = document.querySelector("#drawer-next");
     const fullscreenButton = document.querySelector("#drawer-fullscreen");
+
     if (
-        !(track instanceof HTMLUListElement) ||
-        !(ground instanceof HTMLLIElement) ||
-        !(hoverPreview instanceof HTMLDivElement) ||
-        !(hoverPreviewImage instanceof HTMLImageElement) ||
         !(drawer instanceof HTMLDivElement) ||
         !(drawerContent instanceof HTMLElement) ||
         !(mainImage instanceof HTMLImageElement) ||
@@ -490,99 +455,14 @@ document.addEventListener("DOMContentLoaded", () => {
         !(nextButton instanceof HTMLButtonElement) ||
         !(fullscreenButton instanceof HTMLButtonElement)
     ) {
-        throw new Error("Gallery carousel or image drawer markup is missing.");
+        throw new Error("Gallery image drawer markup is missing.");
     }
 
-    track.replaceChildren(ground);
-    track.style.setProperty("--_num-elements", String(galleryItems.length));
-
-    const revealImage = (image, src) => {
-        if (image.naturalWidth === 0) {
-            console.error(`Gallery image failed to load: ${src}`);
-            return;
-        }
-
-        image.style.opacity = "1";
-        image.classList.remove("opacity-0");
-        image.classList.add("opacity-100");
+    const reportImageError = (src) => {
+        console.error(`Gallery image failed to load: ${src}`);
     };
 
     galleryItems.forEach((item, index) => {
-        const card = document.createElement("li");
-        const rotation = `${(360 * (index + 1)) / galleryItems.length}deg`;
-        const transform = `rotateY(${rotation}) translateZ(var(--_radius))`;
-        card.className = "group absolute";
-        Object.assign(card.style, {
-            left: "calc(var(--_radius) - var(--_item-width) / 2)",
-            top: "calc(var(--_radius) - var(--_item-height) / 2)",
-            width: "var(--_item-width)",
-            height: "var(--_item-height)",
-            transform,
-            transformStyle: "preserve-3d",
-            transition: "all 250ms ease-out",
-            boxShadow: "0 0 var(--carousel-item-glow-size) transparent"
-        });
-        card.dataset.galleryIndex = String(index);
-
-        const link = document.createElement("a");
-        link.className = "select-none focus:outline-none";
-        link.href = item.src;
-        Object.assign(link.style, {
-            position: "relative",
-            display: "block",
-            width: "100%",
-            height: "100%",
-            textIndent: "-9999px",
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
-            backgroundImage: `url("${item.src}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
-        });
-        link.setAttribute("aria-label", item.title);
-        link.title = item.caption;
-        link.textContent = item.title;
-
-        const image = document.createElement("img");
-        image.className = "opacity-0";
-        Object.assign(image.style, {
-            position: "absolute",
-            inset: "0",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: "0",
-            transition: "opacity 500ms ease-out"
-        });
-        image.alt = item.title;
-        image.decoding = "async";
-        image.loading = "eager";
-        image.addEventListener("load", () => revealImage(image, item.src), { once: true });
-        image.addEventListener("error", () => revealImage(image, item.src), { once: true });
-        image.src = item.src;
-        if (image.complete) revealImage(image, item.src);
-
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = `rotateY(${rotation}) translateZ(calc(var(--_radius) * var(--carousel-item-hover-effect)))`;
-            card.style.boxShadow = "0 0 var(--carousel-item-glow-size) rgb(var(--carousel-item-glow-color-rgb))";
-            hoverPreviewImage.src = item.src;
-            hoverPreviewImage.alt = item.title;
-            hoverPreview.classList.remove("opacity-0");
-            hoverPreview.classList.add("opacity-100");
-            hoverPreview.setAttribute("aria-hidden", "false");
-        });
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = transform;
-            card.style.boxShadow = "0 0 var(--carousel-item-glow-size) transparent";
-            hoverPreview.classList.remove("opacity-100");
-            hoverPreview.classList.add("opacity-0");
-            hoverPreview.setAttribute("aria-hidden", "true");
-        });
-
-        link.append(image);
-        card.append(link);
-        track.insertBefore(card, ground);
-
         const thumbnail = document.createElement("button");
         thumbnail.type = "button";
         thumbnail.className =
@@ -591,13 +471,15 @@ document.addEventListener("DOMContentLoaded", () => {
         thumbnail.setAttribute("aria-label", `Show ${item.title}`);
         thumbnail.setAttribute("aria-pressed", "false");
 
-        const thumbnailImage = document.createElement("img");
-        thumbnailImage.className = "size-full object-cover";
-        thumbnailImage.src = item.src;
-        thumbnailImage.alt = "";
-        thumbnailImage.loading = "lazy";
-        thumbnailImage.decoding = "async";
-        thumbnail.append(thumbnailImage);
+        const image = document.createElement("img");
+        image.className = "size-full object-cover";
+        image.src = item.src;
+        image.alt = "";
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.addEventListener("error", () => reportImageError(item.src), { once: true });
+
+        thumbnail.append(image);
         thumbnailGrid.append(thumbnail);
     });
 
@@ -622,6 +504,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (isSelected) button.scrollIntoView({ block: "nearest", inline: "nearest" });
         });
     };
+
+    mainImage.addEventListener("error", () => reportImageError(mainImage.src));
 
     const closeDrawer = () => {
         if (drawer.classList.contains("hidden")) return;
@@ -649,14 +533,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.target === drawer && drawer.classList.contains("opacity-0")) {
             drawer.classList.add("hidden");
         }
-    });
-
-    track.addEventListener("click", (event) => {
-        const link = event.target instanceof Element ? event.target.closest("a") : null;
-        const card = link?.closest("[data-gallery-index]");
-        if (!card) return;
-        event.preventDefault();
-        window.openImageDrawer(Number(card.dataset.galleryIndex));
     });
 
     thumbnailGrid.addEventListener("click", (event) => {
@@ -687,6 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "ArrowRight") showImage(activeIndex + 1);
     });
 });
+
 
 
 

@@ -1008,58 +1008,6 @@
 
 
 
-	<section id="gallery" class="relative flex min-h-0 flex-col items-center justify-center overflow-hidden bg-white px-5 pb-2 pt-2 text-slate-900 transition-colors dark:bg-teal-700 dark:text-white">
-		<div class="mb-0 max-w-3xl text-center">
-			<p class="text-sm font-bold uppercase tracking-[.25em] text-amber-600 dark:text-amber-400">Execution Showcase</p>
-			<h1 class="mt-3 text-3xl font-black tracking-tight md:text-5xl">Witness Precision Engineering &amp; Solar Excellence</h1>
-			<p class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">Explore professional electrical installations, robust power distribution systems, and clean energy deployments.</p>
-		</div>
-		<div class="relative shrink-0 [--carousel-transition-duration:250ms] [--carousel-transition-ease:ease-out] [--carousel-bg-color-rgb:255,255,255] dark:[--carousel-bg-color-rgb:15,118,110] [--carousel-shadow-color-rgb:128,128,128] [--carousel-item-width:4.2rem] [--carousel-item-height:6.4rem] [--carousel-item-hover-effect:1.075] [--carousel-item-reflection-blur:0.25rem] [--carousel-item-empty-color-rgb:255,255,255] [--carousel-item-glow-color-rgb:255,255,255] [--carousel-item-glow-size:5rem] [--carousel-diameter:36rem] [--carousel-3d-perspective:1000px] [--carousel-3d-perspective-origin:50%_20%] [--carousel-control-button-width:1.25rem] [--carousel-control-button-height:4rem] [--carousel-control-color-rgb:15,23,42] dark:[--carousel-control-color-rgb:255,255,255] [--carousel-animation-duration:25s] [--carousel-animation-play-state:running] [--carousel-direction-animation-play-state:paused] [--_diameter:36rem] [--_radius:calc(var(--_diameter)/2)] [--_item-width:4.2rem] [--_item-height:6.4rem] [perspective:1000px] [perspective-origin:50%_20%] size-[var(--_diameter)] has-[.left_input:checked]:[--carousel-direction-animation-play-state:running] has-[.right_input:checked]:[--carousel-direction-animation-play-state:paused] max-[48rem]:[--_diameter:27rem] max-[48rem]:[--_item-width:3.15rem] max-[48rem]:[--_item-height:4.8rem] max-[32rem]:[--_diameter:21.6rem] max-[32rem]:[--_item-width:2.52rem] max-[32rem]:[--_item-height:3.84rem] max-[16rem]:[--_diameter:9rem] max-[16rem]:[--_item-width:1.05rem] max-[16rem]:[--_item-height:1.6rem]">
-		<div class="left absolute left-0 top-[calc(var(--_radius)-var(--carousel-control-button-height)/2)] z-[1] h-[var(--carousel-control-button-height)] w-[var(--carousel-control-button-width)] [background-color:rgb(var(--carousel-control-color-rgb))] opacity-20 transition-opacity duration-[250ms] ease-out hover:opacity-40 has-[:checked]:opacity-80 [clip-path:polygon(0%_50%,100%_0%,100%_100%)]">
-			<input class="left_input size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel left">
-		</div>
-		<div class="right absolute right-0 top-[calc(var(--_radius)-var(--carousel-control-button-height)/2)] z-[1] h-[var(--carousel-control-button-height)] w-[var(--carousel-control-button-width)] [background-color:rgb(var(--carousel-control-color-rgb))] opacity-20 transition-opacity duration-[250ms] ease-out hover:opacity-40 has-[:checked]:opacity-80 [clip-path:polygon(0%_0%,100%_50%,0%_100%)]">
-			<input class="right_input size-full cursor-pointer appearance-none opacity-0 focus:outline-none" type="radio" name="carousel-control-input" aria-label="Rotate carousel right" checked>
-		</div>
-
-		<div class="has-[.group:hover]:[--carousel-animation-play-state:paused] has-[.group:hover]:[--_direction-animation-play-state:paused] [--_direction-animation-play-state:var(--carousel-direction-animation-play-state)] [--_z:calc(var(--_radius)*-1)] [transform:translateZ(var(--_z))] [transform-style:preserve-3d] [animation:carousel-rotation-reverse_calc(var(--carousel-animation-duration)/2)_reverse_linear_infinite_var(--_direction-animation-play-state)] transition-all duration-[250ms] ease-out">
-			<ul id="gallery-track" class="relative m-0 size-[inherit] list-none [transform-style:inherit] [animation:carousel-rotation-normal_var(--carousel-animation-duration)_normal_linear_infinite_var(--carousel-animation-play-state)] transition-all duration-[250ms] ease-out has-[.group:hover]:[&_.carousel-ground]:opacity-75">
-				<li class="carousel-ground pointer-events-none absolute left-0 top-0 size-[var(--_diameter)] rounded-full [transform:rotateX(90deg)_translateZ(calc(var(--_item-height)/-2))] [background:radial-gradient(rgba(var(--carousel-shadow-color-rgb),0.75)_15%,rgba(var(--carousel-bg-color-rgb),0)_60%)] opacity-50 transition-opacity duration-[250ms] ease-out"></li>
-			</ul>
-		</div>
-	</div>
-	</section>
-	<div id="gallery-hover-preview" class="pointer-events-none fixed inset-0 z-40 grid place-items-center p-[4vh] opacity-0 transition-opacity duration-200" aria-hidden="true">
-		<img id="gallery-hover-preview-image" class="max-h-[92vh] max-w-[92vw] object-contain shadow-2xl" src="" alt="">
-	</div>
-
-	<section class="bg-white py-20 dark:bg-slate-950">
-		<div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:items-center">
-			<div>
-				<p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">Specification Standards</p>
-				<h2 class="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">Complete Transparency in Every Installation</h2>
-				<p class="mt-6 leading-8 text-slate-600 dark:text-slate-400">Every project breakdown provides verified details concerning deployment geography, technical classification, scope of execution, and authentic site photography.</p>
-			</div>
-			<div class="space-y-4">
-				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">location_on</span>
-					<div><h3 class="font-bold text-slate-900 dark:text-white">Deployment Geography</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Active regional service footprint spanning Polokwane, Moletjie, and Limpopo districts.</p></div>
-				</div>
-				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">category</span>
-					<div><h3 class="font-bold text-slate-900 dark:text-white">Technical Classification</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Specialized division across heavy electrical engineering, solar integration, and backup storage.</p></div>
-				</div>
-				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">task_alt</span>
-					<div><h3 class="font-bold text-slate-900 dark:text-white">Scope of Execution</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">Rigorous breakdown of professional diagnostics, wiring layouts, and compliance standards delivered.</p></div>
-				</div>
-				<div class="flex gap-5 rounded-2xl border border-slate-200 p-5 dark:border-white/10 dark:bg-slate-900">
-					<span class="material-symbols-outlined text-3xl text-amber-500" aria-hidden="true">photo_library</span>
-					<div><h3 class="font-bold text-slate-900 dark:text-white">Verified Visual Records</h3><p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">High-definition media libraries integrated directly into every professional portfolio entry.</p></div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<div id="imageDrawerModal" class="pointer-events-none fixed inset-0 z-50 hidden overflow-hidden opacity-0 transition-opacity duration-300" aria-hidden="true">
 		<button id="drawer-backdrop" class="absolute inset-0 size-full cursor-default bg-slate-950/90 backdrop-blur-md" type="button" aria-label="Close project gallery"></button>

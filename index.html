@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home | TNSE Electrical Projects</title>
+    <title>Projects | TNSE Electrical Projects</title>
     <meta name="description" content="Explore TNSE electrical, solar and energy project categories.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{tnse:'#f59e0b'}}}}</script>
@@ -22,7 +22,10 @@
       overflow: hidden;
       border-radius: 50%;
       transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      will-change: transform;
       animation: logo-coin-to-ball 8s ease-in-out infinite;
+      -webkit-animation: logo-coin-to-ball 8s ease-in-out infinite;
     }
 
     .logo-spin-orb::after {
@@ -34,6 +37,7 @@
       opacity: 0;
       pointer-events: none;
       animation: logo-ball-shading 8s ease-in-out infinite;
+      -webkit-animation: logo-ball-shading 8s ease-in-out infinite;
     }
 
     @keyframes logo-coin-to-ball {
@@ -50,10 +54,11 @@
       42%, 58% { opacity: 1; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (max-width: 1023px) {
       .logo-spin-orb,
       .logo-spin-orb::after {
-        animation: none;
+        animation-duration: 5s;
+        -webkit-animation-duration: 5s;
       }
     }
   </style>
@@ -61,6 +66,7 @@
   </head>
   
   <body class="m-0 min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white [font-family:Inter,sans-serif]">
+    
 <!-- =========================================================
      HEADER
 ========================================================= -->
@@ -542,12 +548,12 @@
               <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden" aria-hidden="true">
                 <div class="logo-spin-orb">
                   <img
-                    src="/tnseelectricalprojects/images/logo/logo.light.mode-spin.png"
+                    src="logo/logo.light.mode-spin.png"
                     alt=""
                     class="absolute inset-0 h-full w-full object-cover opacity-50 dark:hidden"
                   >
                   <img
-                    src="/tnseelectricalprojects/images/logo/logo.dark.mode-spin.jpg"
+                    src="logo/logo.dark.mode-spin.jpg"
                     alt=""
                     class="absolute inset-0 hidden h-full w-full object-cover opacity-50 dark:block"
                   >
@@ -592,6 +598,9 @@
 
       </div>
     </section>
+
+
+
 
 
 

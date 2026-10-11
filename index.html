@@ -14,10 +14,53 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .logo-spin-orb {
+      position: relative;
+      width: min(100%, 380px);
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      animation: logo-coin-to-ball 8s ease-in-out infinite;
+    }
+
+    .logo-spin-orb::after {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(ellipse at 32% 25%, transparent 28%, rgb(2 6 23 / 12%) 58%, rgb(2 6 23 / 76%) 100%);
+      content: "";
+      opacity: 0;
+      pointer-events: none;
+      animation: logo-ball-shading 8s ease-in-out infinite;
+    }
+
+    @keyframes logo-coin-to-ball {
+      0% { transform: perspective(900px) rotateY(0deg) scaleX(1); }
+      18% { transform: perspective(900px) rotateY(180deg) scaleX(.06); }
+      36% { transform: perspective(900px) rotateY(360deg) scaleX(1); }
+      64% { transform: perspective(900px) rotateY(720deg) scaleX(1); }
+      82% { transform: perspective(900px) rotateY(900deg) scaleX(.06); }
+      100% { transform: perspective(900px) rotateY(1080deg) scaleX(1); }
+    }
+
+    @keyframes logo-ball-shading {
+      0%, 28%, 72%, 100% { opacity: 0; }
+      42%, 58% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-spin-orb,
+      .logo-spin-orb::after {
+        animation: none;
+      }
+    }
+  </style>
 	                                                                                                                                                                                                                                                 
   </head>
   
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white   m-0 min-h-screen overflow-x-hidden  bg-white  [font-family:Inter,sans-serif] ">
+  <body class="m-0 min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white [font-family:Inter,sans-serif]">
 <!-- =========================================================
      HEADER
 ========================================================= -->

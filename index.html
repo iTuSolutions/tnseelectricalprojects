@@ -423,7 +423,12 @@
 
 
 <main>
-    <!-- =========================================================
+
+
+
+
+
+   <!-- =========================================================
          1. HERO SECTION & 2. COMPANY STATISTICS (Merged)
     ========================================================= -->
     <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 pt-20 pb-16">
@@ -490,23 +495,40 @@
         <!-- Hero Side Display Card & Contact Strip -->
         <div class="lg:col-span-5 relative flex items-center justify-center">
           <div class="relative w-full max-w-lg overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/80 shadow-2xl backdrop-blur-xl">
-            <div class="relative flex min-h-[380px] flex-col items-center justify-center p-8 text-center">
-              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400 shadow-2xl shadow-amber-400/20 text-slate-950 mb-3">
-                <span class="material-symbols-outlined text-4xl">bolt</span>
+            <div class="relative isolate flex min-h-[380px] flex-col items-center justify-center overflow-hidden p-8 text-center">
+              <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden" aria-hidden="true">
+                <div class="logo-spin-orb">
+                  <img
+                    src="logo/logo.light.mode-spin.png"
+                    alt=""
+                    class="absolute inset-0 h-full w-full object-cover opacity-50 dark:hidden"
+                  >
+                  <img
+                    src="logo/logo.dark.mode-spin.jpg"
+                    alt=""
+                    class="absolute inset-0 hidden h-full w-full object-cover opacity-50 dark:block"
+                  >
+                </div>
               </div>
-              <h2 class="text-xl font-black text-white">Professional Power Excellence</h2>
-              <p class="mt-1 max-w-xs text-xs leading-relaxed text-slate-300">
-                Engineered electrical and solar infrastructures tailored precisely to your commercial and residential needs.
-              </p>
-              <div class="mt-4 flex flex-wrap justify-center gap-2">
-                <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Electrical</span>
-                <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Solar Systems</span>
-                <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Backup Power</span>
+              <div class="absolute inset-0 bg-slate-950/45" aria-hidden="true"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400 shadow-2xl shadow-amber-400/20 text-slate-950 mb-3">
+                  <span class="material-symbols-outlined text-4xl">bolt</span>
+                </div>
+                <h2 class="text-xl font-black text-white">Professional Power Excellence</h2>
+                <p class="mt-1 max-w-xs text-xs leading-relaxed text-slate-300">
+                  Engineered electrical and solar infrastructures tailored precisely to your commercial and residential needs.
+                </p>
+                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                  <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Electrical</span>
+                  <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Solar Systems</span>
+                  <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Backup Power</span>
+                </div>
               </div>
             </div>
 
             <!-- Quick Contact Strip -->
-            <div class="grid grid-cols-2 border-t border-slate-800/80 bg-slate-950/90">
+            <div class="relative z-10 grid grid-cols-2 border-t border-slate-800/80 bg-slate-950/70">
               <a href="tel:+27818276288" class="flex items-center gap-3 p-4 transition hover:bg-slate-800/50">
                 <span class="material-symbols-outlined text-amber-400">call</span>
                 <div>
@@ -527,6 +549,9 @@
 
       </div>
     </section>
+
+
+
 
 
   

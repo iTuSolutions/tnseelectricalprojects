@@ -205,6 +205,186 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// ==========================================
+// Gallery image drawer
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const imageSources = [
+    "https://www.tnse.co.za/images/gallery/tnse (1).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (2).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (3).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (4).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (5).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (6).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (7).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (8).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (9).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (10).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (11).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (12).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (13).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (14).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (15).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (16).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (17).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (18).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (19).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (20).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (21).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (22).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (23).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (24).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (25).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (26).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (27).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (28).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (29).jpg",
+    "https://www.tnse.co.za/images/gallery/tnse (30).jpg"
+];
+    const galleryItems = imageSources.map((src, index) => ({
+        src,
+        title: `Gallery Project ${index + 1}`,
+        caption: `High-standard electrical installation project capture #${index + 1}.`
+    }));
+    window.galleryItems = galleryItems;
+
+    const drawer = document.querySelector("#imageDrawerModal");
+    const drawerContent = document.querySelector("#imageDrawerModalContent");
+    const mainImage = document.querySelector("#drawerMainImage");
+    const drawerTitle = document.querySelector("#drawerImageTitle");
+    const drawerCaption = document.querySelector("#drawerImageCaption");
+    const counter = document.querySelector("#drawerImageCounter");
+    const thumbnailGrid = document.querySelector("#drawerThumbnailGrid");
+    const closeButton = document.querySelector("#drawer-close");
+    const backdrop = document.querySelector("#drawer-backdrop");
+    const previousButton = document.querySelector("#drawer-previous");
+    const nextButton = document.querySelector("#drawer-next");
+    const fullscreenButton = document.querySelector("#drawer-fullscreen");
+
+    if (
+        !(drawer instanceof HTMLDivElement) ||
+        !(drawerContent instanceof HTMLElement) ||
+        !(mainImage instanceof HTMLImageElement) ||
+        !(drawerTitle instanceof HTMLHeadingElement) ||
+        !(drawerCaption instanceof HTMLParagraphElement) ||
+        !(counter instanceof HTMLDivElement) ||
+        !(thumbnailGrid instanceof HTMLDivElement) ||
+        !(closeButton instanceof HTMLButtonElement) ||
+        !(backdrop instanceof HTMLButtonElement) ||
+        !(previousButton instanceof HTMLButtonElement) ||
+        !(nextButton instanceof HTMLButtonElement) ||
+        !(fullscreenButton instanceof HTMLButtonElement)
+    ) {
+        throw new Error("Gallery image drawer markup is missing.");
+    }
+
+    const reportImageError = (src) => {
+        console.error(`Gallery image failed to load: ${src}`);
+    };
+
+    galleryItems.forEach((item, index) => {
+        const thumbnail = document.createElement("button");
+        thumbnail.type = "button";
+        thumbnail.className =
+            "aspect-square overflow-hidden rounded-lg border border-slate-700 transition hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400";
+        thumbnail.dataset.galleryIndex = String(index);
+        thumbnail.setAttribute("aria-label", `Show ${item.title}`);
+        thumbnail.setAttribute("aria-pressed", "false");
+
+        const image = document.createElement("img");
+        image.className = "size-full object-cover";
+        image.src = item.src;
+        image.alt = "";
+        image.loading = "lazy";
+        image.decoding = "async";
+        image.addEventListener("error", () => reportImageError(item.src), { once: true });
+
+        thumbnail.append(image);
+        thumbnailGrid.append(thumbnail);
+    });
+
+    let activeIndex = 0;
+    let lastFocusedElement = null;
+
+    const showImage = (index) => {
+        activeIndex = (index + galleryItems.length) % galleryItems.length;
+        const item = galleryItems[activeIndex];
+        mainImage.src = item.src;
+        mainImage.alt = item.title;
+        drawerTitle.textContent = item.title;
+        drawerCaption.textContent = item.caption;
+        counter.textContent = `${activeIndex + 1} / ${galleryItems.length}`;
+
+        thumbnailGrid.querySelectorAll("button[data-gallery-index]").forEach((button) => {
+            const isSelected = Number(button.dataset.galleryIndex) === activeIndex;
+            button.setAttribute("aria-pressed", String(isSelected));
+            button.classList.toggle("border-amber-400", isSelected);
+            button.classList.toggle("ring-2", isSelected);
+            button.classList.toggle("ring-amber-400", isSelected);
+            if (isSelected) button.scrollIntoView({ block: "nearest", inline: "nearest" });
+        });
+    };
+
+    mainImage.addEventListener("error", () => reportImageError(mainImage.src));
+
+    const closeDrawer = () => {
+        if (drawer.classList.contains("hidden")) return;
+        drawer.classList.add("opacity-0", "pointer-events-none");
+        drawerContent.classList.add("translate-x-full");
+        drawer.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("overflow-hidden");
+        if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
+    };
+
+    window.openImageDrawer = (index = 0) => {
+        lastFocusedElement = document.activeElement;
+        showImage(index);
+        drawer.classList.remove("hidden", "pointer-events-none");
+        drawer.setAttribute("aria-hidden", "false");
+        document.body.classList.add("overflow-hidden");
+        requestAnimationFrame(() => {
+            drawer.classList.remove("opacity-0");
+            drawerContent.classList.remove("translate-x-full");
+            drawerContent.focus();
+        });
+    };
+
+    drawer.addEventListener("transitionend", (event) => {
+        if (event.target === drawer && drawer.classList.contains("opacity-0")) {
+            drawer.classList.add("hidden");
+        }
+    });
+
+    thumbnailGrid.addEventListener("click", (event) => {
+        const button = event.target instanceof Element
+            ? event.target.closest("button[data-gallery-index]")
+            : null;
+        if (button) showImage(Number(button.dataset.galleryIndex));
+    });
+
+    closeButton.addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+    previousButton.addEventListener("click", () => showImage(activeIndex - 1));
+    nextButton.addEventListener("click", () => showImage(activeIndex + 1));
+
+    fullscreenButton.addEventListener("click", () => {
+        const fullscreenAction = document.fullscreenElement
+            ? document.exitFullscreen()
+            : drawerContent.requestFullscreen();
+        fullscreenAction.catch((error) => {
+            console.error("Unable to change gallery fullscreen mode.", error);
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (drawer.classList.contains("hidden")) return;
+        if (event.key === "Escape") closeDrawer();
+        if (event.key === "ArrowLeft") showImage(activeIndex - 1);
+        if (event.key === "ArrowRight") showImage(activeIndex + 1);
+    });
+});
+
+
 
 
 

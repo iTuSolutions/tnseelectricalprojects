@@ -356,51 +356,6 @@ function toggleDrawerFullScreen() {
     }
 }
 
-// ==========================================
-// 4. Parallax Background Fixed Scroll Script
-// ==========================================
-document.addEventListener("DOMContentLoaded", function () {
-    let parallaxImages = [
-    "https://www.tnse.co.za/images/parallax/tnse (1).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (2).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (3).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (4).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (5).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (6).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (7).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (8).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (9).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (10).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (11).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (12).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (13).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (14).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (15).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (16).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (17).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (18).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (19).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (20).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (21).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (22).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (23).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (24).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (25).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (26).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (27).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (28).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (29).jpg",
-    "https://www.tnse.co.za/images/parallax/tnse (30).jpg"
-];
-    const parallaxBg = document.getElementById('parallaxBg');
-    if (parallaxBg && parallaxImages.length > 0) {
-        parallaxBg.style.backgroundImage = `url('${parallaxImages[0]}')`;
-        parallaxBg.style.backgroundAttachment = 'fixed';
-        parallaxBg.style.backgroundSize = 'cover';
-        parallaxBg.style.backgroundPosition = 'center';
-    }
-});
-
 
 
 

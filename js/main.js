@@ -130,6 +130,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
+// Exclusive FAQ Accordion Toggle Script
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+        item.addEventListener("toggle", (e) => {
+            if (item.open) {
+                faqItems.forEach((otherItem) => {
+                    if (otherItem !== item && otherItem.open) {
+                        otherItem.open = false;
+                    }
+                });
+            }
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// ==========================================
 // 2. Image Carousel Script
 // ==========================================
 document.addEventListener("DOMContentLoaded", function () {

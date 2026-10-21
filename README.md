@@ -16,8 +16,8 @@ A responsive multi-page static website built for **TNSE Electrical Projects**, d
 * **Registration Number**: 2017/417275/07
 * **BEE Status**: Level 1 Contributor
 * **Physical Address**: Stand no 914, Crv Street, Kwena Moloto 2, Moletjie, Polokwane, Limpopo, South Africa, 0751
-* **Contact Numbers**: Johannes: +27 81 827 6288 | Frans: +27 81 550 7926[cite: 2]
-* **Email**: tnse.electricalprojects@gmail.com[cite: 2]
+* **Contact Numbers**: Johannes: +27 81 827 6288 | Frans: +27 81 550 7926
+* **Email**: tnse.electricalprojects@gmail.com
 
 ---
 

@@ -140,7 +140,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Directional Scroll Fade Animation (Reverse on scroll up)
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Scrolled into view (Going down)
+        entry.target.classList.add('is-visible');
+      } else {
+        // Scrolled out of view (Going up - reverses animation)
+        // Remove this 'else' block if you only want it to animate once
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  }, { 
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
 
+  document.querySelectorAll('.fade-init').forEach(el => fadeObserver.observe(el));
 
 
 

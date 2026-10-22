@@ -219,6 +219,42 @@
         -webkit-animation-duration: 5s;
       }
     }
+
+
+
+
+
+
+
+/* ==========================================
+   SCROLL FADE & DIRECTIONAL ANIMATIONS
+   ========================================== */
+
+/* Base state before element enters viewport */
+.fade-init {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Directional initial offsets */
+.fade-init.from-left { transform: translateX(-60px); }
+.fade-init.from-right { transform: translateX(60px); }
+.fade-init.from-top { transform: translateY(-60px); }
+.fade-init.from-bottom { transform: translateY(60px); }
+.fade-init.middle-in { transform: scale(0.85); }
+.fade-init.middle-out { transform: scale(1.15); }
+
+/* Active state when scrolled into view */
+.fade-init.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0) scale(1);
+}
+
+	  
   </style>
 
 <div id="JFWebsiteWidget-01a163178ff870008eae948d20fa94cec3b3"></div>

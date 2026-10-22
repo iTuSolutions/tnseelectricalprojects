@@ -672,132 +672,132 @@
 
 <main>
 
+  <!-- =========================================================
+        1. HERO SECTION & 2. COMPANY STATISTICS (Merged)
+   ========================================================= -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 pt-20 pb-16">
+    
+    <!-- Full Section Dynamic Background Carousel Container -->
+    <div id="heroCarousel" class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+      <!-- Images injected dynamically via JavaScript -->
+    </div>
 
-
-
-
-   <!-- =========================================================
-         1. HERO SECTION & 2. COMPANY STATISTICS (Merged)
-    ========================================================= -->
-    <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950 pt-20 pb-16">
+    <!-- Dark Overlay Gradients for Readability over Carousel -->
+    <div class="absolute inset-0 bg-slate-950/85 z-[1]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.18),transparent_40%),radial-gradient(circle_at_10%_80%,rgba(14,165,233,0.15),transparent_40%)] z-[1]"></div>
+    <div class="absolute inset-0 opacity-10 z-[1]" style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 50px 50px;"></div>
+    
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8 z-10">
       
-      <!-- Full Section Dynamic Background Carousel Container -->
-      <div id="heroCarousel" class="absolute inset-0 w-full h-full z-0 overflow-hidden">
-        <!-- Images injected dynamically via JavaScript -->
-      </div>
-
-      <!-- Dark Overlay Gradients for Readability over Carousel -->
-      <div class="absolute inset-0 bg-slate-950/85 z-[1]"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.18),transparent_40%),radial-gradient(circle_at_10%_80%,rgba(14,165,233,0.15),transparent_40%)] z-[1]"></div>
-      <div class="absolute inset-0 opacity-10 z-[1]" style="background-image: linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px); background-size: 50px 50px;"></div>
-      
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8 z-10">
+      <!-- Hero Text & Statistics Content (Fades in from Left) -->
+      <div class="lg:col-span-7 flex flex-col justify-center fade-init from-left">
         
-        <!-- Hero Text & Statistics Content -->
-        <div class="lg:col-span-7 flex flex-col justify-center">
-          <div class="inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-bold text-amber-300 backdrop-blur-md">
-            <span class="material-symbols-outlined text-lg">verified</span>
-            Established 2017 · BEE Level 1 Contributor
-          </div>
-
-          <h1 class="mt-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl text-white drop-shadow-lg">
-            Electrical. Solar. <span class="text-amber-400">Energy.</span>
-          </h1>
-
-          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl drop-shadow">
-            TNSE Electrical Projects delivers professional electrical, solar maintenance, repairs, and robust backup power solutions for residential, commercial, and project requirements across Polokwane and surrounding areas.
-          </p>
-
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-7 py-4 font-extrabold text-slate-950 shadow-lg shadow-amber-400/20 transition hover:bg-amber-300">
-              <span class="material-symbols-outlined">request_quote</span>
-              Request a Quote
-            </a>
-            <a href="#solutions" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/60 px-7 py-4 font-bold text-white backdrop-blur-md transition hover:border-amber-400/50 hover:bg-slate-900">
-              <span class="material-symbols-outlined">engineering</span>
-              Explore Solutions
-            </a>
-          </div>
-
-          <!-- Integrated Company Statistics -->
-          <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800/80 pt-8">
-            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md">
-              <p class="text-2xl font-black text-white">2017</p>
-              <p class="mt-1 text-xs font-medium text-slate-400">Established Year</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md">
-              <p class="text-2xl font-black text-amber-400">Level 1</p>
-              <p class="mt-1 text-xs font-medium text-slate-400">BEE Contributor</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md">
-              <p class="text-2xl font-black text-white">100%</p>
-              <p class="mt-1 text-xs font-medium text-slate-400">Reliable Power</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md">
-              <p class="text-2xl font-black text-amber-400">360°</p>
-              <p class="mt-1 text-xs font-medium text-slate-400">Energy Support</p>
-            </div>
-          </div>
+        <!-- Badge (Fades from Top) -->
+        <div class="inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-bold text-amber-300 backdrop-blur-md fade-init from-top">
+          <span class="material-symbols-outlined text-lg">verified</span>
+          Established 2017 · BEE Level 1 Contributor
         </div>
 
-        <!-- Hero Side Display Card & Contact Strip -->
-        <div class="lg:col-span-5 relative flex items-center justify-center">
-          <div class="relative w-full max-w-lg overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/80 shadow-2xl backdrop-blur-xl">
-            <div class="relative isolate flex min-h-[380px] flex-col items-center justify-center overflow-hidden p-8 text-center">
-              <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden" aria-hidden="true">
-                <div class="logo-spin-orb">
-                  <img
-                    src="https://www.tnse.co.za/images/logo/logo.light.mode-spin.png"
-                    alt=""
-                    class="absolute inset-0 h-full w-full object-cover opacity-50 dark:hidden"
-                  >
-                  <img
-                    src="https://www.tnse.co.za/images/logo/logo.dark.mode-spin.jpg"
-                    alt=""
-                    class="absolute inset-0 hidden h-full w-full object-cover opacity-50 dark:block"
-                  >
-                </div>
-              </div>
-              <div class="absolute inset-0 bg-slate-950/45" aria-hidden="true"></div>
-              <div class="relative z-10 flex flex-col items-center">
-                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400 shadow-2xl shadow-amber-400/20 text-slate-950 mb-3">
-                  <span class="material-symbols-outlined text-4xl">bolt</span>
-                </div>
-                <h2 class="text-xl font-black text-white">Professional Power Excellence</h2>
-                <p class="mt-1 max-w-xs text-xs leading-relaxed text-slate-300">
-                  Engineered electrical and solar infrastructures tailored precisely to your commercial and residential needs.
-                </p>
-                <div class="mt-4 flex flex-wrap justify-center gap-2">
-                  <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Electrical</span>
-                  <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Solar Systems</span>
-                  <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Backup Power</span>
-                </div>
-              </div>
-            </div>
+        <!-- Heading (Fades from Left) -->
+        <h1 class="mt-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl text-white drop-shadow-lg fade-init from-left">
+          Electrical. Solar. <span class="text-amber-400">Energy.</span>
+        </h1>
 
-            <!-- Quick Contact Strip -->
-            <div class="relative z-10 grid grid-cols-2 border-t border-slate-800/80 bg-slate-950/70">
-              <a href="tel:+27818276288" class="flex items-center gap-3 p-4 transition hover:bg-slate-800/50">
-                <span class="material-symbols-outlined text-amber-400">call</span>
-                <div>
-                  <p class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Johannes</p>
-                  <p class="text-xs font-bold text-white">+27 81 827 6288</p>
-                </div>
-              </a>
-              <a href="tel:+27815507926" class="flex items-center gap-3 border-l border-slate-800/80 p-4 transition hover:bg-slate-800/50">
-                <span class="material-symbols-outlined text-amber-400">call</span>
-                <div>
-                  <p class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Frans</p>
-                  <p class="text-xs font-bold text-white">+27 81 550 7926</p>
-                </div>
-              </a>
-            </div>
-          </div>
+        <!-- Subheading Paragraph (Fades from Bottom) -->
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl drop-shadow fade-init from-bottom">
+          TNSE Electrical Projects delivers professional electrical, solar maintenance, repairs, and robust backup power solutions for residential, commercial, and project requirements across Polokwane and surrounding areas.
+        </p>
+
+        <!-- CTA Action Buttons (Middle Out Zoom Animation) -->
+        <div class="mt-8 flex flex-wrap gap-4 fade-init middle-out">
+          <a href="contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-7 py-4 font-extrabold text-slate-950 shadow-lg shadow-amber-400/20 transition hover:bg-amber-300">
+            <span class="material-symbols-outlined">request_quote</span>
+            Request a Quote
+          </a>
+          <a href="#solutions" class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/60 px-7 py-4 font-bold text-white backdrop-blur-md transition hover:border-amber-400/50 hover:bg-slate-900">
+            <span class="material-symbols-outlined">engineering</span>
+            Explore Solutions
+          </a>
         </div>
 
+        <!-- Integrated Company Statistics (Fades from Bottom with Staggered Card Entrances) -->
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800/80 pt-8 fade-init from-bottom">
+          <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md fade-init from-left">
+            <p class="text-2xl font-black text-white">2017</p>
+            <p class="mt-1 text-xs font-medium text-slate-400">Established Year</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md fade-init from-bottom">
+            <p class="text-2xl font-black text-amber-400">Level 1</p>
+            <p class="mt-1 text-xs font-medium text-slate-400">BEE Contributor</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md fade-init from-top">
+            <p class="text-2xl font-black text-white">100%</p>
+            <p class="mt-1 text-xs font-medium text-slate-400">Reliable Power</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800/60 bg-slate-900/50 p-4 backdrop-blur-md fade-init from-right">
+            <p class="text-2xl font-black text-amber-400">360°</p>
+            <p class="mt-1 text-xs font-medium text-slate-400">Energy Support</p>
+          </div>
+        </div>
       </div>
-    </section>
 
+      <!-- Hero Side Display Card & Contact Strip (Fades in from Right with Middle-In Zoom) -->
+      <div class="lg:col-span-5 relative flex items-center justify-center fade-init from-right">
+        <div class="relative w-full max-w-lg overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-900/80 shadow-2xl backdrop-blur-xl fade-init middle-in">
+          <div class="relative isolate flex min-h-[380px] flex-col items-center justify-center overflow-hidden p-8 text-center">
+            <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden" aria-hidden="true">
+              <div class="logo-spin-orb">
+                <img
+                  src="https://www.tnse.co.za/images/logo/logo.light.mode-spin.png"
+                  alt=""
+                  class="absolute inset-0 h-full w-full object-cover opacity-50 dark:hidden"
+                >
+                <img
+                  src="https://www.tnse.co.za/images/logo/logo.dark.mode-spin.jpg"
+                  alt=""
+                  class="absolute inset-0 hidden h-full w-full object-cover opacity-50 dark:block"
+                >
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-slate-950/45" aria-hidden="true"></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400 shadow-2xl shadow-amber-400/20 text-slate-950 mb-3 fade-init middle-out">
+                <span class="material-symbols-outlined text-4xl">bolt</span>
+              </div>
+              <h2 class="text-xl font-black text-white fade-init from-top">Professional Power Excellence</h2>
+              <p class="mt-1 max-w-xs text-xs leading-relaxed text-slate-300 fade-init from-bottom">
+                Engineered electrical and solar infrastructures tailored precisely to your commercial and residential needs.
+              </p>
+              <div class="mt-4 flex flex-wrap justify-center gap-2 fade-init middle-in">
+                <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Electrical</span>
+                <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Solar Systems</span>
+                <span class="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-amber-300 border border-amber-400/30 backdrop-blur">Backup Power</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Contact Strip (Fades from Bottom) -->
+          <div class="relative z-10 grid grid-cols-2 border-t border-slate-800/80 bg-slate-950/70 fade-init from-bottom">
+            <a href="tel:+27818276288" class="flex items-center gap-3 p-4 transition hover:bg-slate-800/50">
+              <span class="material-symbols-outlined text-amber-400">call</span>
+              <div>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Johannes</p>
+                <p class="text-xs font-bold text-white">+27 81 827 6288</p>
+              </div>
+            </a>
+            <a href="tel:+27815507926" class="flex items-center gap-3 border-l border-slate-800/80 p-4 transition hover:bg-slate-800/50">
+              <span class="material-symbols-outlined text-amber-400">call</span>
+              <div>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Frans</p>
+                <p class="text-xs font-bold text-white">+27 81 550 7926</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
 
@@ -807,9 +807,9 @@
 
   
     
-    <section class="bg-white py-20 dark:bg-slate-950">
+<section class="bg-white py-20 dark:bg-slate-950">
   <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-    <div>
+    <div class="fade-init from-left">
       <p
         class="font-bold uppercase tracking-[0.2em] text-amber-600 dark:text-amber-400">
         About TNSE Electrical Projects
@@ -818,7 +818,7 @@
         Practical power solutions built around your needs.
       </h2>
     </div>
-    <div class="text-lg leading-8 text-slate-600 dark:text-slate-400">
+    <div class="fade-init from-right text-lg leading-8 text-slate-600 dark:text-slate-400">
       <p>
         TNSE Electrical Projects is an electrical and solar energy solutions
         company established in 2017 and based in Moletjie, Polokwane,
@@ -845,9 +845,11 @@
 ========================================================= -->
 <section class="bg-slate-50 py-20 dark:bg-slate-900/50">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl  items-center gap-3">
-		<span class="h-px w-12 bg-amber-400"></span>
-      		<p class="font-bold uppercase tracking-[0.2em] text-sm  text-amber-600 dark:text-amber-400">
+    
+    <!-- Section Header (Fades in Top-to-Bottom) -->
+    <div class="fade-init from-top max-w-3xl items-center gap-3">
+      <span class="h-px w-12 bg-amber-400"></span>
+      <p class="font-bold uppercase tracking-[0.2em] text-sm text-amber-600 dark:text-amber-400">
         What We Do
       </p>
       <h2 class="mt-3 text-3xl font-black text-slate-950 dark:text-white sm:text-4xl">
@@ -858,11 +860,11 @@
       </p>
     </div>
 
-    <!-- 4-Column Grid -->
+    <!-- 4-Column Grid with Directional Fades -->
     <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       
-      <!-- Card 1: Electrical Services -->
-      <article class="group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
+      <!-- Card 1: Left to Right -->
+      <article class="fade-init from-left group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
         <div>
           <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">electrical_services</span>
@@ -882,8 +884,8 @@
         </div>
       </article>
 
-      <!-- Card 2: Solar Services -->
-      <article class="group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
+      <!-- Card 2: Bottom to Top -->
+      <article class="fade-init from-bottom group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
         <div>
           <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">solar_power</span>
@@ -903,8 +905,8 @@
         </div>
       </article>
 
-      <!-- Card 3: Electrical Installations -->
-      <article class="group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
+      <!-- Card 3: Middle In (Zoom In) -->
+      <article class="fade-init middle-in group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
         <div>
           <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">construction</span>
@@ -924,8 +926,8 @@
         </div>
       </article>
 
-      <!-- Card 4: Energy Solutions -->
-      <article class="group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
+      <!-- Card 4: Right to Left -->
+      <article class="fade-init from-right group flex flex-col justify-between rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:ring-slate-800">
         <div>
           <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-400/10 dark:text-amber-400">
             <span class="material-symbols-outlined text-3xl">battery_charging_full</span>
@@ -947,12 +949,14 @@
 
     </div>
 
-    <div class="mt-10 text-center">
+    <!-- CTA Button (Middle Out / Zoom Out) -->
+    <div class="fade-init middle-out mt-10 text-center">
       <a href="contact/index.html" class="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-7 py-3.5 font-bold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200">
         Request a Service
         <span class="material-symbols-outlined">arrow_forward</span>
       </a>
     </div>
+
   </div>
 </section>
 
@@ -960,15 +964,19 @@
 <!-- =========================================================
      WHY TNSE SECTION (Updated Layout Structure)
 ========================================================= -->
-      <section class="bg-slate-100 py-20 dark:bg-slate-900/60">
+<section class="bg-slate-100 py-20 dark:bg-slate-900/60 overflow-hidden">
         <div class="mx-auto max-w-7xl px-5">
           <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
+            
+            <!-- Left Content: Fades in from Left -->
+            <div class="fade-init from-left">
               <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">Why TNSE</p>
               <h2 class="mt-3 text-3xl sm:text-4xl font-black">Professional service with a practical engineering mindset.</h2>
               <p class="mt-5 leading-relaxed text-slate-600 dark:text-slate-400">We focus on understanding the requirement, planning the solution and delivering dependable electrical and energy work.</p>
             </div>
-            <div class="grid gap-4 sm:grid-cols-2">
+
+            <!-- Right Cards Grid: Fades in from Right -->
+            <div class="grid gap-4 sm:grid-cols-2 fade-init from-right">
               <div class="rounded-2xl bg-white p-6 dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-white/5">
                 <span class="material-symbols-outlined text-amber-500">verified</span>
                 <h3 class="mt-3 font-bold">Reliable Solutions</h3>
@@ -990,14 +998,17 @@
                 <p class="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">Clear communication throughout the project.</p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
     
-<section class="bg-slate-950 py-20 text-white">
+<section class="bg-slate-950 py-20 text-white overflow-hidden">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-      <div>
+      
+      <!-- Left Column: Text Content (Fades in from Left) -->
+      <div class="fade-init from-left">
         <p class="font-bold uppercase tracking-[0.2em] text-amber-400">
           Company Highlights
         </p>
@@ -1017,8 +1028,12 @@
           </span>
         </a>
       </div>
+
+      <!-- Right Column: Highlight Cards (Different directional fades) -->
       <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        
+        <!-- Card 1: From Bottom -->
+        <div class="fade-init from-bottom rounded-2xl border border-slate-800 bg-slate-900 p-6" style="transition-delay: 100ms;">
           <span class="material-symbols-outlined text-3xl text-amber-400">
             calendar_month
           </span>
@@ -1029,7 +1044,9 @@
             Year established
           </p>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+
+        <!-- Card 2: From Right -->
+        <div class="fade-init from-right rounded-2xl border border-slate-800 bg-slate-900 p-6" style="transition-delay: 200ms;">
           <span class="material-symbols-outlined text-3xl text-amber-400">
             workspace_premium
           </span>
@@ -1040,7 +1057,9 @@
             BEE Contributor
           </p>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+
+        <!-- Card 3: Middle In -->
+        <div class="fade-init middle-in rounded-2xl border border-slate-800 bg-slate-900 p-6" style="transition-delay: 300ms;">
           <span class="material-symbols-outlined text-3xl text-amber-400">
             bolt
           </span>
@@ -1051,7 +1070,9 @@
             Installation & maintenance
           </p>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+
+        <!-- Card 4: From Bottom -->
+        <div class="fade-init from-bottom rounded-2xl border border-slate-800 bg-slate-900 p-6" style="transition-delay: 400ms;">
           <span class="material-symbols-outlined text-3xl text-amber-400">
             solar_power
           </span>
@@ -1062,7 +1083,9 @@
             Renewable energy solutions
           </p>
         </div>
+
       </div>
+
     </div>
   </div>
 </section>
@@ -1073,7 +1096,9 @@
 ========================================================= -->
 <section id="portfolio" class="border-t border-slate-800 bg-slate-950 py-20 sm:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
+    
+    <!-- Section Header (Fades in from Top) -->
+    <div class="fade-init from-top mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
       <div class="max-w-2xl">
         <p class="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Our portfolio</p>
         <h2 class="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Work built on care and expertise.</h2>
@@ -1087,8 +1112,11 @@
       </button>
     </div>
 
+    <!-- Portfolio Cards Grid -->
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      <button type="button" onclick="openImageDrawer(1)" class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-left transition hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
+      
+      <!-- Card 1: Fades in from Left -->
+      <button type="button" onclick="openImageDrawer(1)" class="fade-init from-left group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-left transition hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
         <span class="relative block aspect-[4/3] overflow-hidden">
           <img src="https://www.tnse.co.za/images/gallery/tnse (2).jpg" alt="Electrician carrying out an installation on site" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
           <span class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></span>
@@ -1100,7 +1128,8 @@
         </span>
       </button>
 
-      <button type="button" onclick="openImageDrawer(3)" class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-left transition hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
+      <!-- Card 2: Fades in from Middle (Zoom In) -->
+      <button type="button" onclick="openImageDrawer(3)" class="fade-init middle-in group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-left transition hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
         <span class="relative block aspect-[4/3] overflow-hidden">
           <img src="https://www.tnse.co.za/images/gallery/tnse (4).jpg" alt="Installed inverter and backup power equipment" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
           <span class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></span>
@@ -1112,7 +1141,8 @@
         </span>
       </button>
 
-      <button type="button" onclick="openImageDrawer(5)" class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-left transition hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 sm:col-span-2 lg:col-span-1">
+      <!-- Card 3: Fades in from Right -->
+      <button type="button" onclick="openImageDrawer(5)" class="fade-init from-right group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-left transition hover:-translate-y-1 hover:border-amber-400/60 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 sm:col-span-2 lg:col-span-1">
         <span class="relative block aspect-[4/3] overflow-hidden">
           <img src="https://www.tnse.co.za/images/gallery/tnse (6).jpg" alt="Electrical distribution board installation" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
           <span class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></span>
@@ -1123,9 +1153,11 @@
           <span class="material-symbols-outlined text-amber-400 transition group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
         </span>
       </button>
+
     </div>
 
-    <div class="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:flex-row sm:items-center sm:p-8">
+    <!-- Call to Action Banner (Fades in from Bottom) -->
+    <div class="fade-init from-bottom mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:flex-row sm:items-center sm:p-8">
       <div>
         <p class="text-lg font-bold text-white">Planning an electrical or solar project?</p>
         <p class="mt-1 text-sm text-slate-400">Talk with our team about the right solution for your property.</p>
@@ -1135,9 +1167,10 @@
         <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
       </a>
     </div>
+
   </div>
 </section>
-
+	
 	<div id="imageDrawerModal" class="pointer-events-none fixed inset-0 z-50 hidden overflow-hidden opacity-0 transition-opacity duration-300" aria-hidden="true">
 		<button id="drawer-backdrop" class="absolute inset-0 size-full cursor-default bg-slate-950/90 backdrop-blur-md" type="button" aria-label="Close project gallery"></button>
 		<section id="imageDrawerModalContent" class="absolute right-0 top-0 z-10 flex h-full w-full max-w-5xl translate-x-full flex-col border-l border-slate-800 bg-slate-900 text-white shadow-2xl transition-transform duration-300" role="dialog" aria-modal="true" aria-labelledby="drawerImageTitle" tabindex="-1">
@@ -1171,33 +1204,33 @@
 
 
       <!-- How We Work Section -->
-      <section class="mx-auto max-w-7xl px-5 py-20">
-        <div>
+ <section class="mx-auto max-w-7xl px-5 py-20">
+        <div class="fade-init from-top">
           <p class="text-sm font-bold uppercase tracking-[.25em] text-amber-500">How we work</p>
           <h2 class="mt-3 text-3xl sm:text-4xl font-black">A clear path from idea to implementation.</h2>
         </div>
         <div class="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+          <div class="fade-init from-left rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
             <b class="text-amber-500 text-lg">01</b>
             <h3 class="mt-3 font-bold">Consultation</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Understand your requirement.</p>
           </div>
-          <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+          <div class="fade-init from-bottom rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
             <b class="text-amber-500 text-lg">02</b>
             <h3 class="mt-3 font-bold">Assessment</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Review site and system needs.</p>
           </div>
-          <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+          <div class="fade-init middle-in rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
             <b class="text-amber-500 text-lg">03</b>
             <h3 class="mt-3 font-bold">Design</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Develop a suitable solution.</p>
           </div>
-          <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
+          <div class="fade-init from-bottom rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40">
             <b class="text-amber-500 text-lg">04</b>
             <h3 class="mt-3 font-bold">Installation</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Implement and test the work.</p>
           </div>
-          <div class="rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40 sm:col-span-2 md:col-span-1">
+          <div class="fade-init from-right rounded-2xl border p-5 dark:border-white/10 bg-white dark:bg-slate-900/40 sm:col-span-2 md:col-span-1">
             <b class="text-amber-500 text-lg">05</b>
             <h3 class="mt-3 font-bold">Support</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">Maintenance and ongoing support.</p>

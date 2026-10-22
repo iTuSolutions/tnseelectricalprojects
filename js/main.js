@@ -104,28 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   document.querySelectorAll('.reveal').forEach(e => obs.observe(e));
 
-  // Back to Top Button
-  const topBtn = document.querySelector('#backTop');
+  // Back to Top Button (Matched with #backToTop)
+  const topBtn = document.getElementById('backToTop') || document.querySelector('#backTop');
   window.addEventListener('scroll', () => {
     if (topBtn) {
-      topBtn.classList.toggle('hidden', window.scrollY < 500);
+      topBtn.classList.toggle('hidden', window.scrollY < 300);
     }
   });
   topBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // Dynamic Year Updater
   document.querySelectorAll('[data-year]').forEach(e => e.textContent = new Date().getFullYear());
-
-  // Contact / Quote Form Handler
-  document.querySelectorAll('form[data-contact]').forEach(f => 
-    f.addEventListener('submit', e => {
-      e.preventDefault();
-      const d = new FormData(f);
-      const subject = encodeURIComponent('TNSE Website Quote Request');
-      const body = encodeURIComponent([...d.entries()].map(x => `${x[0]}: ${x[1]}`).join('\n'));
-      location.href = `mailto:tnse.electricalprojects@gmail.com?subject=${subject}&body=${body}`;
-    })
-  );
 
 });
 
